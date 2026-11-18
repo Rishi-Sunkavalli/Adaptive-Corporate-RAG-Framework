@@ -148,7 +148,7 @@ def create_slide_deck(output_pptx_path: str):
     p.font.color.rgb = TEXT_MUTED
 
     p = tf1.add_paragraph()
-    p.text = "Interactive Live Demo: https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/"
+    p.text = "Interactive Live Demo: https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/"
     p.font.size = Pt(12)
     p.font.color.rgb = ACCENT_GREEN
 
@@ -648,9 +648,9 @@ def create_slide_deck(output_pptx_path: str):
         ("Production-Grade Python Architecture:", "Complete modular codebase (src/rbac, src/ingestion, src/retrieval, src/rl_controller, src/generation, src/evaluation) with Streamlit interactive UI."),
         ("Multi-Department Corporate Corpus:", "8 fully parsed corporate manuals across HR, IT, Finance, and Operations with section-preserving chunking and metadata."),
         ("Rigorous Empirical Benchmark Suite:", "Comparative evaluation across Fixed RAG, Heuristic RAG, and Adaptive RL-RAG proving +39.3% recall gain and +26.1% reward gain."),
-        ("Permanent Live Deployment on GitHub Pages:", "https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/ with live interactive assistant, RBAC sandbox, and Chart.js analytics."),
+        ("Permanent Live Deployment on GitHub Pages:", "https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/ with live interactive assistant, RBAC sandbox, and Chart.js analytics."),
         ("Executive Presentation & Complete Documentation:", "18-slide executive presentation (.pptx) and comprehensive publication-grade README in the GitHub repository."),
-        ("Primary Author & Repository Contact:", "Rishi Sunkavalli (sunkavallirshi@gmail.com) • Repository: MICHANAGATLAYASWANTH/Adaptive-Corporate-RAG-Framework")
+        ("Primary Author & Repository Contact:", "Rishi Sunkavalli (sunkavallirshi@gmail.com) • Repository: Rishi-Sunkavalli/Adaptive-Corporate-RAG-Framework")
     ]
     for i, (b_title, b_desc) in enumerate(bullets):
         p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()

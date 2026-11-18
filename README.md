@@ -1,7 +1,7 @@
 # Adaptive Reinforcement Learning-Based RAG Optimization Framework
 ### For Corporate Knowledge Management & Enterprise Document Intelligence
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue?style=for-the-badge&logo=github)](https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/)
 [![Presentation](https://img.shields.io/badge/Presentation-Download%20PPTX-orange?style=for-the-badge&logo=microsoftpowerpoint)](presentation/Adaptive_Corporate_RAG_Framework_Final_Presentation.pptx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg?style=for-the-badge)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](https://www.python.org/)
@@ -12,8 +12,8 @@
 - **Principal Author / Candidate:** **Rishi Sunkavalli**
 - **GitHub Email:** [sunkavallirshi@gmail.com](mailto:sunkavallirshi@gmail.com)
 - **GitHub Profile:** [@Rishi-Sunkavalli](https://github.com/Rishi-Sunkavalli)
-- **Repository:** [MICHANAGATLAYASWANTH/Adaptive-Corporate-RAG-Framework](https://github.com/MICHANAGATLAYASWANTH/Adaptive-Corporate-RAG-Framework)
-- **Permanent Live Interactive Demo:** [https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/](https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/)
+- **Repository:** [Rishi-Sunkavalli/Adaptive-Corporate-RAG-Framework](https://github.com/Rishi-Sunkavalli/Adaptive-Corporate-RAG-Framework)
+- **Permanent Live Interactive Demo:** [https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/](https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/)
 
 ---
 
@@ -165,7 +165,7 @@ The repository includes 8 comprehensive, real-world corporate policy manuals:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/MICHANAGATLAYASWANTH/Adaptive-Corporate-RAG-Framework.git
+git clone https://github.com/Rishi-Sunkavalli/Adaptive-Corporate-RAG-Framework.git
 cd Adaptive-Corporate-RAG-Framework
 ```
 
@@ -188,7 +188,7 @@ Open your browser at `http://localhost:8501` to test role-based access, inspect 
 
 ### 5. Access the Permanent Live Demo
 Visit the GitHub Pages deployment directly in any browser:
-👉 **[https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/](https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/)**
+👉 **[https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/](https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/)**
 
 ---
 

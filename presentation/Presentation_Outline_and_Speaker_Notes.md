@@ -2,8 +2,8 @@
 ## Final Year Project Presentation: Outline & Speaker Notes
 **Author:** Rishi Sunkavalli  
 **Contact Email:** sunkavallirshi@gmail.com  
-**GitHub Repository:** [Adaptive-Corporate-RAG-Framework](https://github.com/MICHANAGATLAYASWANTH/Adaptive-Corporate-RAG-Framework)  
-**Live Web Deployment:** [Permanent GitHub Pages Demo](https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/)  
+**GitHub Repository:** [Adaptive-Corporate-RAG-Framework](https://github.com/Rishi-Sunkavalli/Adaptive-Corporate-RAG-Framework)  
+**Live Web Deployment:** [Permanent GitHub Pages Demo](https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/)  
 **Presentation File:** `presentation/Adaptive_Corporate_RAG_Framework_Final_Presentation.pptx` (18 Slides, 16:9 Widescreen)
 
 ---
@@ -150,5 +150,5 @@
 
 ### Slide 18: Summary of Deliverables & Conclusion
 - **Complete Python Codebase:** Ingestion, vector store, BM25, hybrid retrieval, LinUCB bandit, grounded generator, benchmark evaluation, and Streamlit app.
-- **Permanent Live Demo:** Hosted on GitHub Pages at `https://michanagatlayaswanth.github.io/Adaptive-Corporate-RAG-Framework/`.
+- **Permanent Live Demo:** Hosted on GitHub Pages at `https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/`.
 - **PowerPoint Presentation:** `Adaptive_Corporate_RAG_Framework_Final_Presentation.pptx` uploaded to the repository.
