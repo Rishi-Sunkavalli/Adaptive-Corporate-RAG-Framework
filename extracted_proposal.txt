@@ -1,0 +1,206 @@
+
+ADAPTIVE REINFORCEMENT LEARNING-BASEDRAG OPTIMIZATION FRAMEWORK
+For Corporate Knowledge Management
+FINAL YEAR PROJECT – ENHANCED PROBLEM STATEMENT & PROPOSAL
+Prepared as a project concept document
+
+1. Project Overview
+Organizations generate and maintain substantial amounts of internal knowledge across departments. This information is distributed across HR policies, employee handbooks, IT manuals, finance guidelines, standard operating procedures (SOPs), project reports, compliance documents, and technical knowledge bases. Employees may struggle to locate the right information quickly, especially when documents are stored in different repositories, use different terminology, or contain overlapping and frequently updated guidance.
+This project proposes an Adaptive Reinforcement Learning-Based Retrieval-Augmented Generation (RAG) framework for corporate knowledge management. It will provide a conversational assistant that retrieves relevant information from authorized corporate documents and generates answers grounded in those sources. A Reinforcement Learning (RL) controller will learn to select retrieval configurations—such as the number of retrieved chunks, similarity threshold, and retrieval strategy—based on query characteristics and measured system outcomes.
+2. Enhanced Problem Statement
+Organizations rely on large and continuously growing collections of corporate documents to support employee activities, operational processes, and business decisions. These documents commonly include human resource policies, leave and benefits information, IT support manuals, finance and reimbursement guidelines, compliance requirements, standard operating procedures, and project documentation. Because this knowledge is often distributed across multiple files, repositories, and departments, employees can find it difficult and time-consuming to identify the most relevant, current, and authoritative information. This can lead to repeated queries to support teams, inconsistent interpretation of policies, delays in routine work, and reduced organizational productivity.
+Conventional Retrieval-Augmented Generation (RAG) systems can improve access to organizational knowledge by retrieving relevant document passages and providing them as context to a Large Language Model (LLM). However, many implementations use fixed retrieval settings, including a predetermined number of retrieved chunks (Top-K), static similarity thresholds, and a single retrieval strategy. Such settings may not suit the wide range of corporate questions: a short factual HR query, a multi-step IT troubleshooting question, and a policy comparison may require different amounts and types of evidence. Poorly configured retrieval can return irrelevant or incomplete passages, omit important policy details, increase response latency and token usage, and contribute to answers that are insufficiently grounded in company documents.
+To address these limitations, the proposed project will design and evaluate an adaptive corporate RAG framework in which a Reinforcement Learning-based controller selects retrieval configurations according to query features, retrieval feedback, and system-cost signals. The controller will be trained using a defined reward function that balances evidence relevance and answer quality against latency and token consumption. The framework will retrieve only documents that the requesting employee is authorized to access, generate source-grounded responses, and display supporting document references. Its performance will be compared with a conventional fixed-parameter RAG baseline using retrieval, answer-quality, efficiency, and access-control tests.
+3. Aim
+To design, implement, and evaluate an adaptive corporate knowledge assistant that uses Reinforcement Learning to optimize RAG retrieval configurations, improving the relevance, grounding, and efficiency of answers generated from authorized organizational documents.
+4. Specific Objectives
+Build a corporate document ingestion pipeline for PDF, DOCX, and TXT files, including text extraction, chunking, embedding generation, and indexing.
+Develop a baseline RAG pipeline that retrieves relevant passages and generates answers with an LLM.
+Represent query characteristics and retrieval outcomes as states for an RL-based retrieval controller.
+Train or update the controller to select retrieval actions such as Top-K, similarity threshold, and dense or hybrid retrieval.
+Design a reward function that balances retrieval relevance, answer faithfulness or quality, response latency, and token consumption.
+Provide source citations or document references with generated answers so employees can verify the information.
+Apply role- or department-based access filtering so users can retrieve only documents they are permitted to access.
+Compare adaptive RAG with fixed-parameter RAG using consistent datasets, queries, and evaluation metrics.
+5. Proposed Corporate Scope
+Department
+Example Knowledge Sources
+Example Employee Questions
+Human Resources
+Leave policy, attendance, benefits, onboarding handbook
+What is the annual leave entitlement?
+Information Technology
+IT manuals, troubleshooting guides, security procedures
+How do I request access to an internal application?
+Finance
+Travel policy, reimbursement rules, expense guidelines
+Which receipts are required for travel reimbursement?
+Operations
+SOPs, workflow documents, process checklists
+What are the approval steps for this operational process?
+Recommended prototype boundary: begin with a controlled collection of sample or approved corporate documents from two to four departments. Use synthetic or publicly available policy examples if real company documents are unavailable. Do not use confidential employee records in the academic prototype.
+6. Proposed System Workflow
+Document ingestion: Upload approved corporate files; extract text and metadata such as department, document title, version, and access group.
+Pre-processing and indexing: Clean text, split it into chunks, create embeddings, and store vectors and metadata in a vector database.
+Employee authentication and access filtering: Identify the user's role or department and filter the searchable corpus before retrieval.
+Query understanding: Extract query features such as intent, length, estimated complexity, department, and retrieval confidence.
+RL-based retrieval control: Select an action, for example Top-K, similarity threshold, or dense/hybrid retrieval mode.
+Retrieval and optional reranking: Retrieve candidate passages, apply metadata filters, and optionally rerank results for relevance.
+Grounded answer generation: Provide the selected passages to the LLM with instructions to answer only from evidence and state when evidence is insufficient.
+Evaluation and reward: Measure retrieval relevance, answer faithfulness, latency, and token use; calculate reward and update the controller.
+Employee feedback and monitoring: Collect optional helpfulness feedback and show source references, selected retrieval settings, and performance metrics.
+Stage
+System Activity
+Expected Output
+1. Corporate document collection
+Collect approved sample documents from HR, IT, Finance, and Operations. Record metadata such as department, document title, version, effective date, and access group.
+Approved document set with metadata
+2. Document extraction and preprocessing
+Extract text from PDF, DOCX, and TXT files; remove extraction noise; preserve headings and section boundaries; and split content into searchable chunks.
+Clean, structured text
+3. Embedding and knowledge-base creation
+Generate vector embeddings for each chunk and store them in FAISS or Chroma together with document metadata and source references.
+Searchable vector knowledge base
+4. Employee query and identity context
+The employee submits a natural-language question. The prototype identifies the user's role or department and applies document permissions before any content is retrieved.
+Authenticated query with access scope
+5. Query analysis and state construction
+Analyze the query's intent, length, estimated complexity, department context, and available retrieval signals. Convert these features into the state supplied to the RL controller.
+Query state/features
+6. Adaptive retrieval decision
+The RL controller selects a retrieval action, such as Top-K value, similarity threshold, dense or hybrid search, and whether reranking should be used.
+Selected retrieval configuration
+7. Authorized retrieval and ranking
+Search only the documents the employee is allowed to access. Retrieve candidate chunks and, where implemented, rerank them by relevance.
+Ranked authorized passages
+8. Context assembly and grounded generation
+Build a concise context from the selected passages and prompt the LLM to answer using only the supplied corporate evidence. If evidence is missing or conflicting, the assistant should say so rather than invent a policy.
+Evidence-grounded context
+9. Source display and employee response
+Return the answer with document title, section, and available version or effective-date information so the employee can verify the source.
+Answer with source references
+10. Evaluation and reward calculation
+Measure retrieval relevance, answer faithfulness, answer relevance, latency, and token usage. Calculate a reward using the defined weighted objective.
+Reward and evaluation record
+11. RL policy update and monitoring
+Use the reward to update the controller (or log feedback for scheduled training). Track selected actions and performance over test queries to determine whether the policy is learning useful retrieval behavior.
+Updated policy / learning log
+End-to-end flow: Corporate documents → preprocessing and indexing → employee query and access check → query analysis → RL-selected retrieval settings → authorized retrieval → LLM answer with sources → quality/cost evaluation → reward feedback → policy improvement.
+7. Reinforcement Learning Formulation
+7.1 State
+A state may include query length, query embedding or intent category, predicted complexity, department metadata, previous retrieval scores, and available context-budget information. For a manageable prototype, start with discretized features such as query type (factual, procedural, comparative), complexity (low/medium/high), and retrieval confidence (low/medium/high).
+7.2 Actions
+Choose Top-K from a small candidate set, for example 3, 5, or 8 chunks.
+Choose a similarity threshold from a small set of values.
+Choose dense retrieval or hybrid retrieval (if keyword search is implemented).
+Optionally choose whether to apply a reranking step.
+7.3 Reward Function
+A proposed reward can combine retrieval relevance and answer quality while penalizing excessive cost:
+Reward = w₁ × Relevance + w₂ × Faithfulness + w₃ × Answer Relevance − w₄ × Normalized Latency − w₅ × Normalized Token Cost
+The weights (w₁–w₅) should be selected experimentally and documented. Retrieval relevance can be measured using labelled relevant passages or benchmark judgments. Faithfulness and answer relevance can be assessed with human review or a carefully validated evaluation method. Latency and token cost are measured directly. Avoid using unverified user satisfaction as the only reward signal.
+7.4 Learning Approach
+For a final-year prototype, a contextual bandit or tabular Q-learning model with a small, discrete action space is practical. A contextual bandit is often easier to evaluate when each query produces one retrieval decision and immediate feedback. Q-learning can be used if the project models sequential decisions. The chosen approach should be compared against fixed settings and, where possible, a simple heuristic policy.
+8. System Architecture – Logical View
+Employee / Corporate User
+↓
+Authentication and Role-Based Access Control
+↓
+Query Analyzer
+↓
+RL Retrieval Controller
+↓
+Retriever (Vector Search / Hybrid Search) + Optional Reranker
+↓
+Authorized Corporate Knowledge Base (Embeddings + Document Metadata)
+↓
+Context Builder and LLM Answer Generator
+↓
+Answer with Source References
+↓
+Evaluation, Reward Calculation, and RL Policy Update
+9. Suggested Technology Stack
+Layer
+Suggested Tools
+Programming
+Python
+User interface
+Streamlit
+API layer (optional)
+FastAPI
+Document parsing
+PyMuPDF / pypdf, python-docx
+Embeddings
+Sentence Transformers
+Vector database
+FAISS or Chroma
+LLM
+An approved hosted API or a locally deployed model
+RAG orchestration
+Custom Python pipeline or LangChain
+RL controller
+Custom contextual bandit / Q-learning implementation
+Evaluation
+RAGAS or custom metrics, labelled test questions, human review
+Metadata and users
+SQLite for prototype; role and department metadata
+10. Evaluation Plan
+Evaluation Area
+Possible Metric
+What It Measures
+Retrieval quality
+Precision@K, Recall@K, MRR or nDCG
+Whether relevant corporate passages are retrieved and ranked well.
+Answer quality
+Faithfulness, answer relevance, human rubric
+Whether the response is supported by evidence and addresses the question.
+Efficiency
+End-to-end latency, retrieved tokens, LLM tokens
+Time and computational cost required to answer.
+Adaptivity
+Reward over test episodes; action distribution
+Whether the controller learns useful retrieval choices.
+Security
+Role-based access test cases
+Whether users are prevented from retrieving unauthorized documents.
+Experimental comparison: run the same held-out query set against (1) fixed-parameter RAG, (2) a heuristic query-aware baseline, and (3) the proposed RL-adaptive RAG. Keep the document corpus, LLM, prompts, and evaluation conditions consistent. Report averages and, where feasible, variation across multiple runs. Include failure cases and trade-offs rather than assuming the adaptive system will outperform.
+11. Expected Outcomes
+A working corporate knowledge assistant that answers questions from an approved document collection.
+An RL-based controller that selects retrieval configurations based on query context and measured outcomes.
+Responses accompanied by source document references and an indication when evidence is insufficient.
+A measurable comparison of adaptive retrieval against fixed-parameter RAG.
+An evaluation report covering retrieval quality, answer grounding, latency, token usage, and access-control behavior.
+Deliverable
+Expected Result
+Functional corporate knowledge assistant
+A working web application through which employees can ask natural-language questions about approved HR, IT, Finance, and Operations documents.
+Searchable corporate knowledge base
+A processed document collection with embeddings, metadata, department tags, version details, and source references.
+Adaptive retrieval controller
+An implemented contextual-bandit or Q-learning controller that selects retrieval settings from a defined action set.
+Grounded answers with traceability
+Responses that include supporting document names and sections, and that indicate when the available evidence is insufficient.
+Access-aware retrieval
+A demonstrable role- or department-based filter that prevents retrieval of documents outside the test user's permitted scope.
+Performance comparison
+An experimental comparison between fixed-parameter RAG, a query-aware heuristic baseline, and the proposed adaptive RAG.
+Evaluation report
+Results for Precision@K, Recall@K, MRR or nDCG, faithfulness, answer relevance, latency, token usage, and access-control test cases.
+Demonstration and documentation
+A project demo, architecture/workflow diagrams, source code, test dataset description, experiment results, and final report.
+Expected Project Outcomes and Deliverables
+Expected organizational value: The prototype is intended to reduce the effort required to locate internal information, provide more consistent access to approved corporate guidance, and help employees verify answers through source references. Whether it improves retrieval quality or reduces latency and token use will be established through the comparative evaluation; these benefits are targets to test, not assumed results.
+12. Novelty and Research Contribution
+The intended contribution is a measurable, query-aware retrieval control mechanism for corporate knowledge repositories. Rather than relying on one fixed retrieval configuration, the system learns or selects retrieval settings in response to query context and a multi-objective reward. The project will investigate whether this adaptation improves the trade-off between evidence quality and operational cost in a multi-department corporate document environment. The novelty claim should be finalized only after reviewing recent research on adaptive RAG, query-adaptive retrieval, contextual bandits, and RL-based information retrieval.
+13. Assumptions, Limitations, and Risk Controls
+The prototype uses a limited, curated document collection; enterprise-scale deployment is outside the initial scope.
+The RL controller's performance depends on the quality of reward signals and evaluation labels.
+LLM outputs may still be incorrect; answers must be grounded in retrieved evidence and provide source references.
+Document versioning and conflicting policies require metadata and effective-date handling.
+Role-based access filtering must occur before retrieved content is sent to the LLM.
+Use synthetic or approved sample documents for academic testing; do not upload confidential or personal employee data to unapproved services.
+14. Short Abstract
+Organizations store critical operational knowledge across distributed corporate documents, including HR policies, IT manuals, finance guidelines, compliance material, and standard operating procedures. Employees may spend considerable time locating relevant and authoritative information. Conventional Retrieval-Augmented Generation (RAG) can make these documents searchable through natural-language questions, but fixed retrieval settings may not suit queries with different levels of complexity and evidence requirements. This project proposes an Adaptive Reinforcement Learning-Based RAG Optimization Framework for Corporate Knowledge Management. The system will ingest approved corporate documents, enforce role-based access filtering, and use an RL-based controller to select retrieval configurations such as Top-K, similarity threshold, and retrieval mode. Retrieved evidence will be passed to a Large Language Model to generate source-grounded answers. A reward function will balance retrieval relevance and answer quality against latency and token consumption. The framework will be evaluated against fixed-parameter RAG and a heuristic baseline using retrieval, answer-quality, efficiency, and access-control metrics. The project aims to determine whether learning-based retrieval adaptation can improve the usefulness and efficiency of corporate knowledge access.
+15. Suggested Final Project Title Variants
+Adaptive Reinforcement Learning-Based RAG Optimization Framework for Corporate Knowledge Management
+An RL-Driven Adaptive Retrieval-Augmented Generation System for Enterprise Document Intelligence
+A Query-Aware Corporate Knowledge Assistant Using Reinforcement Learning-Optimized RAG

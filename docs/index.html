@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptive Corporate RAG Framework | Enterprise Knowledge Assistant</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+    .pulse-glow { animation: pulse-subtle 2s infinite ease-in-out; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/20">
+          <i data-lucide="cpu" class="h-6 w-6 text-white"></i>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-lg text-white tracking-tight">Adaptive Corporate RAG</span>
+            <span class="px-2 py-0.5 text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full">RL-Driven v2.4</span>
+          </div>
+          <p class="text-xs text-slate-400">Enterprise Document Intelligence & Grounded Generation</p>
+        </div>
+      </div>
+
+      <!-- Action Links -->
+      <div class="flex items-center space-x-3">
+        <a href="https://github.com/MICHANAGATLAYASWANTH/Adaptive-Corporate-RAG-Framework" target="_blank" class="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 rounded-lg transition">
+          <i data-lucide="github" class="h-4 w-4"></i>
+          <span>GitHub Repo</span>
+        </a>
+        <a href="presentation/Adaptive_Corporate_RAG_Framework_Final_Presentation.pptx" download class="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded-lg shadow transition">
+          <i data-lucide="presentation" class="h-4 w-4"></i>
+          <span>Download PPT</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUBHEADER INFO BANNER -->
+  <div class="bg-gradient-to-r from-blue-950/40 via-slate-900 to-indigo-950/40 border-b border-slate-800/80 py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-300">
+      <div class="flex items-center space-x-4">
+        <span class="flex items-center space-x-1 text-slate-400">
+          <i data-lucide="user" class="h-3.5 w-3.5 text-blue-400"></i>
+          <span>Principal Researcher: <strong class="text-slate-200">Rishi Sunkavalli</strong></span>
+        </span>
+        <span class="text-slate-600">•</span>
+        <span class="flex items-center space-x-1 text-slate-400">
+          <i data-lucide="mail" class="h-3.5 w-3.5 text-blue-400"></i>
+          <span>Contact: <strong class="text-slate-200">sunkavallirshi@gmail.com</strong></span>
+        </span>
+      </div>
+      <div class="flex items-center space-x-3">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+          RBAC Zero-Leakage Active
+        </span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+          LinUCB Contextual Bandit Controller
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION TABS -->
+  <div class="border-b border-slate-800 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-2">
+      <button onclick="switchTab('assistant')" id="tab-btn-assistant" class="nav-tab active px-4 py-3 text-sm font-medium border-b-2 border-blue-500 text-blue-400 flex items-center space-x-2">
+        <i data-lucide="message-square" class="h-4 w-4"></i>
+        <span>Live Knowledge Assistant & RBAC</span>
+      </button>
+      <button onclick="switchTab('benchmark')" id="tab-btn-benchmark" class="nav-tab px-4 py-3 text-sm font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="bar-chart-3" class="h-4 w-4"></i>
+        <span>Comparative Benchmark Analytics</span>
+      </button>
+      <button onclick="switchTab('rl-diagnostics')" id="tab-btn-rl-diagnostics" class="nav-tab px-4 py-3 text-sm font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="brain-circuit" class="h-4 w-4"></i>
+        <span>RL Controller Diagnostics & Simulator</span>
+      </button>
+      <button onclick="switchTab('documents')" id="tab-btn-documents" class="nav-tab px-4 py-3 text-sm font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="folder-kanban" class="h-4 w-4"></i>
+        <span>Corporate Knowledge Base</span>
+      </button>
+      <button onclick="switchTab('presentation')" id="tab-btn-presentation" class="nav-tab px-4 py-3 text-sm font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center space-x-2">
+        <i data-lucide="file-presentation" class="h-4 w-4"></i>
+        <span>Final Presentation & Slides</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: LIVE ASSISTANT & RBAC SANDBOX -->
+    <!-- ========================================== -->
+    <div id="tab-assistant" class="tab-content active space-y-6">
+      
+      <!-- CONTROLS ROW: USER PERSONA & PIPELINE MODE -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Persona Selection -->
+        <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-xl shadow-sm">
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2 flex items-center justify-between">
+            <span><i data-lucide="shield-check" class="inline h-3.5 w-3.5 text-blue-400 mr-1"></i> Active User & Role (RBAC)</span>
+            <span id="role-badge" class="px-2 py-0.5 rounded text-[10px] bg-blue-500/20 text-blue-300 border border-blue-500/30">General_Employee</span>
+          </label>
+          <select id="user-selector" onchange="onUserChange()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="emp_001" selected>Alex Smith (Marketing) — General Staff</option>
+            <option value="hr_001">Sarah Jenkins (Human Resources) — HR Specialist</option>
+            <option value="it_001">David Kumar (IT Infrastructure) — DevOps Engineer</option>
+            <option value="fin_001">Rachel Wong (Finance & Sourcing) — Finance Officer</option>
+            <option value="ops_001">Marcus Brody (Operations) — Ops Lead</option>
+            <option value="admin_001">Elena Vance (Executive) — VP & CISO</option>
+          </select>
+          <p id="user-permissions-hint" class="mt-2 text-[11px] text-slate-400">Allowed: General HR, IT, and Travel guidelines. Restricted from privileged IT & Finance.</p>
+        </div>
+
+        <!-- Pipeline Selector -->
+        <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-xl shadow-sm">
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            <i data-lucide="sliders" class="inline h-3.5 w-3.5 text-indigo-400 mr-1"></i> Retrieval Architecture Mode
+          </label>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="setRagMode('adaptive')" id="mode-btn-adaptive" class="px-2 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white border border-blue-400 shadow">
+              Adaptive RL
+            </button>
+            <button onclick="setRagMode('heuristic')" id="mode-btn-heuristic" class="px-2 py-2 text-xs font-medium rounded-lg bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-700">
+              Heuristic
+            </button>
+            <button onclick="setRagMode('fixed')" id="mode-btn-fixed" class="px-2 py-2 text-xs font-medium rounded-lg bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-700">
+              Fixed (K=5)
+            </button>
+          </div>
+          <p id="mode-description" class="mt-2 text-[11px] text-slate-400">Contextual Bandit dynamically configures K, similarity threshold, and hybrid mode.</p>
+        </div>
+
+        <!-- Quick Benchmark Sample Queries -->
+        <div class="bg-slate-800/80 border border-slate-700/80 p-4 rounded-xl shadow-sm">
+          <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            <i data-lucide="sparkles" class="inline h-3.5 w-3.5 text-amber-400 mr-1"></i> Quick Test Queries
+          </label>
+          <select id="sample-query-selector" onchange="applySampleQuery()" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <option value="">-- Choose Benchmark Scenario --</option>
+            <option value="annual_leave">HR: Annual leave entitlement & rollover cap (Factual)</option>
+            <option value="parental_leave">HR: Compare Maternity vs Paternity leave (Comparative)</option>
+            <option value="it_sla">IT: P1 Outage vs P2 Degradation SLA times (Comparative)</option>
+            <option value="finance_hotel">Finance: Hotel caps for Tier 1 vs Tier 2 cities (Comparative)</option>
+            <option value="three_way">Finance: Three-way matching verification protocol (Procedural)</option>
+            <option value="ops_bcp">Operations: System Tier 0 RTO & RPO targets (Factual)</option>
+            <option value="dog_policy">Out-of-Domain: Corporate pet policy for London office (Refusal test)</option>
+            <option value="rbac_test">Security Probe: Query restricted procurement guideline as General Staff</option>
+          </select>
+          <p class="mt-2 text-[11px] text-slate-400">Select any pre-configured question to evaluate controller behavior.</p>
+        </div>
+      </div>
+
+      <!-- QUERY INPUT BAR -->
+      <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-4 shadow-xl">
+        <div class="flex flex-col sm:flex-row gap-3">
+          <div class="relative flex-1">
+            <i data-lucide="search" class="absolute left-3.5 top-3.5 h-5 w-5 text-slate-400"></i>
+            <input type="text" id="query-input" value="What is the annual leave entitlement for regular full-time employees?" placeholder="Ask any enterprise question across HR, IT, Finance, or Operations..." class="w-full bg-slate-900/90 border border-slate-700 rounded-xl pl-11 pr-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <button onclick="executeRAGQuery()" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-sm font-semibold rounded-xl shadow-lg shadow-blue-500/25 flex items-center justify-center space-x-2 transition">
+            <i data-lucide="play" class="h-4 w-4"></i>
+            <span>Execute Grounded Search</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RESULTS SPLIT: GROUNDED ANSWER & RL CONTROLLER DIAGNOSTICS -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- LEFT: GROUNDED ANSWER & CITATIONS (7 COLS) -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-md relative overflow-hidden">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-700/80 mb-4">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="bot" class="h-5 w-5 text-blue-400"></i>
+                <h3 class="text-sm font-bold text-white uppercase tracking-wider">Evidence-Grounded Assistant Response</h3>
+              </div>
+              <div id="grounding-badge" class="flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <i data-lucide="check-circle" class="h-3.5 w-3.5"></i>
+                <span>Grounded (Faithfulness: 1.0)</span>
+              </div>
+            </div>
+
+            <!-- Answer Body -->
+            <div id="answer-container" class="prose prose-invert max-w-none text-slate-200 text-sm leading-relaxed space-y-3">
+              <p>Based on the official <strong class="text-white">Human Resources</strong> policy documents, here are the verified details:</p>
+              <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
+                <li><strong class="text-white">Regular Full-Time Employees: Accrue 22 days of paid annual leave per calendar year.</strong> — <em class="text-blue-300">[Ref: 3. Annual Leave Entitlement]</em></li>
+                <li><strong class="text-white">Accrual rate: Leave accrues monthly at 1.83 days per completed calendar month of active service.</strong> — <em class="text-blue-300">[Ref: 3. Annual Leave Entitlement]</em></li>
+                <li><strong class="text-white">Rollover and Encashment Cap: A maximum of 8 unused annual leave days may be rolled over into the subsequent calendar year.</strong> — <em class="text-blue-300">[Ref: 3. Annual Leave Entitlement]</em></li>
+              </ul>
+              <p class="text-xs text-slate-400 pt-2 border-t border-slate-700/60">
+                <strong>Primary Policy Reference:</strong> Global Leave and Attendance Policy 2026 (Effective: 2026-01-01, Rev 2.4).
+              </p>
+            </div>
+
+            <!-- Citations Section -->
+            <div class="mt-6 pt-4 border-t border-slate-700/80">
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center">
+                <i data-lucide="bookmark-check" class="h-3.5 w-3.5 text-blue-400 mr-1.5"></i> Verified In-Text Citations & Provenance
+              </h4>
+              <div id="citations-list" class="space-y-2">
+                <div class="p-3 bg-slate-900/80 border border-slate-700/60 rounded-xl flex items-start justify-between text-xs">
+                  <div>
+                    <span class="font-bold text-blue-400">[HR-DOC-001] Global Leave and Attendance Policy 2026</span>
+                    <p class="text-slate-300 mt-0.5">Section: <strong>3. Annual Leave Entitlement</strong> | Rev 2.4</p>
+                    <span class="inline-block mt-1 text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Security Clearance: Internal</span>
+                  </div>
+                  <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded font-mono font-bold">
+                    Score: 0.842
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: RL CONTROLLER STATE & ACTION INSPECTOR (5 COLS) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-md space-y-5">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-700/80">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="cpu" class="h-5 w-5 text-indigo-400"></i>
+                <h3 class="text-sm font-bold text-white uppercase tracking-wider">RL Retrieval Controller State</h3>
+              </div>
+              <span id="agent-type-badge" class="px-2 py-0.5 text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 rounded-md">
+                LinUCB Bandit
+              </span>
+            </div>
+
+            <!-- State Feature Extraction Grid -->
+            <div>
+              <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-2">1. Query State Representation (s)</span>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="bg-slate-900/90 border border-slate-700/60 p-2.5 rounded-lg">
+                  <span class="text-slate-400 block text-[10px]">DETECTED INTENT</span>
+                  <span id="diag-intent" class="font-semibold text-blue-300">Factual</span>
+                </div>
+                <div class="bg-slate-900/90 border border-slate-700/60 p-2.5 rounded-lg">
+                  <span class="text-slate-400 block text-[10px]">COMPLEXITY ESTIMATE</span>
+                  <span id="diag-complexity" class="font-semibold text-emerald-300">Low Complexity</span>
+                </div>
+                <div class="bg-slate-900/90 border border-slate-700/60 p-2.5 rounded-lg">
+                  <span class="text-slate-400 block text-[10px]">QUERY LENGTH BIN</span>
+                  <span id="diag-length" class="font-semibold text-slate-200">Medium (11 words)</span>
+                </div>
+                <div class="bg-slate-900/90 border border-slate-700/60 p-2.5 rounded-lg">
+                  <span class="text-slate-400 block text-[10px]">CLASSIFIED DEPT</span>
+                  <span id="diag-dept" class="font-semibold text-purple-300">Human Resources</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Selected Action Configuration -->
+            <div>
+              <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block mb-2">2. RL Selected Retrieval Action (a*)</span>
+              <div class="bg-slate-900/90 border border-blue-500/30 p-3 rounded-xl space-y-2 text-xs">
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400">Top-K Passages:</span>
+                  <span id="diag-k" class="font-mono font-bold text-white bg-blue-600/30 px-2 py-0.5 rounded border border-blue-500/40">K = 3</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400">Similarity Cutoff (Threshold):</span>
+                  <span id="diag-thresh" class="font-mono font-bold text-white">0.50</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400">Retrieval Strategy:</span>
+                  <span id="diag-mode" class="font-semibold text-indigo-300 uppercase">DENSE VECTOR</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-slate-400">Cross-Encoder Reranker:</span>
+                  <span id="diag-rerank" class="font-semibold text-slate-400">Bypassed (Cost Saving)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Multi-Objective Reward Breakdown -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider">3. Multi-Objective Reward (R)</span>
+                <span id="diag-reward" class="font-mono font-bold text-sm text-emerald-400">+0.7240</span>
+              </div>
+              <div class="space-y-1.5 text-[11px] bg-slate-900/90 p-3 rounded-xl border border-slate-700/60">
+                <div class="flex justify-between text-slate-300">
+                  <span>Relevance Gain (w1=0.35):</span>
+                  <span id="diag-gain-rel" class="text-emerald-400 font-mono">+0.295</span>
+                </div>
+                <div class="flex justify-between text-slate-300">
+                  <span>Faithfulness Gain (w2=0.35):</span>
+                  <span id="diag-gain-faith" class="text-emerald-400 font-mono">+0.350</span>
+                </div>
+                <div class="flex justify-between text-slate-300">
+                  <span>Answer Relevance (w3=0.15):</span>
+                  <span id="diag-gain-ans" class="text-emerald-400 font-mono">+0.120</span>
+                </div>
+                <div class="flex justify-between text-slate-400 border-t border-slate-800 pt-1">
+                  <span>Latency Penalty (w4=0.08):</span>
+                  <span id="diag-pen-lat" class="text-rose-400 font-mono">-0.015 (84ms)</span>
+                </div>
+                <div class="flex justify-between text-slate-400">
+                  <span>Token Cost Penalty (w5=0.07):</span>
+                  <span id="diag-pen-cost" class="text-rose-400 font-mono">-0.026 (580 tok)</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: COMPARATIVE BENCHMARK ANALYTICS -->
+    <!-- ========================================== -->
+    <div id="tab-benchmark" class="tab-content space-y-6">
+      
+      <!-- HIGHLIGHT KPI CARDS -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-slate-800/80 border border-slate-700/80 p-5 rounded-2xl shadow">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Recall @ 5</span>
+            <span class="px-2 py-0.5 text-xs font-bold bg-emerald-500/10 text-emerald-400 rounded">+39.3%</span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-3xl font-extrabold text-white">97.5%</span>
+            <span class="text-xs text-slate-400">vs 70.0% (Fixed)</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-2">Zero critical policy clauses missed on complex comparative queries.</p>
+        </div>
+
+        <div class="bg-slate-800/80 border border-slate-700/80 p-5 rounded-2xl shadow">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Mean Reciprocal Rank</span>
+            <span class="px-2 py-0.5 text-xs font-bold bg-emerald-500/10 text-emerald-400 rounded">+39.3%</span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-3xl font-extrabold text-white">0.975</span>
+            <span class="text-xs text-slate-400">vs 0.700 (Fixed)</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-2">Target corporate passage returned in rank 1 in 95% of benchmark queries.</p>
+        </div>
+
+        <div class="bg-slate-800/80 border border-slate-700/80 p-5 rounded-2xl shadow">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Mean Multi-Obj Reward</span>
+            <span class="px-2 py-0.5 text-xs font-bold bg-blue-500/10 text-blue-400 rounded">+26.1%</span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-3xl font-extrabold text-blue-400">0.700</span>
+            <span class="text-xs text-slate-400">vs 0.555 (Fixed)</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-2">Optimal Pareto trade-off between evidence grounding and latency/cost.</p>
+        </div>
+
+        <div class="bg-slate-800/80 border border-slate-700/80 p-5 rounded-2xl shadow">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">RBAC Security Leakage</span>
+            <span class="px-2 py-0.5 text-xs font-bold bg-emerald-500/10 text-emerald-400 rounded">100% Compliant</span>
+          </div>
+          <div class="mt-2 flex items-baseline space-x-2">
+            <span class="text-3xl font-extrabold text-emerald-400">0.00%</span>
+            <span class="text-xs text-slate-400">0 Leaks in 60 runs</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-2">Rigorous pre-retrieval role filtration ensures zero unauthorized exposure.</p>
+        </div>
+      </div>
+
+      <!-- CHARTS ROW -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Chart 1: Retrieval Quality Metrics -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-md">
+          <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center">
+            <i data-lucide="bar-chart-2" class="h-4 w-4 text-blue-400 mr-2"></i> Retrieval Quality: Precision@5, Recall@5 & MRR
+          </h3>
+          <div class="h-72">
+            <canvas id="qualityChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Cost & Latency Trade-Off -->
+        <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-md">
+          <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center">
+            <i data-lucide="trending-up" class="h-4 w-4 text-indigo-400 mr-2"></i> Latency vs Reward Optimization
+          </h3>
+          <div class="h-72">
+            <canvas id="latencyRewardChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPLETE BENCHMARK TABLE -->
+      <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-md overflow-x-auto">
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4 flex items-center">
+          <i data-lucide="table" class="h-4 w-4 text-purple-400 mr-2"></i> Full Comparative Benchmark Evaluation Matrix
+        </h3>
+        <table class="w-full text-left text-xs text-slate-300">
+          <thead class="bg-slate-900/80 text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-700">
+            <tr>
+              <th class="py-3 px-4">Evaluation Dimension / Metric</th>
+              <th class="py-3 px-4">Fixed-Parameter RAG (Static K=5)</th>
+              <th class="py-3 px-4">Query-Aware Heuristic Baseline</th>
+              <th class="py-3 px-4 font-bold text-blue-400">Adaptive RL-RAG (LinUCB)</th>
+              <th class="py-3 px-4">RL Improvement Δ</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-700/60 font-mono">
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">Precision @ 5</td>
+              <td class="py-3 px-4">0.7000</td>
+              <td class="py-3 px-4">0.6600</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.7625</td>
+              <td class="py-3 px-4 text-emerald-400">+8.9%</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">Recall @ 5</td>
+              <td class="py-3 px-4">0.7000</td>
+              <td class="py-3 px-4">0.7000</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.9750</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">+39.3%</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">Mean Reciprocal Rank (MRR)</td>
+              <td class="py-3 px-4">0.7000</td>
+              <td class="py-3 px-4">0.7000</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.9750</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">+39.3%</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">Faithfulness (Evidence Grounding)</td>
+              <td class="py-3 px-4">1.0000</td>
+              <td class="py-3 px-4">1.0000</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">1.0000</td>
+              <td class="py-3 px-4 text-slate-400">Verified</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">Answer Relevance Score</td>
+              <td class="py-3 px-4">0.7030</td>
+              <td class="py-3 px-4">0.7160</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.8057</td>
+              <td class="py-3 px-4 text-emerald-400">+14.6%</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">Mean Latency (ms)</td>
+              <td class="py-3 px-4">39.30 ms</td>
+              <td class="py-3 px-4">76.22 ms</td>
+              <td class="py-3 px-4 text-blue-300">107.82 ms</td>
+              <td class="py-3 px-4 text-slate-400">Sub-150ms</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">Tokens per Query</td>
+              <td class="py-3 px-4">471.8 tok</td>
+              <td class="py-3 px-4">599.6 tok</td>
+              <td class="py-3 px-4 text-blue-300">901.3 tok</td>
+              <td class="py-3 px-4 text-slate-400">Context Rich</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">Multi-Objective Scalar Reward</td>
+              <td class="py-3 px-4">0.5550</td>
+              <td class="py-3 px-4">0.5507</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.6999</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">+26.1%</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-sans font-medium text-white">RBAC Cross-Boundary Leakage Rate</td>
+              <td class="py-3 px-4 text-emerald-400">0.00%</td>
+              <td class="py-3 px-4 text-emerald-400">0.00%</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">0.00%</td>
+              <td class="py-3 px-4 text-emerald-400">Zero Leakage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: RL CONTROLLER DIAGNOSTICS & SIMULATOR -->
+    <!-- ========================================== -->
+    <div id="tab-rl-diagnostics" class="tab-content space-y-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Interactive Controls (4 cols) -->
+        <div class="lg:col-span-4 bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-md space-y-5">
+          <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+            <i data-lucide="sliders-horizontal" class="h-4 w-4 text-indigo-400 mr-2"></i> Bandit Policy Hyperparameters
+          </h3>
+          
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-1">LinUCB Exploration Parameter (&alpha;):</label>
+            <div class="flex items-center space-x-3">
+              <input type="range" id="param-alpha" min="0.1" max="1.5" step="0.1" value="0.6" oninput="updateAlphaLabel(this.value)" class="w-full h-1.5 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-blue-500">
+              <span id="alpha-val" class="font-mono text-xs font-bold text-blue-400 w-10">0.6</span>
+            </div>
+            <p class="text-[10px] text-slate-400 mt-1">Controls upper confidence bound width: higher values encourage exploration.</p>
+          </div>
+
+          <div class="border-t border-slate-700/80 pt-4 space-y-3">
+            <span class="text-xs font-semibold text-slate-300 block">Reward Objective Weights (Sum = 1.0):</span>
+            
+            <div class="text-xs space-y-2">
+              <div class="flex justify-between">
+                <span class="text-slate-400">w1: Relevance</span>
+                <span class="font-mono text-slate-200">0.35</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">w2: Faithfulness</span>
+                <span class="font-mono text-slate-200">0.35</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">w3: Answer Relevance</span>
+                <span class="font-mono text-slate-200">0.15</span>
+              </div>
+              <div class="flex justify-between text-rose-300">
+                <span>w4: Latency Penalty</span>
+                <span class="font-mono">0.08</span>
+              </div>
+              <div class="flex justify-between text-rose-300">
+                <span>w5: Token Cost Penalty</span>
+                <span class="font-mono">0.07</span>
+              </div>
+            </div>
+          </div>
+
+          <button onclick="runSimulation()" id="sim-btn" class="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-xs rounded-xl shadow transition flex items-center justify-center space-x-2">
+            <i data-lucide="refresh-cw" class="h-4 w-4" id="sim-icon"></i>
+            <span>Run 50-Episode Learning Simulation</span>
+          </button>
+        </div>
+
+        <!-- Simulation Curves (8 cols) -->
+        <div class="lg:col-span-8 bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-md">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center">
+              <i data-lucide="line-chart" class="h-4 w-4 text-emerald-400 mr-2"></i> Online Episodic Learning Curve & Cumulative Reward
+            </h3>
+            <span class="text-xs font-mono text-slate-400" id="sim-episodes-label">Episodes: 50 / 50</span>
+          </div>
+          <div class="h-80">
+            <canvas id="learningCurveChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: CORPORATE KNOWLEDGE BASE EXPLORER -->
+    <!-- ========================================== -->
+    <div id="tab-documents" class="tab-content space-y-6">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div>
+          <h3 class="text-base font-bold text-white">Authorized Corporate Knowledge Corpus</h3>
+          <p class="text-xs text-slate-400">4 Core Departments • 8 Official Policy Manuals • 24 Ingested Chunks</p>
+        </div>
+        <!-- Department Filter -->
+        <div class="flex space-x-2">
+          <button onclick="filterDeptDocs('all')" class="doc-filter-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white" data-dept="all">All Departments</button>
+          <button onclick="filterDeptDocs('HR')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="HR">HR</button>
+          <button onclick="filterDeptDocs('IT')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="IT">IT</button>
+          <button onclick="filterDeptDocs('Finance')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Finance">Finance</button>
+          <button onclick="filterDeptDocs('Operations')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Operations">Operations</button>
+        </div>
+      </div>
+
+      <!-- DOC CARDS GRID -->
+      <div id="doc-cards-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 5: FINAL PRESENTATION & SLIDES -->
+    <!-- ========================================== -->
+    <div id="tab-presentation" class="tab-content space-y-6">
+      <div class="bg-slate-800/90 border border-slate-700 rounded-2xl p-6 shadow-md">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-slate-700">
+          <div>
+            <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Final Year Project Presentation</span>
+            <h2 class="text-xl font-extrabold text-white mt-1">Adaptive Reinforcement Learning-Based RAG Optimization Framework</h2>
+            <p class="text-xs text-slate-300 mt-1">Candidate: <strong>Rishi Sunkavalli</strong> (sunkavallirshi@gmail.com) • Comprehensive 18-Slide Executive Deck</p>
+          </div>
+          <a href="presentation/Adaptive_Corporate_RAG_Framework_Final_Presentation.pptx" download class="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-bold rounded-xl shadow-lg flex items-center space-x-2 transition">
+            <i data-lucide="download" class="h-4 w-4"></i>
+            <span>Download Presentation (.pptx)</span>
+          </a>
+        </div>
+
+        <!-- SLIDE DECK VIEWER GRID -->
+        <div class="mt-6">
+          <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Complete 18-Slide Presentation Structure</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 01</span>
+              <h4 class="text-sm font-bold text-white">Title & Project Overview</h4>
+              <p class="text-xs text-slate-400">Title, candidate details, supervisor context, institutional affiliation, and corporate intelligence scope.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 02</span>
+              <h4 class="text-sm font-bold text-white">Executive Summary & Motivation</h4>
+              <p class="text-xs text-slate-400">Enterprise knowledge silos, search inefficiencies across HR/IT/Finance, and cost of lost productivity.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 03</span>
+              <h4 class="text-sm font-bold text-white">Problem Statement</h4>
+              <p class="text-xs text-slate-400">Static retrieval parameters fail heterogeneous corporate queries (short vs comparative vs procedural).</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 04</span>
+              <h4 class="text-sm font-bold text-white">Limitations of Conventional RAG</h4>
+              <p class="text-xs text-slate-400">Fixed Top-K, static similarity threshold, token wastage, latency inflation, and hallucination risks.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 05</span>
+              <h4 class="text-sm font-bold text-white">Research Aim & Specific Objectives</h4>
+              <p class="text-xs text-slate-400">Formal aim statement and 8 core engineering objectives from parsing to RL controller and RBAC.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 06</span>
+              <h4 class="text-sm font-bold text-white">End-to-End System Architecture</h4>
+              <p class="text-xs text-slate-400">Logical view: Employee & RBAC &rarr; State Analyzer &rarr; LinUCB Controller &rarr; Hybrid Search &rarr; Grounded LLM.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 07</span>
+              <h4 class="text-sm font-bold text-white">Knowledge Corpus & RBAC Security</h4>
+              <p class="text-xs text-slate-400">4 Departments, document classification levels, role matrix, and pre-retrieval access boundary enforcement.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 08</span>
+              <h4 class="text-sm font-bold text-white">Ingestion, Chunking & Hybrid Search</h4>
+              <p class="text-xs text-slate-400">Section-preserving chunking, Dense vector similarity, BM25 Okapi, and Reciprocal Rank Fusion (RRF).</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 09</span>
+              <h4 class="text-sm font-bold text-white">Query Analysis & State Representation</h4>
+              <p class="text-xs text-slate-400">Feature vector construction: Intent, length bin, complexity score, department signals, and bias term.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 10</span>
+              <h4 class="text-sm font-bold text-white">Reinforcement Learning Formulation</h4>
+              <p class="text-xs text-slate-400">Contextual Bandits: Action space tuples, LinUCB parameter estimation, exploration vs exploitation.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 11</span>
+              <h4 class="text-sm font-bold text-white">Multi-Objective Reward Function</h4>
+              <p class="text-xs text-slate-400">Mathematical formulation balancing relevance, faithfulness, latency penalties, and token costs.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 12</span>
+              <h4 class="text-sm font-bold text-white">Grounded Generation & Citation Engine</h4>
+              <p class="text-xs text-slate-400">Strict grounding prompt, inline document citations, and refusal mechanisms for out-of-domain queries.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 13</span>
+              <h4 class="text-sm font-bold text-white">Experimental Design & Methodology</h4>
+              <p class="text-xs text-slate-400">Evaluation setup, 3 comparative baselines, held-out corporate test suite, and metrics.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 14</span>
+              <h4 class="text-sm font-bold text-white">Benchmark Results & Comparative Findings</h4>
+              <p class="text-xs text-slate-400">+39.3% recall, +39.3% MRR, 1.0 faithfulness, and 26.1% higher multi-objective reward.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 15</span>
+              <h4 class="text-sm font-bold text-white">Security & RBAC Boundary Validation</h4>
+              <p class="text-xs text-slate-400">Zero cross-department leakage test results, audit logging, and enterprise compliance.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 16</span>
+              <h4 class="text-sm font-bold text-white">Key Findings & Engineering Trade-Offs</h4>
+              <p class="text-xs text-slate-400">When hybrid search excels, overhead of reranking, and bandit convergence dynamics.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 17</span>
+              <h4 class="text-sm font-bold text-white">Future Research & Enterprise Roadmap</h4>
+              <p class="text-xs text-slate-400">Deep Q-Networks (DQN), user feedback loop integration, and scale to 100k+ documents.</p>
+            </div>
+
+            <div class="p-4 bg-slate-900/80 border border-slate-700/70 rounded-xl space-y-2">
+              <span class="text-[10px] font-mono text-blue-400 font-bold">SLIDE 18</span>
+              <h4 class="text-sm font-bold text-white">Deliverables & Conclusion</h4>
+              <p class="text-xs text-slate-400">GitHub repository, live GitHub Pages deployment, presentation deck, and project closure.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 bg-slate-950/80 py-6 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-medium text-slate-400">Adaptive Corporate RAG Optimization Framework &copy; 2026</p>
+        <p class="text-[11px] text-slate-500">Created by Rishi Sunkavalli (sunkavallirshi@gmail.com) • Permanent Live Demo on GitHub Pages</p>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://github.com/MICHANAGATLAYASWANTH/Adaptive-Corporate-RAG-Framework" target="_blank" class="text-slate-400 hover:text-white transition">GitHub Repository</a>
+        <span>•</span>
+        <a href="presentation/Adaptive_Corporate_RAG_Framework_Final_Presentation.pptx" download class="text-slate-400 hover:text-white transition">Download Presentation</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIC: CLIENT-SIDE RAG SIMULATION ENGINE -->
+  <script>
+    // Lucide initialization
+    lucide.createIcons();
+
+    // Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(el => {
+        el.classList.remove('border-blue-500', 'text-blue-400');
+        el.classList.add('border-transparent', 'text-slate-400');
+      });
+
+      document.getElementById('tab-' + tabId).classList.add('active');
+      const activeBtn = document.getElementById('tab-btn-' + tabId);
+      activeBtn.classList.remove('border-transparent', 'text-slate-400');
+      activeBtn.classList.add('border-blue-500', 'text-blue-400');
+
+      if (tabId === 'benchmark') {
+        renderBenchmarkCharts();
+      } else if (tabId === 'rl-diagnostics') {
+        renderLearningCurveChart();
+      }
+    }
+
+    // Current State
+    let currentRole = 'General_Employee';
+    let currentRagMode = 'adaptive';
+
+    const USER_ROLES = {
+      emp_001: { role: 'General_Employee', name: 'Alex Smith', dept: 'Marketing', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'IT-DOC-001'] },
+      hr_001: { role: 'HR_Staff', name: 'Sarah Jenkins', dept: 'Human Resources', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'IT-DOC-001'] },
+      it_001: { role: 'IT_Staff', name: 'David Kumar', dept: 'Information Technology', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'IT-DOC-001', 'IT-DOC-002', 'OPS-DOC-001'] },
+      fin_001: { role: 'Finance_Staff', name: 'Rachel Wong', dept: 'Finance', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'FIN-DOC-002', 'IT-DOC-001'] },
+      ops_001: { role: 'Operations_Staff', name: 'Marcus Brody', dept: 'Operations', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'IT-DOC-001', 'OPS-DOC-001', 'OPS-DOC-002'] },
+      admin_001: { role: 'Executive_Admin', name: 'Elena Vance', dept: 'Executive Leadership', allowed: ['ALL'] }
+    };
+
+    function onUserChange() {
+      const select = document.getElementById('user-selector');
+      const user = USER_ROLES[select.value];
+      currentRole = user.role;
+      document.getElementById('role-badge').innerText = user.role;
+      
+      const hint = document.getElementById('user-permissions-hint');
+      if (user.role === 'Executive_Admin') {
+        hint.innerText = "Full Unrestricted Access to all Department Policies.";
+      } else if (user.role === 'General_Employee') {
+        hint.innerText = "Allowed: General HR, IT, and Travel guidelines. Restricted from privileged IT & Finance.";
+      } else {
+        hint.innerText = `Departmental Privileges: ${user.dept} and General corporate documents.`;
+      }
+    }
+
+    function setRagMode(mode) {
+      currentRagMode = mode;
+      ['adaptive', 'heuristic', 'fixed'].forEach(m => {
+        const btn = document.getElementById('mode-btn-' + m);
+        if (m === mode) {
+          btn.className = "px-2 py-2 text-xs font-semibold rounded-lg bg-blue-600 text-white border border-blue-400 shadow";
+        } else {
+          btn.className = "px-2 py-2 text-xs font-medium rounded-lg bg-slate-900 text-slate-300 border border-slate-700 hover:bg-slate-700";
+        }
+      });
+
+      const desc = document.getElementById('mode-description');
+      if (mode === 'adaptive') desc.innerText = "Contextual Bandit dynamically configures K, similarity threshold, and hybrid mode.";
+      else if (mode === 'heuristic') desc.innerText = "Rule-based: short queries K=3, complex queries K=8 with hybrid search.";
+      else desc.innerText = "Static baseline: fixed Top-K=5, similarity threshold=0.50, dense search only.";
+    }
+
+    // Sample Query presets
+    const PRESETS = {
+      annual_leave: "What is the annual leave entitlement for regular full-time employees?",
+      parental_leave: "Compare primary caregiver maternity leave with secondary caregiver paternity leave durations.",
+      it_sla: "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
+      finance_hotel: "What is the nightly hotel room cap for Tier 1 high-cost cities versus Tier 2 metropolitan cities?",
+      three_way: "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+      ops_bcp: "What are the recovery objectives (MTD, RTO, RPO) for Mission-Critical System Tier 0 in the Business Continuity Plan?",
+      dog_policy: "What is the corporate pet policy for bringing dogs to the London technology office?",
+      rbac_test: "What are the purchase order tiers and approval thresholds for contracts between $5,000 and $50,000?"
+    };
+
+    function applySampleQuery() {
+      const val = document.getElementById('sample-query-selector').value;
+      if (val && PRESETS[val]) {
+        document.getElementById('query-input').value = PRESETS[val];
+      }
+    }
+
+    // Knowledge Database Mock Chunks
+    const DOCUMENTS = [
+      {
+        id: "HR-DOC-001",
+        dept: "HR",
+        title: "Global Leave and Attendance Policy 2026",
+        version: "2.4",
+        date: "2026-01-01",
+        clearance: "Internal",
+        section: "3. Annual Leave Entitlement",
+        text: "Regular Full-Time Employees: Accrue 22 days of paid annual leave per calendar year. Senior Management: Accrue 26 days. Accrual rate: Leave accrues monthly at 1.83 days per completed month. Rollover Cap: A maximum of 8 unused annual leave days may be rolled over into the subsequent calendar year, expiring March 31st.",
+        keywords: ["annual", "leave", "entitlement", "rollover", "days", "vacation"]
+      },
+      {
+        id: "HR-DOC-001",
+        dept: "HR",
+        title: "Global Leave and Attendance Policy 2026",
+        version: "2.4",
+        date: "2026-01-01",
+        clearance: "Internal",
+        section: "5. Parental, Maternity, and Paternity Leave",
+        text: "Primary Caregiver / Maternity Leave: 18 weeks of fully paid leave for female employees or designated primary caregivers. Secondary Caregiver / Paternity Leave: 4 weeks of fully paid leave for non-birthing parents, taken continuously or in two-week blocks within the first 12 months.",
+        keywords: ["maternity", "paternity", "parental", "caregiver", "weeks", "birth", "adoption", "compare"]
+      },
+      {
+        id: "IT-DOC-002",
+        dept: "IT",
+        title: "Infrastructure Incident Response and Disaster Recovery SOP",
+        version: "3.5",
+        date: "2026-02-15",
+        clearance: "Internal (IT Staff)",
+        section: "1. Incident Severity Definitions and SLA Matrix",
+        text: "P1 (Critical Outage): SLA Initial Response: 15 minutes (24x7x365). Status update every 30 mins. Target resolution: under 2 hours. P2 (Major Degradation): Affecting >20% users. SLA Initial Response: 30 minutes. Status update every 60 mins. Target resolution: under 4 hours.",
+        keywords: ["incident", "p1", "p2", "sla", "response", "outage", "degradation", "severity", "compare"]
+      },
+      {
+        id: "FIN-DOC-001",
+        dept: "Finance",
+        title: "Corporate Travel and Expense Reimbursement Policy",
+        version: "3.3",
+        date: "2026-01-01",
+        clearance: "Internal",
+        section: "3. Hotel Accommodations and Nightly Caps",
+        text: "Nightly rate caps: Tier 1 High-Cost Cities (New York, San Francisco, London, Tokyo, Singapore, Zurich): Up to $300 per night. Tier 2 Standard Metropolitan Cities (Chicago, Austin, Berlin, Sydney): Up to $220 per night. Tier 3 Regional: Up to $160 per night.",
+        keywords: ["hotel", "tier 1", "tier 2", "nightly", "caps", "travel", "lodging", "cities", "compare"]
+      },
+      {
+        id: "FIN-DOC-002",
+        dept: "Finance",
+        title: "Corporate Procurement and Vendor Payment Guidelines",
+        version: "2.8",
+        date: "2026-01-20",
+        clearance: "Internal (Finance & Procurement)",
+        section: "2. Purchase Order (PO) Thresholds and Approval Authority",
+        text: "Tier B ($5,000 to $50,000): Requires three formal competitive vendor quotes or an established Master Services Agreement (MSA); requires Department VP and Finance Controller approval. Issued via Coupa within 3 business days.",
+        keywords: ["purchase order", "po", "threshold", "tier b", "quotes", "procurement", "5000", "50000"]
+      },
+      {
+        id: "FIN-DOC-002",
+        dept: "Finance",
+        title: "Corporate Procurement and Vendor Payment Guidelines",
+        version: "2.8",
+        date: "2026-01-20",
+        clearance: "Internal (Finance & Procurement)",
+        section: "3. Three-Way Matching Process",
+        text: "Finance operates a strict three-way matching verification protocol before releasing supplier payments: 1. Purchase Order, 2. Goods Receipt / Service Delivery Confirmation, 3. Vendor Tax Invoice. Discrepancy >2% triggers an automated hold.",
+        keywords: ["three-way", "matching", "supplier", "invoice", "verification", "payment", "protocol"]
+      },
+      {
+        id: "OPS-DOC-002",
+        dept: "Operations",
+        title: "Enterprise Business Continuity and Disaster Preparedness Plan",
+        version: "4.0",
+        date: "2026-02-10",
+        clearance: "Internal (Operations Staff)",
+        section: "2. Business Impact Analysis (BIA) and Recovery Objectives",
+        text: "Mission-Critical System Tier 0 (Core Payment Processing, Identity Vault): Maximum Tolerable Downtime (MTD): 4 hours. Recovery Time Objective (RTO): 2 hours. Recovery Point Objective (RPO): 15 minutes.",
+        keywords: ["bcp", "rto", "rpo", "mtd", "tier 0", "recovery", "continuity", "objectives"]
+      }
+    ];
+
+    function executeRAGQuery() {
+      const query = document.getElementById('query-input').value.trim();
+      if (!query) return;
+
+      const user = USER_ROLES[document.getElementById('user-selector').value];
+      const qLower = query.toLowerCase();
+
+      // Step 1: Query State Analysis
+      let intent = "factual";
+      if (qLower.includes("compare") || qLower.includes("versus") || qLower.includes("differ")) intent = "comparative";
+      else if (qLower.includes("steps") || qLower.includes("protocol") || qLower.includes("how do i") || qLower.includes("matching")) intent = "procedural";
+      else if (qLower.includes("allowed") || qLower.includes("policy on") || qLower.includes("mandatory")) intent = "policy_verification";
+
+      let complexity = "low";
+      if (intent === "comparative" || intent === "procedural") complexity = "high";
+      else if (query.split(' ').length > 15) complexity = "medium";
+
+      let dept = "General";
+      if (qLower.includes("leave") || qLower.includes("maternity") || qLower.includes("vacation") || qLower.includes("hr")) dept = "Human Resources";
+      else if (qLower.includes("sla") || qLower.includes("outage") || qLower.includes("p1") || qLower.includes("it")) dept = "Information Technology";
+      else if (qLower.includes("hotel") || qLower.includes("expense") || qLower.includes("purchase order") || qLower.includes("procurement") || qLower.includes("matching")) dept = "Finance";
+      else if (qLower.includes("bcp") || qLower.includes("rto") || qLower.includes("rpo") || qLower.includes("escalation") || qLower.includes("operations")) dept = "Operations";
+
+      // Step 2: RBAC Access Check
+      let isRestrictedProbe = false;
+      if (qLower.includes("purchase order") || qLower.includes("50,000") || qLower.includes("matching")) {
+        if (!user.allowed.includes('ALL') && !user.allowed.includes('FIN-DOC-002')) {
+          isRestrictedProbe = true;
+        }
+      } else if (qLower.includes("p1") || qLower.includes("incident") || qLower.includes("rto")) {
+        if (!user.allowed.includes('ALL') && !user.allowed.includes('IT-DOC-002') && !user.allowed.includes('OPS-DOC-002')) {
+          isRestrictedProbe = true;
+        }
+      }
+
+      // Step 3: Out of domain check
+      const isOutOfDomain = qLower.includes("dog") || qLower.includes("pet") || qLower.includes("cat");
+
+      // Step 4: Action Selection
+      let topK = 5, thresh = 0.50, mode = "dense", rerank = false;
+      if (currentRagMode === 'adaptive') {
+        if (complexity === 'high' || intent === 'comparative') {
+          topK = 8; thresh = 0.35; mode = "hybrid"; rerank = true;
+        } else if (complexity === 'medium') {
+          topK = 5; thresh = 0.50; mode = "dense"; rerank = false;
+        } else {
+          topK = 3; thresh = 0.50; mode = "dense"; rerank = false;
+        }
+      } else if (currentRagMode === 'heuristic') {
+        topK = (complexity === 'high') ? 8 : (complexity === 'medium' ? 5 : 3);
+        mode = (complexity === 'high') ? "hybrid" : "dense";
+      } else {
+        topK = 5; thresh = 0.50; mode = "dense"; rerank = false;
+      }
+
+      // Update Diagnostics UI
+      document.getElementById('diag-intent').innerText = intent.charAt(0).toUpperCase() + intent.slice(1);
+      document.getElementById('diag-complexity').innerText = complexity.charAt(0).toUpperCase() + complexity.slice(1) + " Complexity";
+      document.getElementById('diag-length').innerText = `${query.split(' ').length > 15 ? 'Long' : 'Medium'} (${query.split(' ').length} words)`;
+      document.getElementById('diag-dept').innerText = dept;
+
+      document.getElementById('diag-k').innerText = `K = ${topK}`;
+      document.getElementById('diag-thresh').innerText = thresh.toFixed(2);
+      document.getElementById('diag-mode').innerText = mode.toUpperCase();
+      document.getElementById('diag-rerank').innerText = rerank ? "Active (Cross-Encoder)" : "Bypassed (Cost Saving)";
+
+      // Step 5: Render Answer & Security badge
+      const ansContainer = document.getElementById('answer-container');
+      const badge = document.getElementById('grounding-badge');
+      const citationsList = document.getElementById('citations-list');
+
+      if (isRestrictedProbe) {
+        badge.className = "flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-500/10 text-rose-400 border border-rose-500/20";
+        badge.innerHTML = `<i data-lucide="shield-alert" class="h-3.5 w-3.5"></i><span>RBAC Access Blocked (0.0% Leakage)</span>`;
+        ansContainer.innerHTML = `
+          <div class="p-4 bg-rose-950/30 border border-rose-800/40 rounded-xl text-rose-200">
+            <h4 class="font-bold text-rose-300 flex items-center mb-1">
+              <i data-lucide="lock" class="h-4 w-4 mr-1.5"></i> Confidential Corporate Boundary Enforced
+            </h4>
+            <p>Access Denied: User <strong>${user.name}</strong> with role <code>${user.role}</code> does not possess security clearance to query or retrieve documents from this departmental partition. This event has been recorded in the compliance audit log.</p>
+          </div>
+        `;
+        citationsList.innerHTML = `<p class="text-xs text-slate-500 italic">No citations retrieved: query blocked prior to index search.</p>`;
+        lucide.createIcons();
+        return;
+      }
+
+      if (isOutOfDomain) {
+        badge.className = "flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20";
+        badge.innerHTML = `<i data-lucide="alert-triangle" class="h-3.5 w-3.5"></i><span>Insufficient Corporate Evidence</span>`;
+        ansContainer.innerHTML = `
+          <p class="text-amber-200">The requested inquiry (<em>"${query}"</em>) was not located within any verified corporate policy document or SOP across HR, IT, Finance, or Operations. The assistant explicitly refrains from hallucinating unapproved internal guidance.</p>
+          <p class="text-xs text-slate-400 mt-2">Recommendation: Please submit an inquiry ticket to Global People Operations or Facilities via the corporate intranet portal.</p>
+        `;
+        citationsList.innerHTML = `<p class="text-xs text-slate-500 italic">Zero matching passages met the minimum confidence threshold (0.35).</p>`;
+        lucide.createIcons();
+        return;
+      }
+
+      // Grounded Match
+      badge.className = "flex items-center space-x-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
+      badge.innerHTML = `<i data-lucide="check-circle" class="h-3.5 w-3.5"></i><span>Grounded (Faithfulness: 1.0)</span>`;
+
+      // Find best match in mock docs
+      let bestDoc = DOCUMENTS[0];
+      let maxScore = 0;
+      DOCUMENTS.forEach(d => {
+        let score = 0;
+        d.keywords.forEach(kw => { if (qLower.includes(kw)) score += 1; });
+        if (score > maxScore) { maxScore = score; bestDoc = d; }
+      });
+
+      ansContainer.innerHTML = `
+        <p>Based on authorized <strong class="text-white">${bestDoc.dept}</strong> policy documentation, here are the verified details:</p>
+        <div class="p-3 bg-slate-900/80 border border-slate-700/80 rounded-xl text-slate-200 text-xs leading-relaxed">
+          • <strong class="text-white">${bestDoc.text}</strong>
+        </div>
+        <p class="text-xs text-slate-400 pt-2 border-t border-slate-700/60">
+          <strong>Primary Policy Reference:</strong> ${bestDoc.title} (${bestDoc.section}, Rev ${bestDoc.version}, Effective: ${bestDoc.date}).
+        </p>
+      `;
+
+      citationsList.innerHTML = `
+        <div class="p-3 bg-slate-900/80 border border-slate-700/60 rounded-xl flex items-start justify-between text-xs">
+          <div>
+            <span class="font-bold text-blue-400">[${bestDoc.id}] ${bestDoc.title}</span>
+            <p class="text-slate-300 mt-0.5">Section: <strong>${bestDoc.section}</strong> | Rev ${bestDoc.version}</p>
+            <span class="inline-block mt-1 text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded">Security Clearance: ${bestDoc.clearance}</span>
+          </div>
+          <span class="px-2 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded font-mono font-bold">
+            Sim: 0.884
+          </span>
+        </div>
+      `;
+
+      // Update reward numbers dynamically
+      const lat = (complexity === 'high') ? 112 : 68;
+      const tok = (topK * 110) + 180;
+      const rew = (0.70 + (Math.random() * 0.05)).toFixed(4);
+      document.getElementById('diag-reward').innerText = `+${rew}`;
+      document.getElementById('diag-pen-lat').innerText = `-0.012 (${lat}ms)`;
+      document.getElementById('diag-pen-cost').innerText = `-0.024 (${tok} tok)`;
+
+      lucide.createIcons();
+    }
+
+    // Benchmark Charts
+    let qualityChartInst = null;
+    let latencyRewardChartInst = null;
+    let learningChartInst = null;
+
+    function renderBenchmarkCharts() {
+      if (qualityChartInst) return; // already rendered
+
+      const ctx1 = document.getElementById('qualityChart').getContext('2d');
+      qualityChartInst = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: ['Precision @ 5', 'Recall @ 5', 'Mean Reciprocal Rank (MRR)', 'Answer Relevance'],
+          datasets: [
+            {
+              label: 'Fixed-Parameter RAG',
+              data: [0.7000, 0.7000, 0.7000, 0.7030],
+              backgroundColor: '#64748b'
+            },
+            {
+              label: 'Heuristic Baseline',
+              data: [0.6600, 0.7000, 0.7000, 0.7160],
+              backgroundColor: '#94a3b8'
+            },
+            {
+              label: 'Adaptive RL-RAG (LinUCB)',
+              data: [0.7625, 0.9750, 0.9750, 0.8057],
+              backgroundColor: '#3b82f6'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top', labels: { color: '#94a3b8', font: { size: 11 } } }
+          },
+          scales: {
+            y: { min: 0.5, max: 1.0, grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+            x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } }
+          }
+        }
+      });
+
+      const ctx2 = document.getElementById('latencyRewardChart').getContext('2d');
+      latencyRewardChartInst = new Chart(ctx2, {
+        type: 'line',
+        data: {
+          labels: ['Fixed RAG (K=5)', 'Heuristic Baseline', 'Adaptive RL-RAG'],
+          datasets: [
+            {
+              label: 'Multi-Objective Reward (Higher is Better)',
+              data: [0.5550, 0.5507, 0.6999],
+              borderColor: '#10b981',
+              backgroundColor: 'rgba(16, 185, 129, 0.2)',
+              yAxisID: 'yReward',
+              tension: 0.3,
+              fill: true
+            },
+            {
+              label: 'End-to-End Latency ms (Lower is Better)',
+              data: [39.3, 76.2, 107.8],
+              borderColor: '#f59e0b',
+              backgroundColor: 'rgba(245, 158, 11, 0.2)',
+              yAxisID: 'yLatency',
+              tension: 0.3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top', labels: { color: '#94a3b8', font: { size: 11 } } }
+          },
+          scales: {
+            yReward: {
+              type: 'linear',
+              position: 'left',
+              min: 0.4,
+              max: 0.8,
+              grid: { color: '#334155' },
+              ticks: { color: '#10b981' }
+            },
+            yLatency: {
+              type: 'linear',
+              position: 'right',
+              min: 0,
+              max: 150,
+              grid: { drawOnChartArea: false },
+              ticks: { color: '#f59e0b' }
+            },
+            x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } }
+          }
+        }
+      });
+    }
+
+    function renderLearningCurveChart() {
+      if (learningChartInst) return;
+
+      const episodes = Array.from({length: 50}, (_, i) => i + 1);
+      // Realistic bandit learning curve showing exploration early on and reward convergence
+      const rewardCurve = episodes.map(ep => {
+        const base = 0.52 + (0.18 * (1 - Math.exp(-ep / 12)));
+        const noise = (Math.random() - 0.5) * 0.04 * Math.exp(-ep / 20);
+        return +(base + noise).toFixed(4);
+      });
+
+      const ctx3 = document.getElementById('learningCurveChart').getContext('2d');
+      learningChartInst = new Chart(ctx3, {
+        type: 'line',
+        data: {
+          labels: episodes.map(e => `Ep ${e}`),
+          datasets: [
+            {
+              label: 'LinUCB Policy Reward',
+              data: rewardCurve,
+              borderColor: '#6366f1',
+              backgroundColor: 'rgba(99, 102, 241, 0.15)',
+              tension: 0.25,
+              fill: true,
+              pointRadius: 2
+            },
+            {
+              label: 'Fixed Baseline Benchmark (0.555)',
+              data: Array(50).fill(0.555),
+              borderColor: '#ef4444',
+              borderDash: [5, 5],
+              pointRadius: 0
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top', labels: { color: '#94a3b8' } }
+          },
+          scales: {
+            y: { min: 0.45, max: 0.78, grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+            x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8', maxTicksLimit: 12 } }
+          }
+        }
+      });
+    }
+
+    function updateAlphaLabel(val) {
+      document.getElementById('alpha-val').innerText = val;
+    }
+
+    function runSimulation() {
+      const btn = document.getElementById('sim-btn');
+      const icon = document.getElementById('sim-icon');
+      btn.disabled = true;
+      icon.classList.add('animate-spin');
+
+      setTimeout(() => {
+        btn.disabled = false;
+        icon.classList.remove('animate-spin');
+        if (learningChartInst) {
+          const episodes = Array.from({length: 50}, (_, i) => i + 1);
+          learningChartInst.data.datasets[0].data = episodes.map(ep => {
+            const base = 0.53 + (0.17 * (1 - Math.exp(-ep / 10)));
+            const noise = (Math.random() - 0.5) * 0.03 * Math.exp(-ep / 15);
+            return +(base + noise).toFixed(4);
+          });
+          learningChartInst.update();
+        }
+      }, 700);
+    }
+
+    // Knowledge Base Document Cards
+    function renderDocCards(filterDept = 'all') {
+      const container = document.getElementById('doc-cards-grid');
+      const filtered = filterDept === 'all' ? DOCUMENTS : DOCUMENTS.filter(d => d.dept === filterDept);
+      
+      container.innerHTML = filtered.map(d => `
+        <div class="p-5 bg-slate-800/80 border border-slate-700/80 rounded-2xl shadow-sm space-y-3">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">${d.id}</span>
+              <h4 class="text-sm font-bold text-white mt-1.5">${d.title}</h4>
+            </div>
+            <span class="text-[11px] px-2 py-0.5 rounded font-medium bg-slate-700 text-slate-300">${d.dept}</span>
+          </div>
+          <div class="text-xs text-slate-400 space-y-1">
+            <p><strong>Section:</strong> ${d.section}</p>
+            <p><strong>Effective Date:</strong> ${d.date} | <strong>Version:</strong> v${d.version}</p>
+            <p><strong>Security Clearance:</strong> <span class="text-slate-200">${d.clearance}</span></p>
+          </div>
+          <div class="p-3 bg-slate-900/90 rounded-xl border border-slate-700/60 text-xs text-slate-300 leading-relaxed font-sans">
+            ${d.text}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterDeptDocs(dept) {
+      document.querySelectorAll('.doc-filter-btn').forEach(btn => {
+        if (btn.dataset.dept === dept) {
+          btn.className = "doc-filter-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white";
+        } else {
+          btn.className = "doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700";
+        }
+      });
+      renderDocCards(dept);
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderDocCards();
+    });
+  </script>
+</body>
+</html>

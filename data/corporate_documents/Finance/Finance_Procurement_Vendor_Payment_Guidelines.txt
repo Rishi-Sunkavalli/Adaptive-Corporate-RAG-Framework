@@ -1,0 +1,36 @@
+# DOCUMENT METADATA
+# Document ID: FIN-DOC-002
+# Title: Corporate Procurement and Vendor Payment Guidelines
+# Department: Finance
+# Version: 2.8
+# Effective Date: 2026-01-20
+# Security Clearance: Internal (Finance, Procurement & Managers)
+# Approved By: Head of Strategic Sourcing & Procurement
+
+## 1. Principles of Procurement
+All organizational purchases of goods, hardware, software licenses, and external professional consulting services must be conducted with integrity, competitive bidding, cost efficiency, and full auditability.
+
+## 2. Purchase Order (PO) Thresholds and Approval Authority
+- Tier A (< $5,000): Requires single competitive quote; approved by Department Manager via Coupa. A PO is issued within 2 business days.
+- Tier B ($5,000 to $50,000): Requires three formal competitive vendor quotes or an established Master Services Agreement (MSA); requires Department VP and Finance Controller approval.
+- Tier C ($50,001 to $250,000): Requires formal Request for Proposal (RFP) process conducted by Global Sourcing; approved by CFO and General Counsel.
+- Tier D (> $250,000): Requires Board of Directors Audit Committee notification and CEO sign-off.
+- Commencing work or receiving deliverables without an approved Purchase Order (PO) is a direct policy violation ("after-the-fact PO") and subject to disciplinary review.
+
+## 3. Three-Way Matching Process
+Finance operates a strict three-way matching verification protocol before releasing supplier payments:
+1. Purchase Order (approved item specifications, quantities, and pricing).
+2. Goods Receipt / Service Delivery Confirmation (signed off by the internal business stakeholder).
+3. Vendor Tax Invoice (confirming bank coordinates, tax IDs, and billed totals).
+Any discrepancy greater than 2% or $100 requires an automated hold and manual exception resolution by the procurement specialist.
+
+## 4. Vendor Onboarding and Due Diligence
+- Prior to PO creation, all prospective vendors must pass:
+  * Anti-Money Laundering (AML) and Sanctions Screening (OFAC/EU list checks).
+  * Information Security Review (SOC 2 Type II or ISO 27001 certification mandatory for cloud and software vendors).
+  * W-9 / W-8BEN tax form validation and bank account ownership verification.
+
+## 5. Payment Terms and Early Settlement Discounts
+- Standard Corporate Terms: Net-45 calendar days from receipt of a verified invoice.
+- Preferred Terms: Net-30 for vendors offering a 2% prompt-payment cash discount (2/10 Net 30).
+- Wire Transfer cutoffs: Outgoing ACH and wire disbursements are executed twice weekly on Tuesdays and Thursdays at 2:00 PM EST.

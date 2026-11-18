@@ -1,0 +1,33 @@
+# DOCUMENT METADATA
+# Document ID: IT-DOC-001
+# Title: IT Access Management and Information Security Manual
+# Department: Information Technology
+# Version: 4.2
+# Effective Date: 2026-02-01
+# Security Clearance: Internal (All Employees; Privileged Sections IT-Only)
+# Approved By: Chief Information Security Officer (CISO)
+
+## 1. Identity and Access Management (IAM) Fundamentals
+All access to organizational applications, cloud platforms (AWS, GCP, Azure), databases, and network shares is governed by the Principle of Least Privilege (PoLP). Access rights are assigned based on verified job requirements and mapped strictly to predefined Role-Based Access Control (RBAC) user groups.
+
+## 2. Multi-Factor Authentication (MFA) and Corporate VPN
+- Multi-Factor Authentication is mandatory for all employee accounts across Google Workspace, Okta SSO, GitHub, and corporate VPN gateways.
+- Permitted MFA Factors: FIDO2 hardware security keys (YubiKey) or push-based mobile authenticators (Okta Verify, Google Authenticator). SMS-based 2FA is strictly prohibited due to SIM-swapping vulnerabilities.
+- Corporate VPN Requirements: All remote connections to internal staging, production clusters, internal wikis, or data lakes must route through GlobalProtect VPN with posture checking enabled. Split-tunneling is strictly disabled for protected subnet ranges.
+
+## 3. Password Complexity and Credential Rotation
+- Minimum Length: 16 alphanumeric characters including at least one uppercase letter, one lowercase letter, one number, and one special symbol.
+- Password Lifespan: Corporate passwords expire every 90 days. Systems prevent the reuse of the last 12 historical passwords.
+- Passphrase Alternative: A four-word passphrase with a minimum length of 24 characters without mandatory special symbols is permitted.
+- Account Lockout Threshold: Accounts automatically lock out for 30 minutes following 5 consecutive failed login attempts.
+
+## 4. Privileged Access Management (PAM)
+- Admin and root-level credentials must never be shared or hardcoded into source repositories or configuration files.
+- Production access is provisioned via Just-In-Time (JIT) access requests through Teleport or CyberArk, requiring multi-party authorization from an IT Team Lead or Manager.
+- All privileged terminal sessions and database queries on production instances are recorded and retained for 365 days for regulatory compliance and audit trails.
+
+## 5. Information Classification and Data Handling
+- Level 1 - Public: Marketing collateral, press releases, public repository documentation. No restriction.
+- Level 2 - Internal: General operating guidelines, company handbook, internal announcements. Accessible to all badge-authenticated employees.
+- Level 3 - Confidential: Department budgets, customer PII, unreleased product source code. Restricted to authorized teams. Encryption in transit (TLS 1.3) and at rest (AES-256) mandatory.
+- Level 4 - Restricted: Board minutes, M&A strategy, cryptographic keys, master production database backups. Requires explicit C-level or CISO approval.

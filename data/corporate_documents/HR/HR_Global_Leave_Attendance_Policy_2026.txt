@@ -1,0 +1,47 @@
+# DOCUMENT METADATA
+# Document ID: HR-DOC-001
+# Title: Global Leave and Attendance Policy 2026
+# Department: Human Resources
+# Version: 2.4
+# Effective Date: 2026-01-01
+# Security Clearance: Internal (All Employees)
+# Approved By: Global Head of HR Operations
+
+## 1. Purpose and Scope
+This policy outlines the guidelines governing employee working hours, attendance expectations, and leave entitlements across all global entities of the organization. This policy applies to all full-time regular employees, fixed-term contractors, and probationary team members, unless explicitly modified by local statutory legislation.
+
+## 2. Working Hours and Core Collaboration Hours
+- Standard weekly working hours: 40 hours per week (Monday through Friday, 8 hours per day).
+- Core Collaboration Window: 10:00 AM to 3:00 PM in the employee's designated local time zone. All synchronous team ceremonies, stand-ups, and cross-functional meetings should be scheduled within this window.
+- Flexible scheduling: Employees may adjust their starting time between 7:30 AM and 10:00 AM upon written alignment with their direct line manager.
+
+## 3. Annual Leave Entitlement
+- Regular Full-Time Employees: Accrue 22 days of paid annual leave per calendar year.
+- Senior Management (Director level and above): Accrue 26 days of paid annual leave per calendar year.
+- Accrual rate: Leave accrues monthly at 1.83 days per completed calendar month of active service.
+- Probationary status: Employees within their initial 90-day probationary period may accrue leave but can only take up to 3 days of accrued annual leave prior to confirmation.
+- Rollover and Encashment Cap: A maximum of 8 unused annual leave days may be rolled over into the subsequent calendar year. All rolled-over days must be utilized before March 31st of the new year, otherwise they lapse. Cash encashment of annual leave is prohibited except upon formal separation or redundancy.
+
+## 4. Sick and Medical Leave
+- Entitlement: 12 days of fully paid medical/sick leave per calendar year.
+- Single-day absences: Must be reported to the direct line manager via Slack or email by 9:00 AM on the day of absence.
+- Medical Certificate (MC) requirement: Any sick leave extending beyond two consecutive working days requires a valid medical certificate issued by a certified healthcare professional.
+- Hospitalization Leave: In cases of documented surgical operations or inpatient hospital stays, employees are eligible for up to 30 days of paid hospitalization leave, distinct from standard sick leave.
+
+## 5. Parental, Maternity, and Paternity Leave
+- Primary Caregiver / Maternity Leave: 18 weeks of fully paid leave for female employees or designated primary caregivers welcoming a newborn or newly adopted child under the age of 5.
+- Secondary Caregiver / Paternity Leave: 4 weeks of fully paid leave for non-birthing parents or secondary caregivers, which may be taken continuously or in two-week blocks within the first 12 months following birth or legal adoption.
+- Adoption Support: Employees completing a formal adoption process are entitled to a one-time reimbursement of up to $3,500 for legal and administrative expenses.
+
+## 6. Bereavement and Compassionate Leave
+- Immediate Family (Spouse, Child, Parent, Sibling): 5 consecutive working days of fully paid compassionate leave.
+- Extended Family (Grandparent, In-law, Aunt, Uncle): 3 consecutive working days of fully paid leave.
+- Additional travel time: An additional 2 travel days may be granted if the funeral service occurs internationally or more than 500 kilometers from the employee's residential location.
+
+## 7. Study and Examination Leave
+- Employees pursuing company-sponsored or manager-approved professional certifications (e.g., AWS, PMP, CFA) are granted up to 3 days of paid study leave per calendar year, inclusive of the official examination date.
+
+## 8. Leave Approval Ladder and Notice Requirements
+- 1 to 2 days leave: Requires direct line manager approval via Workday with at least 48 hours advance notice.
+- 3 to 9 days leave: Requires direct line manager approval with at least 14 days advance notice.
+- 10 or more consecutive days: Requires direct line manager approval and Department Head sign-off with at least 30 days advance notice to ensure operational continuity.

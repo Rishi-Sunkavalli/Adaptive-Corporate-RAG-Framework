@@ -1,0 +1,44 @@
+# DOCUMENT METADATA
+# Document ID: FIN-DOC-001
+# Title: Corporate Travel and Expense Reimbursement Policy
+# Department: Finance
+# Version: 3.3
+# Effective Date: 2026-01-01
+# Security Clearance: Internal (All Employees)
+# Approved By: Chief Financial Officer (CFO)
+
+## 1. Scope and Objective
+This policy defines allowable corporate travel and entertainment expenses incurred on behalf of the company. The objective is to facilitate productive business operations while maintaining fiscal responsibility, compliance, and transparent financial reporting.
+
+## 2. Air Travel Booking Guidelines
+- Domestic Flights & Short-Haul (Under 6 hours continuous flight duration): Must be booked in Standard Economy / Coach Class via the corporate travel portal (Navan / TripActions).
+- Long-Haul & Transcontinental Flights (6 hours or longer continuous duration): Premium Economy is authorized. Business Class is authorized solely for VP-level executives and above, or with explicit written pre-approval from the CFO for overnight flights preceding client negotiations.
+- Advance Booking: Flights should be booked at least 14 days in advance whenever feasible to optimize commercial fare rates.
+
+## 3. Hotel Accommodations and Nightly Caps
+- Lodging must be booked at preferred corporate rate hotels.
+- Nightly rate caps (exclusive of local taxes):
+  * Tier 1 High-Cost Cities (New York, San Francisco, London, Tokyo, Singapore, Zurich): Up to $300 per night.
+  * Tier 2 Standard Metropolitan Cities (Chicago, Austin, Berlin, Sydney, Toronto): Up to $220 per night.
+  * Tier 3 Regional Locations: Up to $160 per night.
+- Incidental expenses (e.g., hotel minibar snacks, laundry for trips under 4 days) are personal costs and will not be reimbursed.
+
+## 4. Meals and Daily Per-Diem Rates
+- Per-Diem Meal Allowance: Employees traveling on approved corporate assignments receive a daily meal allowance:
+  * Tier 1 Cities: $85 per day ($20 Breakfast, $25 Lunch, $40 Dinner).
+  * Tier 2 & Tier 3 Cities: $65 per day ($15 Breakfast, $20 Lunch, $30 Dinner).
+- Alcohol: Moderate alcohol consumed with evening business dinners is reimbursable if within the total daily meal cap. Standalone bar tabs or nightclub purchases are strictly non-reimbursable.
+- Itemized Receipts: Itemized merchant receipts showing items ordered are mandatory for any individual meal exceeding $25. Credit card charge slips showing only the final total without line-item breakdowns are insufficient for audit compliance.
+
+## 5. Ground Transportation and Mileage
+- Public transit, ride-shares (Uber, Lyft standard class), or licensed taxis are the preferred modes of local transportation.
+- Luxury vehicle classes (Uber Black, Executive SUVs) are prohibited unless multiple team members are sharing the ride and the aggregate cost is lower than multiple individual vehicles.
+- Personal vehicle business mileage is reimbursed at the statutory rate of $0.67 per mile, covering fuel, insurance, and vehicle wear-and-tear.
+
+## 6. Submission Deadlines and Approval Hierarchy
+- Filing Window: Expense claims must be submitted through Concur/Expensify within 30 calendar days of expense incurrence or return from business travel. Claims submitted after 60 days require Department Head exception approval; claims older than 90 days will be rejected.
+- Approval Thresholds:
+  * Claims up to $2,500: Approved by Direct Line Manager.
+  * Claims between $2,501 and $10,000: Approved by Line Manager and Department VP.
+  * Claims exceeding $10,000: Require CFO approval.
+- Payment Processing: Approved expense reports are processed bi-weekly and disbursed directly into the employee's designated payroll bank account.

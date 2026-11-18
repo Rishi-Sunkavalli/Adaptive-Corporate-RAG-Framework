@@ -1,0 +1,32 @@
+# DOCUMENT METADATA
+# Document ID: HR-DOC-002
+# Title: Employee Code of Conduct and Total Rewards Benefits Guide
+# Department: Human Resources
+# Version: 3.1
+# Effective Date: 2026-01-15
+# Security Clearance: Internal (All Employees)
+# Approved By: Chief People Officer
+
+## 1. Professional Conduct and Ethics
+All team members are expected to maintain the highest standards of integrity, transparency, and mutual respect. The organization enforces a zero-tolerance policy regarding workplace harassment, bullying, discrimination, or retaliation based on gender, race, religion, sexual orientation, disability, or age.
+
+## 2. Whistleblower Protections and Anonymous Reporting
+Employees who observe unethical conduct, financial fraud, data privacy violations, or safety compromises are protected under our Corporate Whistleblower Charter. Reports may be submitted 24/7 anonymously through the EthicsPoint portal or directly to compliance@company.internal. Whistleblowers are strictly protected from demotion, harassment, or adverse career repercussions.
+
+## 3. Health, Dental, and Vision Insurance
+- Tier 1 (Comprehensive Gold): 100% employer-sponsored premium for the employee; 80% coverage for eligible dependents. Includes zero deductible for in-network general practitioner visits and emergency care.
+- Dental and Vision: Covers up to $2,000 annually per enrolled individual for preventive cleanings, orthodontics, and annual corrective lenses.
+- Mental Health Care: Provides 12 complimentary, confidential therapy sessions per calendar year through our Employee Assistance Program (EAP) platform (Lyra Health).
+
+## 4. Retirement Savings and 401(k) / Provident Fund Matching
+- The company provides a dollar-for-dollar match on employee retirement contributions up to 5% of gross base salary.
+- Vesting Schedule: Immediate 100% vesting of company matching contributions upon the first day of employment; no cliff period applies.
+
+## 5. Remote Work Stipend and Home Office Allowance
+- One-time Home Office Setup Stipend: $800 upon joining to procure ergonomic chairs, desks, monitors, or noise-canceling headsets.
+- Monthly Connectivity Allowance: $75 monthly reimbursement credited directly through payroll to subsidize high-speed home broadband and cellular usage.
+
+## 6. Performance Evaluation and Compensation Reviews
+- Formal performance appraisals occur bi-annually: Mid-Year Check-in (July) and Annual Review (December).
+- Merit salary increments and annual corporate bonus disbursements are finalized in February and credited with the March payroll cycle.
+- Performance ratings scale: 1 (Unsatisfactory), 2 (Developing), 3 (Meets High Standards), 4 (Exceeds Expectations), 5 (Exceptional Impact).

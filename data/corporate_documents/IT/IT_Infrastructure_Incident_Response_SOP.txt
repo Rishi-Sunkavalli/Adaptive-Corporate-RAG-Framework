@@ -1,0 +1,40 @@
+# DOCUMENT METADATA
+# Document ID: IT-DOC-002
+# Title: Infrastructure Incident Response and Disaster Recovery SOP
+# Department: Information Technology
+# Version: 3.5
+# Effective Date: 2026-02-15
+# Security Clearance: Internal (IT & Operations Staff)
+# Approved By: VP of Infrastructure & Reliability Engineering
+
+## 1. Incident Severity Definitions and SLA Matrix
+- P1 (Critical Outage): Complete loss of revenue-generating services, core SaaS platform unavailability, or confirmed active security breach.
+  * SLA Initial Response: 15 minutes (24x7x365).
+  * Status Update Cadence: Every 30 minutes to all corporate stakeholders.
+  * Target Resolution Time: Under 2 hours.
+- P2 (Major Degradation): High-impact service degradation affecting more than 20% of active enterprise customers or critical internal workflows (e.g., global payroll processing halt).
+  * SLA Initial Response: 30 minutes.
+  * Status Update Cadence: Every 60 minutes.
+  * Target Resolution Time: Under 4 hours.
+- P3 (Moderate Issue): Non-critical service failure with an existing operational workaround; minor customer segment impacted.
+  * SLA Initial Response: 2 hours (during standard business hours).
+  * Target Resolution Time: Within 24 business hours.
+- P4 (Low / Informational): Cosmetic UI bugs, minor reporting discrepancies, feature requests.
+  * SLA Initial Response: 8 business hours.
+  * Target Resolution Time: Next scheduled maintenance release.
+
+## 2. On-Call Escalation Ladders and Incident Command
+- Tier 1: Primary On-Call Site Reliability Engineer (paged automatically via PagerDuty).
+- Tier 2: Secondary On-Call Specialist / Service Lead (engaged if Tier 1 does not acknowledge within 10 minutes).
+- Incident Commander (IC): For any P1 or P2 incident, an IC is appointed immediately to manage communications, track action items in the war-room Slack channel (#incident-war-room), and shield responding engineers from external queries.
+
+## 3. Post-Incident Review (PIR) and Blameless Post-Mortem
+- A blameless post-mortem must be conducted within 72 hours of resolving any P1 or P2 incident.
+- Key deliverables: Comprehensive timeline of events, Five-Whys root cause analysis, action items assigned in Jira with strict 30-day completion SLAs.
+- Post-mortem reports are published to the internal Engineering Confluence space for organizational learning.
+
+## 4. Disaster Recovery (DR) and Data Center Failover
+- High Availability: Multi-region active-active cluster topology deployed across US-East and EU-West regions.
+- Recovery Point Objective (RPO): Maximum allowable data loss is 15 minutes.
+- Recovery Time Objective (RTO): Maximum allowable downtime for core user authentication and transaction processing is 4 hours.
+- Failover drill: Simulated full regional failover exercises are executed semi-annually during off-peak weekend windows.

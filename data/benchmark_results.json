@@ -1,0 +1,1230 @@
+{
+  "timestamp": "2026-11-18T13:49:37Z",
+  "total_test_queries": 20,
+  "metrics_summary": {
+    "fixed": {
+      "mean_precision_at_5": 0.7,
+      "mean_recall_at_5": 0.7,
+      "mean_mrr": 0.7,
+      "mean_faithfulness": 1.0,
+      "mean_answer_relevance": 0.703,
+      "mean_latency_ms": 39.3,
+      "mean_tokens_per_query": 471.8,
+      "total_tokens_consumed": 9436,
+      "mean_reward": 0.555,
+      "rbac_security_leakage_rate": 0.0
+    },
+    "heuristic": {
+      "mean_precision_at_5": 0.66,
+      "mean_recall_at_5": 0.7,
+      "mean_mrr": 0.7,
+      "mean_faithfulness": 1.0,
+      "mean_answer_relevance": 0.716,
+      "mean_latency_ms": 76.22,
+      "mean_tokens_per_query": 599.6,
+      "total_tokens_consumed": 11992,
+      "mean_reward": 0.5507,
+      "rbac_security_leakage_rate": 0.0
+    },
+    "adaptive": {
+      "mean_precision_at_5": 0.7625,
+      "mean_recall_at_5": 0.975,
+      "mean_mrr": 0.975,
+      "mean_faithfulness": 1.0,
+      "mean_answer_relevance": 0.8057,
+      "mean_latency_ms": 107.82,
+      "mean_tokens_per_query": 901.3,
+      "total_tokens_consumed": 18026,
+      "mean_reward": 0.6999,
+      "rbac_security_leakage_rate": 0.0
+    }
+  },
+  "detailed_results": {
+    "fixed": [
+      {
+        "query_id": "Q01",
+        "query": "What is the annual leave entitlement for regular full-time employees?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.78,
+        "tokens": 670,
+        "reward": 0.6517
+      },
+      {
+        "query_id": "Q02",
+        "query": "How many days of annual leave can be rolled over into the next year, and when do they expire?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.79,
+        "tokens": 676,
+        "reward": 0.6562
+      },
+      {
+        "query_id": "Q03",
+        "query": "What is the policy for sick leave, and when is a medical certificate mandatory?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.74,
+        "tokens": 598,
+        "reward": 0.6514
+      },
+      {
+        "query_id": "Q04",
+        "query": "Compare primary caregiver maternity leave with secondary caregiver paternity leave durations.",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.74,
+        "tokens": 592,
+        "reward": 0.6711
+      },
+      {
+        "query_id": "Q05",
+        "query": "What are the rules and notice periods required when requesting 10 or more consecutive days off?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.64,
+        "tokens": 152,
+        "reward": 0.3734
+      },
+      {
+        "query_id": "Q06",
+        "query": "What is the company 401(k) matching percentage and vesting period?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.69,
+        "tokens": 556,
+        "reward": 0.657
+      },
+      {
+        "query_id": "Q07",
+        "query": "How much is the home office setup stipend and monthly connectivity allowance?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.7,
+        "tokens": 548,
+        "reward": 0.6802
+      },
+      {
+        "query_id": "Q08",
+        "query": "What are the password complexity requirements and expiration frequency for corporate accounts?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.86,
+        "tokens": 152,
+        "reward": 0.3895
+      },
+      {
+        "query_id": "Q09",
+        "query": "Are employees allowed to use SMS-based two-factor authentication for corporate logins?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.7,
+        "tokens": 152,
+        "reward": 0.385
+      },
+      {
+        "query_id": "Q10",
+        "query": "Explain the differences between Level 2 Internal, Level 3 Confidential, and Level 4 Restricted data classifications.",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.98,
+        "tokens": 632,
+        "reward": 0.6547
+      },
+      {
+        "query_id": "Q11",
+        "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.02,
+        "tokens": 648,
+        "reward": 0.6253
+      },
+      {
+        "query_id": "Q12",
+        "query": "What are the disaster recovery RTO and RPO targets for core infrastructure?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.81,
+        "tokens": 152,
+        "reward": 0.382
+      },
+      {
+        "query_id": "Q13",
+        "query": "What is the nightly hotel room cap for Tier 1 high-cost cities versus Tier 2 metropolitan cities?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.76,
+        "tokens": 646,
+        "reward": 0.6016
+      },
+      {
+        "query_id": "Q14",
+        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.78,
+        "tokens": 696,
+        "reward": 0.6606
+      },
+      {
+        "query_id": "Q15",
+        "query": "Under what flight duration is an employee permitted to book Business Class or Premium Economy?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.64,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q16",
+        "query": "What are the purchase order tiers, required quotes, and approval authorities for purchasing goods between $5,000 and $50,000?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.92,
+        "tokens": 732,
+        "reward": 0.6401
+      },
+      {
+        "query_id": "Q17",
+        "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.75,
+        "tokens": 152,
+        "reward": 0.3745
+      },
+      {
+        "query_id": "Q18",
+        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately to a higher tier?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.04,
+        "tokens": 554,
+        "reward": 0.6337
+      },
+      {
+        "query_id": "Q19",
+        "query": "What are the recovery objectives (MTD, RTO, RPO) for Mission-Critical System Tier 0 in the Business Continuity Plan?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 71.1,
+        "tokens": 824,
+        "reward": 0.6534
+      },
+      {
+        "query_id": "Q20",
+        "query": "What is the corporate pet policy for bringing dogs to the London technology office?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.63,
+        "tokens": 152,
+        "reward": 0.3915
+      }
+    ],
+    "heuristic": [
+      {
+        "query_id": "Q01",
+        "query": "What is the annual leave entitlement for regular full-time employees?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.78,
+        "tokens": 670,
+        "reward": 0.6517
+      },
+      {
+        "query_id": "Q02",
+        "query": "How many days of annual leave can be rolled over into the next year, and when do they expire?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.78,
+        "tokens": 676,
+        "reward": 0.6562
+      },
+      {
+        "query_id": "Q03",
+        "query": "What is the policy for sick leave, and when is a medical certificate mandatory?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.75,
+        "tokens": 598,
+        "reward": 0.6514
+      },
+      {
+        "query_id": "Q04",
+        "query": "Compare primary caregiver maternity leave with secondary caregiver paternity leave durations.",
+        "action": {
+          "action_id": -2,
+          "top_k": 8,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": true,
+          "description": "Heuristic: K=8, Thresh=0.35, Mode=hybrid, Rerank=True"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 281.57,
+        "tokens": 1488,
+        "reward": 0.6223
+      },
+      {
+        "query_id": "Q05",
+        "query": "What are the rules and notice periods required when requesting 10 or more consecutive days off?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.85,
+        "tokens": 152,
+        "reward": 0.3734
+      },
+      {
+        "query_id": "Q06",
+        "query": "What is the company 401(k) matching percentage and vesting period?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.81,
+        "tokens": 556,
+        "reward": 0.657
+      },
+      {
+        "query_id": "Q07",
+        "query": "How much is the home office setup stipend and monthly connectivity allowance?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.7,
+        "tokens": 548,
+        "reward": 0.6802
+      },
+      {
+        "query_id": "Q08",
+        "query": "What are the password complexity requirements and expiration frequency for corporate accounts?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.65,
+        "tokens": 152,
+        "reward": 0.3895
+      },
+      {
+        "query_id": "Q09",
+        "query": "Are employees allowed to use SMS-based two-factor authentication for corporate logins?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.64,
+        "tokens": 152,
+        "reward": 0.385
+      },
+      {
+        "query_id": "Q10",
+        "query": "Explain the differences between Level 2 Internal, Level 3 Confidential, and Level 4 Restricted data classifications.",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.97,
+        "tokens": 632,
+        "reward": 0.6547
+      },
+      {
+        "query_id": "Q11",
+        "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
+        "action": {
+          "action_id": -2,
+          "top_k": 8,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": true,
+          "description": "Heuristic: K=8, Thresh=0.35, Mode=hybrid, Rerank=True"
+        },
+        "precision": 0.6,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 282.22,
+        "tokens": 1466,
+        "reward": 0.5929
+      },
+      {
+        "query_id": "Q12",
+        "query": "What are the disaster recovery RTO and RPO targets for core infrastructure?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.82,
+        "tokens": 152,
+        "reward": 0.382
+      },
+      {
+        "query_id": "Q13",
+        "query": "What is the nightly hotel room cap for Tier 1 high-cost cities versus Tier 2 metropolitan cities?",
+        "action": {
+          "action_id": -2,
+          "top_k": 8,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": true,
+          "description": "Heuristic: K=8, Thresh=0.35, Mode=hybrid, Rerank=True"
+        },
+        "precision": 0.6,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 281.76,
+        "tokens": 1488,
+        "reward": 0.5971
+      },
+      {
+        "query_id": "Q14",
+        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.78,
+        "tokens": 696,
+        "reward": 0.6606
+      },
+      {
+        "query_id": "Q15",
+        "query": "Under what flight duration is an employee permitted to book Business Class or Premium Economy?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.64,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q16",
+        "query": "What are the purchase order tiers, required quotes, and approval authorities for purchasing goods between $5,000 and $50,000?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.93,
+        "tokens": 732,
+        "reward": 0.6401
+      },
+      {
+        "query_id": "Q17",
+        "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.76,
+        "tokens": 152,
+        "reward": 0.3745
+      },
+      {
+        "query_id": "Q18",
+        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately to a higher tier?",
+        "action": {
+          "action_id": -2,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=5, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.04,
+        "tokens": 554,
+        "reward": 0.6337
+      },
+      {
+        "query_id": "Q19",
+        "query": "What are the recovery objectives (MTD, RTO, RPO) for Mission-Critical System Tier 0 in the Business Continuity Plan?",
+        "action": {
+          "action_id": -2,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=5, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 71.1,
+        "tokens": 824,
+        "reward": 0.6534
+      },
+      {
+        "query_id": "Q20",
+        "query": "What is the corporate pet policy for bringing dogs to the London technology office?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.81,
+        "tokens": 152,
+        "reward": 0.3915
+      }
+    ],
+    "adaptive": [
+      {
+        "query_id": "Q01",
+        "query": "What is the annual leave entitlement for regular full-time employees?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6353,
+          "confidence": 0.6536865500543629
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 142.81,
+        "tokens": 1044,
+        "reward": 0.7177
+      },
+      {
+        "query_id": "Q02",
+        "query": "How many days of annual leave can be rolled over into the next year, and when do they expire?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6814,
+          "confidence": 0.6640402886729766
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 177.82,
+        "tokens": 1134,
+        "reward": 0.6949
+      },
+      {
+        "query_id": "Q03",
+        "query": "What is the policy for sick leave, and when is a medical certificate mandatory?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.669,
+          "confidence": 0.6612755537530937
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 177.76,
+        "tokens": 1172,
+        "reward": 0.6972
+      },
+      {
+        "query_id": "Q04",
+        "query": "Compare primary caregiver maternity leave with secondary caregiver paternity leave durations.",
+        "action": {
+          "action_id": 34,
+          "top_k": 8,
+          "threshold": 0.65,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.65, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7305,
+          "confidence": 0.6749088256619296
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.47,
+        "tokens": 592,
+        "reward": 0.7339
+      },
+      {
+        "query_id": "Q05",
+        "query": "What are the rules and notice periods required when requesting 10 or more consecutive days off?",
+        "action": {
+          "action_id": 2,
+          "top_k": 3,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.35, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.582,
+          "confidence": 0.6415325437072721
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 107.67,
+        "tokens": 958,
+        "reward": 0.6749
+      },
+      {
+        "query_id": "Q06",
+        "query": "What is the company 401(k) matching percentage and vesting period?",
+        "action": {
+          "action_id": 2,
+          "top_k": 3,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.35, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.5559,
+          "confidence": 0.6355038460961203
+        },
+        "precision": 0.3333,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 107.99,
+        "tokens": 874,
+        "reward": 0.7167
+      },
+      {
+        "query_id": "Q07",
+        "query": "How much is the home office setup stipend and monthly connectivity allowance?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6455,
+          "confidence": 0.6560004169788975
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.48,
+        "tokens": 548,
+        "reward": 0.746
+      },
+      {
+        "query_id": "Q08",
+        "query": "What are the password complexity requirements and expiration frequency for corporate accounts?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6455,
+          "confidence": 0.6560004169788975
+        },
+        "precision": 0.4,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 177.8,
+        "tokens": 1156,
+        "reward": 0.6768
+      },
+      {
+        "query_id": "Q09",
+        "query": "Are employees allowed to use SMS-based two-factor authentication for corporate logins?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6404,
+          "confidence": 0.6548444004947128
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.49,
+        "tokens": 592,
+        "reward": 0.6821
+      },
+      {
+        "query_id": "Q10",
+        "query": "Explain the differences between Level 2 Internal, Level 3 Confidential, and Level 4 Restricted data classifications.",
+        "action": {
+          "action_id": 2,
+          "top_k": 3,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.35, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.582,
+          "confidence": 0.6415325437072721
+        },
+        "precision": 0.3333,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 107.95,
+        "tokens": 852,
+        "reward": 0.7112
+      },
+      {
+        "query_id": "Q11",
+        "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
+        "action": {
+          "action_id": 34,
+          "top_k": 8,
+          "threshold": 0.65,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.65, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7605,
+          "confidence": 0.6814702635282683
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.81,
+        "tokens": 648,
+        "reward": 0.7089
+      },
+      {
+        "query_id": "Q12",
+        "query": "What are the disaster recovery RTO and RPO targets for core infrastructure?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6455,
+          "confidence": 0.6560004169788975
+        },
+        "precision": 0.75,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 143.45,
+        "tokens": 1078,
+        "reward": 0.6909
+      },
+      {
+        "query_id": "Q13",
+        "query": "What is the nightly hotel room cap for Tier 1 high-cost cities versus Tier 2 metropolitan cities?",
+        "action": {
+          "action_id": 34,
+          "top_k": 8,
+          "threshold": 0.65,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.65, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7665,
+          "confidence": 0.6827740636655629
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 72.62,
+        "tokens": 820,
+        "reward": 0.6998
+      },
+      {
+        "query_id": "Q14",
+        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6558,
+          "confidence": 0.6583069051443293
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.51,
+        "tokens": 696,
+        "reward": 0.7343
+      },
+      {
+        "query_id": "Q15",
+        "query": "Under what flight duration is an employee permitted to book Business Class or Premium Economy?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6741,
+          "confidence": 0.6624211345095149
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.49,
+        "tokens": 598,
+        "reward": 0.6987
+      },
+      {
+        "query_id": "Q16",
+        "query": "What are the purchase order tiers, required quotes, and approval authorities for purchasing goods between $5,000 and $50,000?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6865,
+          "confidence": 0.6651812533217615
+        },
+        "precision": 0.2,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 178.02,
+        "tokens": 1212,
+        "reward": 0.6851
+      },
+      {
+        "query_id": "Q17",
+        "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+        "action": {
+          "action_id": 2,
+          "top_k": 3,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.35, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.5611,
+          "confidence": 0.6367130629805948
+        },
+        "precision": 0.3333,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.21,
+        "tokens": 870,
+        "reward": 0.6916
+      },
+      {
+        "query_id": "Q18",
+        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately to a higher tier?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6972,
+          "confidence": 0.6675776026599389
+        },
+        "precision": 0.6,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 178.29,
+        "tokens": 1186,
+        "reward": 0.6833
+      },
+      {
+        "query_id": "Q19",
+        "query": "What are the recovery objectives (MTD, RTO, RPO) for Mission-Critical System Tier 0 in the Business Continuity Plan?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6921,
+          "confidence": 0.6664407091492637
+        },
+        "precision": 0.8,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 178.16,
+        "tokens": 1206,
+        "reward": 0.7084
+      },
+      {
+        "query_id": "Q20",
+        "query": "What is the corporate pet policy for bringing dogs to the London technology office?",
+        "action": {
+          "action_id": 18,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6558,
+          "confidence": 0.6583069051443293
+        },
+        "precision": 0.5,
+        "recall": 0.5,
+        "mrr": 0.5,
+        "faithfulness": 1.0,
+        "latency_ms": 72.55,
+        "tokens": 790,
+        "reward": 0.6465
+      }
+    ]
+  }
+}
