@@ -1,0 +1,20 @@
+# DOCUMENT METADATA
+# Document ID: OPS-DOC-001
+# Title: Enterprise Business Continuity and Disaster Recovery Plan (BCP/DRP)
+# Department: Operations
+# Version: 4.8
+# Effective Date: 2026-01-10
+# Security Clearance: Confidential
+
+## 1. Purpose, Governance and Activation Authority
+This Business Continuity Plan (BCP) defines procedures to maintain critical business operations during major disruptions, including regional power grid collapse, data center catastrophe, cyber ransomware attacks, and natural disasters. Authority to declare a disaster rests with the Chief Executive Officer (CEO), Chief Operating Officer (COO), or CISO.
+
+## 2. Recovery Time Objective (RTO) and Recovery Point Objective (RPO)
+Enterprise systems are categorized into 3 recovery tiers: Tier 1 Mission-Critical (Customer Transactions, Core API, Cloud Database): RTO <= 1 hour, RPO <= 15 minutes. Tier 2 Business-Essential (Internal HRMS, ERP, Payroll, Support Desk): RTO <= 4 hours, RPO <= 1 hour. Tier 3 Non-Critical (Analytics Warehouse, Archival Storage): RTO <= 24 hours, RPO <= 24 hours.
+
+## 3. Alternate Disaster Recovery Site Failover Protocol
+In the event of total primary data center loss (US-East), automatic DNS route failover executes to the secondary disaster recovery site (EU-Central) within 6 minutes. Operations command center activates alternate satellite communication uplinks if regional fiber lines are severed.
+
+## 4. Annual Disaster Simulation and Tabletop Drills
+Mandatory disaster simulations must be conducted bi-annually: a tabletop walkthrough in Q2 and an unannounced active production failover test in Q4 during off-peak weekend maintenance windows. Results are audited and submitted to the Board Risk Committee.
+

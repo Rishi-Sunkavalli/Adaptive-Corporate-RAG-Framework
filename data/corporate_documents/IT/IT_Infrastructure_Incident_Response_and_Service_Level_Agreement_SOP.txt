@@ -1,0 +1,20 @@
+# DOCUMENT METADATA
+# Document ID: IT-DOC-001
+# Title: IT Infrastructure Incident Response and Service Level Agreement SOP
+# Department: IT
+# Version: 5.0
+# Effective Date: 2026-01-15
+# Security Clearance: Internal
+
+## 1. Incident Classification and Severity Levels
+IT production incidents are classified into 4 standardized severity tiers: P1 (Critical Outage: Core customer-facing services or entire enterprise network down); P2 (Major Degradation: Vital service heavily impaired with no viable workaround); P3 (Moderate Impact: Non-critical feature failure affecting limited users); P4 (Minor Request: Routine inquiry, documentation bug, or non-urgent config change).
+
+## 2. SLA Response and Resolution Targets
+Mandatory SLAs are defined as follows: P1 Critical incidents require initial acknowledgment within 15 minutes and target resolution or failover within 2 hours. P2 Major incidents require acknowledgment within 30 minutes and target resolution within 6 hours. P3 incidents require acknowledgment within 4 business hours and resolution within 24 hours. P4 requests require response within 8 business hours and resolution within 5 business days.
+
+## 3. Critical Outage (P1) Escalation Ladder
+When a P1 incident is declared: at T+0, Incident Commander activates War Room bridge and PagerDuty alert. At T+15m, first status bulletin posted to status.company.internal. At T+30m with no resolution, Director of Infrastructure notified. At T+60m without root cause containment, Chief Information Officer (CIO) and VP of Engineering are briefed. Executive stakeholder updates occur every 30 minutes thereafter.
+
+## 4. Post-Incident Review and RCA Requirements
+For every P1 and P2 incident, an engineering blameless Post-Incident Review (PIR) must be completed within 72 hours of incident resolution. The resulting Root Cause Analysis (RCA) document must identify root causes, 5 Whys, timeline, and corrective preventive actions assigned with explicit JIRA owners.
+

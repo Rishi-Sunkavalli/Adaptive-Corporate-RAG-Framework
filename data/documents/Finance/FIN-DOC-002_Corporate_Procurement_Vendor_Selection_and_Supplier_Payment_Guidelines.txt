@@ -1,0 +1,20 @@
+# DOCUMENT METADATA
+# Document ID: FIN-DOC-002
+# Title: Corporate Procurement, Vendor Selection and Supplier Payment Guidelines
+# Department: Finance
+# Version: 4.5
+# Effective Date: 2026-01-01
+# Security Clearance: Confidential
+
+## 1. Purchase Order (PO) Thresholds and Approval Ladder
+All vendor purchases exceeding $2,500 USD require an approved Purchase Order before contract signing or service commencement. Approval limits are structured as follows: Tier A (Up to $10,000 USD): Department Manager approval; Tier B ($10,001 to $50,000 USD): Department Director approval; Tier C ($50,001 to $250,000 USD): VP and Head of Procurement approval; Tier D (Exceeding $250,000 USD): Chief Financial Officer (CFO) and Chief Executive Officer (CEO) formal sign-off.
+
+## 2. Competitive Bidding and RFP Requirements
+For any procurement contract with an aggregate contract value exceeding $50,000 USD, the procurement team must solicit a minimum of three independent, sealed competitive bids (RFP/RFQ). Single-source or sole-source exemptions require a formally documented Sole Source Justification memo approved by the General Counsel.
+
+## 3. Three-Way Matching Verification Protocol
+Accounts Payable enforces strict Three-Way Matching before any vendor invoice is disbursed. The accounts payable system automatically cross-references: 1. The approved Purchase Order; 2. The Goods Received Note (GRN) or signed milestone proof-of-performance; 3. The vendor's itemized commercial tax invoice. Payment is halted automatically if price variance exceeds 1.5% or quantity exceeds 0%.
+
+## 4. Standard Payment Terms and Wire Transfer Anti-Fraud
+Corporate standard payment terms are Net 45 days from the receipt of a verified invoice. Net 30 or Net 15 terms require Treasury Director sign-off. Wire transfer bank routing changes requested by any vendor require telephone callback verification to the verified vendor finance officer on record before updating banking records.
+

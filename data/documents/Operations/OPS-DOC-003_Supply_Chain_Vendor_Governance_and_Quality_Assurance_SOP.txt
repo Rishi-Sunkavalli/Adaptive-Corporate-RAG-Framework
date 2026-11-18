@@ -1,0 +1,14 @@
+# DOCUMENT METADATA
+# Document ID: OPS-DOC-003
+# Title: Supply Chain Vendor Governance and Quality Assurance SOP
+# Department: Operations
+# Version: 2.1
+# Effective Date: 2026-02-01
+# Security Clearance: Internal
+
+## 1. Vendor Performance Scorecards and Quarterly Reviews
+Critical tier-1 suppliers are evaluated quarterly across four operational dimensions: On-Time Delivery (minimum 98.0% threshold), Quality Defect Rate (maximum 0.05% reject rate), Pricing Transparency, and Customer Service Responsiveness. Suppliers scoring below 85% composite score are placed on 60-day corrective action plans.
+
+## 2. Warehouse Inbound Inspection and Quarantine Procedures
+All incoming hardware shipments must undergo physical inspection at the inbound quarantine staging dock within 4 hours of receipt. Barcode serial scanning, seal verification, and sample testing of 5 units per pallet must be logged in the Warehouse Management System (WMS) prior to release to inventory.
+

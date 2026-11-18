@@ -1,0 +1,17 @@
+# DOCUMENT METADATA
+# Document ID: FIN-DOC-003
+# Title: Capital Expenditure (CapEx) Governance and Asset Depreciation Manual
+# Department: Finance
+# Version: 3.0
+# Effective Date: 2026-01-20
+# Security Clearance: Confidential
+
+## 1. Capital Expenditure Definition and Capitalization Floor
+Tangible assets or software development expenditures with an acquisition cost of $5,000 USD or greater and an estimated useful operational lifespan exceeding 12 months must be capitalized as fixed assets rather than expensed as operating expenditure (OpEx). Items under $5,000 are expensed immediately.
+
+## 2. CapEx Budget Authorization Matrix
+CapEx projects between $50,000 and $200,000 require Capital Budgeting Committee approval and a Return on Investment (ROI) payback period under 36 months. Projects exceeding $500,000 require Board of Directors Audit Committee ratification.
+
+## 3. Asset Depreciation Schedules
+Depreciation is recognized using the straight-line method over statutory useful lives: Computer Hardware & Servers: 3 years (36 months); Enterprise Software Licenses: 5 years (60 months); Office Furniture and Fixtures: 7 years; Leasehold Improvements: Lesser of 10 years or remaining lease term.
+

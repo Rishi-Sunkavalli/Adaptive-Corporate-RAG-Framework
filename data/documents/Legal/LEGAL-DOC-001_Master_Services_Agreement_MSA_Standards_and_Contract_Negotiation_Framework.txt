@@ -1,0 +1,17 @@
+# DOCUMENT METADATA
+# Document ID: LEGAL-DOC-001
+# Title: Master Services Agreement (MSA) Standards and Contract Negotiation Framework
+# Department: Legal
+# Version: 4.0
+# Effective Date: 2026-01-01
+# Security Clearance: Confidential
+
+## 1. Standard Contract Terms and Governing Law
+All corporate commercial agreements, customer contracts, and vendor master services agreements (MSAs) must adopt the approved corporate standard legal templates. Governing law for US operations is the State of Delaware; for EMEA operations, governing law is the courts of England and Wales. Modifications to governing law require General Counsel sign-off.
+
+## 2. Limitation of Liability and Indemnification Caps
+Corporate policy stipulates that aggregate liability under any commercial contract shall not exceed 12 months of total fees paid or payable by the customer under the applicable Order Form. Super-caps for data breach or gross negligence are restricted to a maximum of 2x the standard annual fee cap.
+
+## 3. Confidentiality and Non-Disclosure Term Duration
+Mutual non-disclosure agreements (NDAs) must mandate confidentiality protection for a minimum period of 5 years following disclosure of proprietary business information. Trade secrets, source code, and customer records must be protected in perpetuity without expiration.
+

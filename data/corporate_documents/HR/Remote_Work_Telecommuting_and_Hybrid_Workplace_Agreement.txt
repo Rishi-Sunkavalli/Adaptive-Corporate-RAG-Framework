@@ -1,0 +1,17 @@
+# DOCUMENT METADATA
+# Document ID: HR-DOC-003
+# Title: Remote Work, Telecommuting and Hybrid Workplace Agreement
+# Department: HR
+# Version: 2.0
+# Effective Date: 2026-02-01
+# Security Clearance: Internal
+
+## 1. Hybrid Work Model Eligibility
+Full-time employees whose job functions do not mandate physical on-site presence (such as data center operators and facilities engineers) may adopt a 3/2 hybrid model: a minimum of 3 days working from the designated company regional office and up to 2 days working remotely each work week.
+
+## 2. Home Office Ergonomic Stipend
+New full-time remote or hybrid employees are provided a one-time home office setup reimbursement of up to $800 USD within their first 90 days of employment. Eligible items include ergonomic chairs, external monitors, adjustable desk converters, and noise-canceling headsets.
+
+## 3. Work From Anywhere (WFA) International Travel Limit
+Employees may request to work remotely from an approved international country for up to 30 cumulative calendar days per calendar year. Requests must be logged 21 business days in advance to evaluate cross-border corporate tax presence and visa compliance.
+

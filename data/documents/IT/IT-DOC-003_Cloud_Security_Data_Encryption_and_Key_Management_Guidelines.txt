@@ -1,0 +1,17 @@
+# DOCUMENT METADATA
+# Document ID: IT-DOC-003
+# Title: Cloud Security, Data Encryption and Key Management Guidelines
+# Department: IT
+# Version: 2.2
+# Effective Date: 2026-02-15
+# Security Clearance: Confidential
+
+## 1. Encryption at Rest Standards
+All data stored in enterprise cloud storage buckets (AWS S3, Google Cloud Storage, Azure Blob) and relational databases must be encrypted at rest using AES-256 or customer-managed encryption keys (CMEK) managed via Cloud KMS. Unencrypted storage buckets are blocked automatically by Sentinel guardrails.
+
+## 2. Encryption in Transit Protocols
+All network communications traversing external networks or inter-service VPC perimeters must enforce TLS 1.3 encryption (TLS 1.2 minimum). Deprecated cipher suites (TLS 1.0, 1.1, SSLv3, RC4) are blocked at the perimeter API Gateway and Cloudflare Edge.
+
+## 3. Cryptographic Key Rotation Schedules
+Master KMS keys for database and token encryption must undergo automated key rotation every 365 days. Data encryption keys (DEKs) for sensitive financial records must be regenerated at least every 90 days. Key export is strictly disabled across all KMS HSM instances.
+

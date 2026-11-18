@@ -56,18 +56,21 @@
 
 ---
 
-### Slide 7: Corporate Knowledge Corpus & RBAC Security Layer
-- **4 Departments & 8 Manuals:**
-  - HR: Leave & Attendance Policy, Code of Conduct & Benefits.
-  - IT: Access Management Manual, Incident Response & DR SOP.
-  - Finance: Travel & Expense Policy, Procurement & Vendor Payment Guidelines.
-  - Operations: Customer Escalation Matrix, Business Continuity Plan.
-- **RBAC Matrix:** Pre-retrieval role filtration ensures general staff cannot query restricted financial procurement or infrastructure DR documents.
+### Slide 7: Enterprise Knowledge Corpus & Multi-Format Datasets
+- **5 Departments & 14 Policies:**
+  - **HR:** Global Leave Policy, Code of Conduct & Ethics, Remote Work & Ergonomic Stipend.
+  - **IT:** Infrastructure Incident Response SOP, Access Management & Root Protocol, Cloud Encryption & KMS Key Rotation.
+  - **Finance:** Travel Expense Reimbursement, Procurement & 3-Way Matching, CapEx Asset Depreciation.
+  - **Operations:** Business Continuity Plan, Customer Support Escalation Matrix, Supply Chain Vendor Quality SOP.
+  - **Legal & Governance:** Master Services Agreement (MSA) Standards, GDPR & CCPA Data Privacy Manual.
+- **Multi-Format Datasets:** Provided in JSON, JSONL, CSV, Apache Parquet, Word DOCX, and Adobe PDF.
+- **RBAC Matrix:** Pre-retrieval role filtration ensures general staff cannot query restricted financial procurement, infrastructure root access, or disaster recovery documents.
 
 ---
 
-### Slide 8: Ingestion, Chunking & Hybrid Retrieval Engine
-- **Semantic Chunking:** 180 words per chunk with 30-word overlap, preserving section headings and document breadcrumbs.
+### Slide 8: Multi-Format Ingestion & Hybrid Retrieval Engine
+- **Multi-Format Parsing:** Native parsers for structured datasets (JSON, CSV, Parquet) and document binaries (Word DOCX, Adobe PDF, and TXT).
+- **Semantic Chunking:** 180 words per chunk with 30-word overlap, preserving section headings, table entities, and document breadcrumbs.
 - **Hybrid Retrieval:** Dense 384-d semantic vectors combined with BM25 Okapi lexical scoring via Reciprocal Rank Fusion (RRF constant k=60).
 - **Cross-Encoder Reranker:** Evaluates term proximity, bigram overlap, and section affinity for complex comparative queries.
 
@@ -75,10 +78,10 @@
 
 ### Slide 9: Query Analysis & State Representation
 - **State Features (d=6):**
-  - Intent: Factual, Procedural, Comparative, Policy Verification.
+  - Intent: Factual, Numeric/Lookup, Procedural, Comparative, Policy Verification, Security Probes, and Refusal Guards.
   - Length Bins: Short (<10 words), Medium (10-22 words), Long (>22 words).
   - Complexity: Low, Medium, High.
-  - Department signals: HR, IT, Finance, Operations, General.
+  - Department signals: HR, IT, Finance, Operations, Legal, General.
 - **Feature Vector:** `x = [1.0, intent_norm, complexity_norm, length_norm, scaled_words, domain_flag]^T`.
 
 ---
@@ -105,7 +108,7 @@
 ---
 
 ### Slide 13: Experimental Design & Comparative Methodology
-- **Held-Out Test Queries:** 20 diverse enterprise questions covering factual, comparative, procedural, and out-of-domain edge cases.
+- **Held-Out Test Queries:** 50 gold-annotated corporate questions covering factual, comparative, procedural, numeric/lookup, RBAC security probes, and out-of-domain edge cases.
 - **Evaluated Baselines:**
   1. Fixed-Parameter RAG (Static K=5, threshold=0.50, dense search).
   2. Query-Aware Heuristic Baseline (Rule-based switching).
@@ -113,17 +116,17 @@
 
 ---
 
-### Slide 14: Empirical Benchmark Results
+### Slide 14: Empirical Benchmark Results (50 Test Queries)
 | Metric / Dimension | Fixed RAG (K=5) | Heuristic Baseline | Adaptive RL-RAG | RL Improvement Δ |
 | :--- | :--- | :--- | :--- | :--- |
-| **Precision @ 5** | 0.7000 | 0.6600 | **0.7625** | **+8.9%** |
-| **Recall @ 5** | 0.7000 | 0.7000 | **0.9750** | **+39.3% (Substantial)** |
-| **Mean Reciprocal Rank (MRR)** | 0.7000 | 0.7000 | **0.9750** | **+39.3%** |
-| **Faithfulness Score** | 1.0000 | 1.0000 | **1.0000** | **100% Grounded** |
-| **Answer Relevance** | 0.7030 | 0.7160 | **0.8057** | **+14.6%** |
-| **Mean Latency (ms)** | 39.30 ms | 76.22 ms | **107.82 ms** | Real-time interactive |
-| **Multi-Objective Reward** | 0.5550 | 0.5507 | **0.6999** | **+26.1% Higher Utility** |
-| **RBAC Security Leakage** | 0.00% | 0.00% | **0.00%** | **Zero Security Leaks** |
+| **Precision @ 5** | 0.6800 | 0.6960 | **0.8093** | **+19.0%** |
+| **Recall @ 5** | 0.6800 | 0.7200 | **0.9400** | **+38.2% (Substantial)** |
+| **Mean Reciprocal Rank (MRR)** | 0.6800 | 0.7200 | **0.9300** | **+36.8%** |
+| **Faithfulness Score** | 1.0000 | 1.0000 | **0.9920** | **High Evidence Grounding** |
+| **Answer Relevance** | 0.6805 | 0.6928 | **0.7857** | **+15.5%** |
+| **Mean Latency (ms)** | 37.95 ms | 57.46 ms | **82.16 ms** | Real-time interactive (<100ms) |
+| **Multi-Objective Reward** | 0.5382 | 0.5436 | **0.6781** | **+26.0% Higher Utility** |
+| **RBAC Security Leakage** | 0.00% | 0.00% | **0.00%** | **Zero Security Leaks (0/50)** |
 
 ---
 

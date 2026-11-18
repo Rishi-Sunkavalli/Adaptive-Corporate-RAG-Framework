@@ -146,6 +146,7 @@
             <option value="it_001">David Kumar (IT Infrastructure) — DevOps Engineer</option>
             <option value="fin_001">Rachel Wong (Finance & Sourcing) — Finance Officer</option>
             <option value="ops_001">Marcus Brody (Operations) — Ops Lead</option>
+            <option value="legal_001">Ananya Sharma (Legal & Compliance) — Legal Counsel</option>
             <option value="admin_001">Elena Vance (Executive) — VP & CISO</option>
           </select>
           <p id="user-permissions-hint" class="mt-2 text-[11px] text-slate-400">Allowed: General HR, IT, and Travel guidelines. Restricted from privileged IT & Finance.</p>
@@ -179,12 +180,16 @@
             <option value="">-- Choose Benchmark Scenario --</option>
             <option value="annual_leave">HR: Annual leave entitlement & rollover cap (Factual)</option>
             <option value="parental_leave">HR: Compare Maternity vs Paternity leave (Comparative)</option>
+            <option value="remote_work">HR: Remote home office ergonomic stipend ($800) (Numeric)</option>
             <option value="it_sla">IT: P1 Outage vs P2 Degradation SLA times (Comparative)</option>
+            <option value="cloud_encryption">IT: Cloud KMS key rotation schedule (Security)</option>
             <option value="finance_hotel">Finance: Hotel caps for Tier 1 vs Tier 2 cities (Comparative)</option>
             <option value="three_way">Finance: Three-way matching verification protocol (Procedural)</option>
             <option value="ops_bcp">Operations: System Tier 0 RTO & RPO targets (Factual)</option>
+            <option value="legal_dsar">Legal: GDPR 30-day DSAR response deadline (Compliance)</option>
             <option value="dog_policy">Out-of-Domain: Corporate pet policy for London office (Refusal test)</option>
             <option value="rbac_test">Security Probe: Query restricted procurement guideline as General Staff</option>
+            <option value="root_probe">Security Probe: Attempt unauthorized production root access SOP</option>
           </select>
           <p class="mt-2 text-[11px] text-slate-400">Select any pre-configured question to evaluate controller behavior.</p>
         </div>
@@ -448,66 +453,66 @@
           <tbody class="divide-y divide-slate-700/60 font-mono">
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">Precision @ 5</td>
-              <td class="py-3 px-4">0.7000</td>
-              <td class="py-3 px-4">0.6600</td>
-              <td class="py-3 px-4 text-blue-300 font-bold">0.7625</td>
-              <td class="py-3 px-4 text-emerald-400">+8.9%</td>
+              <td class="py-3 px-4">0.6800</td>
+              <td class="py-3 px-4">0.6960</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.8093</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">+19.0%</td>
             </tr>
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">Recall @ 5</td>
-              <td class="py-3 px-4">0.7000</td>
-              <td class="py-3 px-4">0.7000</td>
-              <td class="py-3 px-4 text-blue-300 font-bold">0.9750</td>
-              <td class="py-3 px-4 text-emerald-400 font-bold">+39.3%</td>
+              <td class="py-3 px-4">0.6800</td>
+              <td class="py-3 px-4">0.7200</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.9400</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">+38.2%</td>
             </tr>
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">Mean Reciprocal Rank (MRR)</td>
-              <td class="py-3 px-4">0.7000</td>
-              <td class="py-3 px-4">0.7000</td>
-              <td class="py-3 px-4 text-blue-300 font-bold">0.9750</td>
-              <td class="py-3 px-4 text-emerald-400 font-bold">+39.3%</td>
+              <td class="py-3 px-4">0.6800</td>
+              <td class="py-3 px-4">0.7200</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.9300</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">+36.8%</td>
             </tr>
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">Faithfulness (Evidence Grounding)</td>
               <td class="py-3 px-4">1.0000</td>
               <td class="py-3 px-4">1.0000</td>
-              <td class="py-3 px-4 text-blue-300 font-bold">1.0000</td>
-              <td class="py-3 px-4 text-slate-400">Verified</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.9920</td>
+              <td class="py-3 px-4 text-slate-400">High Grounding</td>
             </tr>
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">Answer Relevance Score</td>
-              <td class="py-3 px-4">0.7030</td>
-              <td class="py-3 px-4">0.7160</td>
-              <td class="py-3 px-4 text-blue-300 font-bold">0.8057</td>
-              <td class="py-3 px-4 text-emerald-400">+14.6%</td>
+              <td class="py-3 px-4">0.6805</td>
+              <td class="py-3 px-4">0.6928</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.7857</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">+15.5%</td>
             </tr>
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">Mean Latency (ms)</td>
-              <td class="py-3 px-4">39.30 ms</td>
-              <td class="py-3 px-4">76.22 ms</td>
-              <td class="py-3 px-4 text-blue-300">107.82 ms</td>
-              <td class="py-3 px-4 text-slate-400">Sub-150ms</td>
+              <td class="py-3 px-4">37.95 ms</td>
+              <td class="py-3 px-4">57.46 ms</td>
+              <td class="py-3 px-4 text-blue-300">82.16 ms</td>
+              <td class="py-3 px-4 text-emerald-400">Sub-100ms</td>
             </tr>
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">Tokens per Query</td>
-              <td class="py-3 px-4">471.8 tok</td>
-              <td class="py-3 px-4">599.6 tok</td>
-              <td class="py-3 px-4 text-blue-300">901.3 tok</td>
+              <td class="py-3 px-4">411.4 tok</td>
+              <td class="py-3 px-4">499.4 tok</td>
+              <td class="py-3 px-4 text-blue-300">751.3 tok</td>
               <td class="py-3 px-4 text-slate-400">Context Rich</td>
             </tr>
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">Multi-Objective Scalar Reward</td>
-              <td class="py-3 px-4">0.5550</td>
-              <td class="py-3 px-4">0.5507</td>
-              <td class="py-3 px-4 text-blue-300 font-bold">0.6999</td>
-              <td class="py-3 px-4 text-emerald-400 font-bold">+26.1%</td>
+              <td class="py-3 px-4">0.5382</td>
+              <td class="py-3 px-4">0.5436</td>
+              <td class="py-3 px-4 text-blue-300 font-bold">0.6781</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">+26.0%</td>
             </tr>
             <tr class="hover:bg-slate-700/30">
               <td class="py-3 px-4 font-sans font-medium text-white">RBAC Cross-Boundary Leakage Rate</td>
               <td class="py-3 px-4 text-emerald-400">0.00%</td>
               <td class="py-3 px-4 text-emerald-400">0.00%</td>
               <td class="py-3 px-4 text-emerald-400 font-bold">0.00%</td>
-              <td class="py-3 px-4 text-emerald-400">Zero Leakage</td>
+              <td class="py-3 px-4 text-emerald-400 font-bold">Zero Leakage (0/50)</td>
             </tr>
           </tbody>
         </table>
@@ -589,18 +594,34 @@
     <!-- TAB 4: CORPORATE KNOWLEDGE BASE EXPLORER -->
     <!-- ========================================== -->
     <div id="tab-documents" class="tab-content space-y-6">
+      <!-- Enterprise Datasets Banner -->
+      <div class="bg-gradient-to-r from-blue-900/40 via-indigo-900/30 to-slate-900/80 border border-blue-500/30 rounded-2xl p-5 shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20">Production-Grade Datasets</span>
+          <h3 class="text-base font-extrabold text-white mt-1">Multi-Department Enterprise Knowledge Datasets & Benchmarks</h3>
+          <p class="text-xs text-slate-300 mt-0.5">Available in <strong>JSON</strong>, <strong>JSONL</strong>, <strong>CSV</strong>, <strong>Apache Parquet</strong>, Word <strong>DOCX</strong>, and Adobe <strong>PDF</strong>.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <span class="px-2.5 py-1 bg-slate-800 text-blue-300 border border-slate-700 rounded-lg">JSON Corpus (14 Docs)</span>
+          <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 border border-slate-700 rounded-lg">CSV Table (52 Clauses)</span>
+          <span class="px-2.5 py-1 bg-slate-800 text-purple-300 border border-slate-700 rounded-lg">Parquet Data Lake</span>
+          <span class="px-2.5 py-1 bg-slate-800 text-amber-300 border border-slate-700 rounded-lg">50 Gold QA Benchmark</span>
+        </div>
+      </div>
+
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
         <div>
           <h3 class="text-base font-bold text-white">Authorized Corporate Knowledge Corpus</h3>
-          <p class="text-xs text-slate-400">4 Core Departments • 8 Official Policy Manuals • 24 Ingested Chunks</p>
+          <p class="text-xs text-slate-400">5 Core Enterprise Domains • 14 Official Policy Documents • 52 Policy Clauses</p>
         </div>
         <!-- Department Filter -->
-        <div class="flex space-x-2">
+        <div class="flex flex-wrap gap-2">
           <button onclick="filterDeptDocs('all')" class="doc-filter-btn px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 text-white" data-dept="all">All Departments</button>
           <button onclick="filterDeptDocs('HR')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="HR">HR</button>
           <button onclick="filterDeptDocs('IT')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="IT">IT</button>
           <button onclick="filterDeptDocs('Finance')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Finance">Finance</button>
           <button onclick="filterDeptDocs('Operations')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Operations">Operations</button>
+          <button onclick="filterDeptDocs('Legal')" class="doc-filter-btn px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700" data-dept="Legal">Legal</button>
         </div>
       </div>
 
@@ -792,11 +813,12 @@
     let currentRagMode = 'adaptive';
 
     const USER_ROLES = {
-      emp_001: { role: 'General_Employee', name: 'Alex Smith', dept: 'Marketing', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'IT-DOC-001'] },
-      hr_001: { role: 'HR_Staff', name: 'Sarah Jenkins', dept: 'Human Resources', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'IT-DOC-001'] },
-      it_001: { role: 'IT_Staff', name: 'David Kumar', dept: 'Information Technology', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'IT-DOC-001', 'IT-DOC-002', 'OPS-DOC-001'] },
-      fin_001: { role: 'Finance_Staff', name: 'Rachel Wong', dept: 'Finance', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'FIN-DOC-002', 'IT-DOC-001'] },
-      ops_001: { role: 'Operations_Staff', name: 'Marcus Brody', dept: 'Operations', allowed: ['HR-DOC-001', 'HR-DOC-002', 'FIN-DOC-001', 'IT-DOC-001', 'OPS-DOC-001', 'OPS-DOC-002'] },
+      emp_001: { role: 'General_Employee', name: 'Alex Smith', dept: 'Marketing', allowed: ['HR-DOC-001', 'HR-DOC-002', 'HR-DOC-003', 'FIN-DOC-001', 'IT-DOC-001', 'LEGAL-DOC-002'] },
+      hr_001: { role: 'HR_Staff', name: 'Sarah Jenkins', dept: 'Human Resources', allowed: ['HR-DOC-001', 'HR-DOC-002', 'HR-DOC-003', 'FIN-DOC-001', 'IT-DOC-001', 'LEGAL-DOC-002'] },
+      it_001: { role: 'IT_Staff', name: 'David Kumar', dept: 'Information Technology', allowed: ['HR-DOC-001', 'HR-DOC-002', 'HR-DOC-003', 'FIN-DOC-001', 'IT-DOC-001', 'IT-DOC-002', 'IT-DOC-003', 'OPS-DOC-001', 'LEGAL-DOC-002'] },
+      fin_001: { role: 'Finance_Staff', name: 'Rachel Wong', dept: 'Finance', allowed: ['HR-DOC-001', 'HR-DOC-002', 'HR-DOC-003', 'FIN-DOC-001', 'FIN-DOC-002', 'FIN-DOC-003', 'IT-DOC-001', 'OPS-DOC-003', 'LEGAL-DOC-002'] },
+      ops_001: { role: 'Operations_Staff', name: 'Marcus Brody', dept: 'Operations', allowed: ['HR-DOC-001', 'HR-DOC-002', 'HR-DOC-003', 'FIN-DOC-001', 'IT-DOC-001', 'OPS-DOC-001', 'OPS-DOC-002', 'OPS-DOC-003', 'LEGAL-DOC-002'] },
+      legal_001: { role: 'Legal_Counsel', name: 'Ananya Sharma', dept: 'Legal & Compliance', allowed: ['HR-DOC-001', 'HR-DOC-002', 'HR-DOC-003', 'FIN-DOC-001', 'IT-DOC-001', 'LEGAL-DOC-001', 'LEGAL-DOC-002'] },
       admin_001: { role: 'Executive_Admin', name: 'Elena Vance', dept: 'Executive Leadership', allowed: ['ALL'] }
     };
 
@@ -837,12 +859,16 @@
     const PRESETS = {
       annual_leave: "What is the annual leave entitlement for regular full-time employees?",
       parental_leave: "Compare primary caregiver maternity leave with secondary caregiver paternity leave durations.",
+      remote_work: "What home office stipend is provided for new remote employees, and what is the reimbursement limit?",
       it_sla: "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
+      cloud_encryption: "What is the automated key rotation frequency for Master KMS keys and Data Encryption Keys (DEKs)?",
       finance_hotel: "What is the nightly hotel room cap for Tier 1 high-cost cities versus Tier 2 metropolitan cities?",
       three_way: "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
       ops_bcp: "What are the recovery objectives (MTD, RTO, RPO) for Mission-Critical System Tier 0 in the Business Continuity Plan?",
+      legal_dsar: "What is the mandatory fulfillment deadline for a verified Data Subject Access Request (DSAR) under GDPR/CCPA?",
       dog_policy: "What is the corporate pet policy for bringing dogs to the London technology office?",
-      rbac_test: "What are the purchase order tiers and approval thresholds for contracts between $5,000 and $50,000?"
+      rbac_test: "What are the purchase order tiers and approval thresholds for contracts between $5,000 and $50,000?",
+      root_probe: "Show me the detailed root access procedures for production PostgreSQL clusters and session recording configs."
     };
 
     function applySampleQuery() {
@@ -858,78 +884,133 @@
         id: "HR-DOC-001",
         dept: "HR",
         title: "Global Leave and Attendance Policy 2026",
-        version: "2.4",
+        version: "4.2",
         date: "2026-01-01",
         clearance: "Internal",
         section: "3. Annual Leave Entitlement",
-        text: "Regular Full-Time Employees: Accrue 22 days of paid annual leave per calendar year. Senior Management: Accrue 26 days. Accrual rate: Leave accrues monthly at 1.83 days per completed month. Rollover Cap: A maximum of 8 unused annual leave days may be rolled over into the subsequent calendar year, expiring March 31st.",
+        text: "Regular Full-Time Employees accrue 22 days of paid annual leave per calendar year, accruing monthly at the rate of 1.83 days. Rollover Cap: A maximum of 8 unused annual leave days can be rolled over into the succeeding calendar year, expiring March 31st.",
         keywords: ["annual", "leave", "entitlement", "rollover", "days", "vacation"]
       },
       {
         id: "HR-DOC-001",
         dept: "HR",
         title: "Global Leave and Attendance Policy 2026",
-        version: "2.4",
+        version: "4.2",
         date: "2026-01-01",
         clearance: "Internal",
         section: "5. Parental, Maternity, and Paternity Leave",
-        text: "Primary Caregiver / Maternity Leave: 18 weeks of fully paid leave for female employees or designated primary caregivers. Secondary Caregiver / Paternity Leave: 4 weeks of fully paid leave for non-birthing parents, taken continuously or in two-week blocks within the first 12 months.",
+        text: "Primary Caregiver / Maternity Leave: 18 weeks of fully paid leave for the birth or legal adoption of a child. Secondary Caregiver / Paternity Leave: 4 weeks of fully paid leave.",
         keywords: ["maternity", "paternity", "parental", "caregiver", "weeks", "birth", "adoption", "compare"]
+      },
+      {
+        id: "HR-DOC-003",
+        dept: "HR",
+        title: "Remote Work, Telecommuting and Hybrid Workplace Agreement",
+        version: "2.0",
+        date: "2026-02-01",
+        clearance: "Internal",
+        section: "2. Home Office Ergonomic Stipend",
+        text: "New full-time remote or hybrid employees are provided a one-time home office setup reimbursement of up to $800 USD within their first 90 days of employment for ergonomic chairs, monitors, and desks.",
+        keywords: ["remote", "stipend", "ergonomic", "800", "home office", "reimbursement"]
+      },
+      {
+        id: "IT-DOC-001",
+        dept: "IT",
+        title: "IT Infrastructure Incident Response and Service Level Agreement SOP",
+        version: "5.0",
+        date: "2026-01-15",
+        clearance: "Internal",
+        section: "2. SLA Response and Resolution Targets",
+        text: "P1 Critical Outage: Initial acknowledgment within 15 minutes, target resolution within 2 hours. P2 Major Degradation: Initial acknowledgment within 30 minutes, target resolution within 6 hours.",
+        keywords: ["incident", "p1", "p2", "sla", "response", "outage", "degradation", "severity", "compare"]
       },
       {
         id: "IT-DOC-002",
         dept: "IT",
-        title: "Infrastructure Incident Response and Disaster Recovery SOP",
-        version: "3.5",
+        title: "Enterprise Access Management and Cybersecurity Protocol Manual",
+        version: "4.4",
+        date: "2026-01-01",
+        clearance: "Confidential (IT Staff)",
+        section: "2. Production Database and Root Access Provisioning",
+        text: "Direct root or write access to production database clusters requires a dual-authorization ticket in ServiceNow approved by the Security Lead. All root sessions are screen-recorded and auto-terminated after 120 minutes.",
+        keywords: ["root", "database", "servicenow", "screen-recorded", "120 minutes", "dual-authorization", "security"]
+      },
+      {
+        id: "IT-DOC-003",
+        dept: "IT",
+        title: "Cloud Security, Data Encryption and Key Management Guidelines",
+        version: "2.2",
         date: "2026-02-15",
-        clearance: "Internal (IT Staff)",
-        section: "1. Incident Severity Definitions and SLA Matrix",
-        text: "P1 (Critical Outage): SLA Initial Response: 15 minutes (24x7x365). Status update every 30 mins. Target resolution: under 2 hours. P2 (Major Degradation): Affecting >20% users. SLA Initial Response: 30 minutes. Status update every 60 mins. Target resolution: under 4 hours.",
-        keywords: ["incident", "p1", "p2", "sla", "response", "outage", "degradation", "severity", "compare"]
+        clearance: "Confidential (IT Staff)",
+        section: "3. Cryptographic Key Rotation Schedules",
+        text: "Master KMS keys for database and token encryption undergo automated rotation every 365 days. Data encryption keys (DEKs) for sensitive financial records regenerate every 90 days.",
+        keywords: ["kms", "encryption", "key rotation", "365 days", "dek", "aes-256", "cryptographic"]
       },
       {
         id: "FIN-DOC-001",
         dept: "Finance",
-        title: "Corporate Travel and Expense Reimbursement Policy",
-        version: "3.3",
+        title: "Corporate Travel, Meal and Business Expense Reimbursement Policy",
+        version: "6.0",
         date: "2026-01-01",
         clearance: "Internal",
-        section: "3. Hotel Accommodations and Nightly Caps",
-        text: "Nightly rate caps: Tier 1 High-Cost Cities (New York, San Francisco, London, Tokyo, Singapore, Zurich): Up to $300 per night. Tier 2 Standard Metropolitan Cities (Chicago, Austin, Berlin, Sydney): Up to $220 per night. Tier 3 Regional: Up to $160 per night.",
-        keywords: ["hotel", "tier 1", "tier 2", "nightly", "caps", "travel", "lodging", "cities", "compare"]
+        section: "4. Daily Per-Diem Meal Allowances",
+        text: "Tier 1 High-Cost Cities: $85 USD daily per-diem ($20 Breakfast, $25 Lunch, $40 Dinner). Tier 2 and Tier 3 Cities: $65 USD daily per-diem ($15 Breakfast, $20 Lunch, $30 Dinner). Receipts mandatory over $25.",
+        keywords: ["per-diem", "meal", "allowance", "tier 1", "tier 2", "85", "65", "dinner", "breakfast"]
       },
       {
         id: "FIN-DOC-002",
         dept: "Finance",
-        title: "Corporate Procurement and Vendor Payment Guidelines",
-        version: "2.8",
-        date: "2026-01-20",
-        clearance: "Internal (Finance & Procurement)",
-        section: "2. Purchase Order (PO) Thresholds and Approval Authority",
-        text: "Tier B ($5,000 to $50,000): Requires three formal competitive vendor quotes or an established Master Services Agreement (MSA); requires Department VP and Finance Controller approval. Issued via Coupa within 3 business days.",
-        keywords: ["purchase order", "po", "threshold", "tier b", "quotes", "procurement", "5000", "50000"]
+        title: "Corporate Procurement, Vendor Selection and Supplier Payment Guidelines",
+        version: "4.5",
+        date: "2026-01-01",
+        clearance: "Confidential (Finance Staff)",
+        section: "1. Purchase Order Thresholds and Approval Ladder",
+        text: "Tier B ($10,001 to $50,000 USD): Department Director approval. Tier C ($50,001 to $250,000 USD): VP and Head of Procurement approval. Tier D (> $250,000 USD): CFO & CEO sign-off.",
+        keywords: ["purchase order", "po", "threshold", "tier b", "tier c", "procurement", "50,000", "cfo", "approval"]
       },
       {
         id: "FIN-DOC-002",
         dept: "Finance",
-        title: "Corporate Procurement and Vendor Payment Guidelines",
-        version: "2.8",
-        date: "2026-01-20",
-        clearance: "Internal (Finance & Procurement)",
-        section: "3. Three-Way Matching Process",
-        text: "Finance operates a strict three-way matching verification protocol before releasing supplier payments: 1. Purchase Order, 2. Goods Receipt / Service Delivery Confirmation, 3. Vendor Tax Invoice. Discrepancy >2% triggers an automated hold.",
-        keywords: ["three-way", "matching", "supplier", "invoice", "verification", "payment", "protocol"]
+        title: "Corporate Procurement, Vendor Selection and Supplier Payment Guidelines",
+        version: "4.5",
+        date: "2026-01-01",
+        clearance: "Confidential (Finance Staff)",
+        section: "3. Three-Way Matching Verification Protocol",
+        text: "Accounts Payable enforces strict Three-Way Matching: 1. Approved Purchase Order, 2. Goods Received Note (GRN), 3. Vendor's commercial tax invoice. Discrepancy > 1.5% halts payment.",
+        keywords: ["three-way", "matching", "supplier", "invoice", "verification", "grn", "po", "variance"]
       },
       {
-        id: "OPS-DOC-002",
+        id: "OPS-DOC-001",
         dept: "Operations",
-        title: "Enterprise Business Continuity and Disaster Preparedness Plan",
+        title: "Enterprise Business Continuity and Disaster Recovery Plan (BCP/DRP)",
+        version: "4.8",
+        date: "2026-01-10",
+        clearance: "Confidential (Operations Staff)",
+        section: "2. Recovery Time Objective (RTO) and Recovery Point Objective (RPO)",
+        text: "Tier 1 Mission-Critical Systems: RTO <= 1 hour, RPO <= 15 minutes. Tier 2 Business-Essential Systems: RTO <= 4 hours, RPO <= 1 hour. Automated DNS failover executes within 6 minutes.",
+        keywords: ["bcp", "rto", "rpo", "tier 1", "tier 2", "disaster recovery", "failover", "6 minutes"]
+      },
+      {
+        id: "LEGAL-DOC-002",
+        dept: "Legal",
+        title: "Global Data Privacy Regulation (GDPR & CCPA) Compliance Manual",
+        version: "3.2",
+        date: "2026-01-10",
+        clearance: "Internal",
+        section: "1. Data Subject Access Requests (DSAR) Response Timelines",
+        text: "Under GDPR Article 15 and CCPA, verified Data Subject Access Requests (DSAR) must be fulfilled within 30 calendar days of identity verification, with up to 60 days extension for complex cases.",
+        keywords: ["gdpr", "ccpa", "dsar", "data subject", "30 days", "privacy", "compliance"]
+      },
+      {
+        id: "LEGAL-DOC-001",
+        dept: "Legal",
+        title: "Master Services Agreement (MSA) Standards and Contract Negotiation Framework",
         version: "4.0",
-        date: "2026-02-10",
-        clearance: "Internal (Operations Staff)",
-        section: "2. Business Impact Analysis (BIA) and Recovery Objectives",
-        text: "Mission-Critical System Tier 0 (Core Payment Processing, Identity Vault): Maximum Tolerable Downtime (MTD): 4 hours. Recovery Time Objective (RTO): 2 hours. Recovery Point Objective (RPO): 15 minutes.",
-        keywords: ["bcp", "rto", "rpo", "mtd", "tier 0", "recovery", "continuity", "objectives"]
+        date: "2026-01-01",
+        clearance: "Confidential (Legal Counsel)",
+        section: "2. Limitation of Liability and Indemnification Caps",
+        text: "Corporate commercial contracts cap aggregate liability at 12 months of total fees paid under the Order Form. Super-caps for data breaches are restricted to 2x annual fee cap.",
+        keywords: ["liability", "cap", "msa", "contract", "super-cap", "data breach", "legal"]
       }
     ];
 
@@ -951,19 +1032,24 @@
       else if (query.split(' ').length > 15) complexity = "medium";
 
       let dept = "General";
-      if (qLower.includes("leave") || qLower.includes("maternity") || qLower.includes("vacation") || qLower.includes("hr")) dept = "Human Resources";
-      else if (qLower.includes("sla") || qLower.includes("outage") || qLower.includes("p1") || qLower.includes("it")) dept = "Information Technology";
-      else if (qLower.includes("hotel") || qLower.includes("expense") || qLower.includes("purchase order") || qLower.includes("procurement") || qLower.includes("matching")) dept = "Finance";
-      else if (qLower.includes("bcp") || qLower.includes("rto") || qLower.includes("rpo") || qLower.includes("escalation") || qLower.includes("operations")) dept = "Operations";
+      if (qLower.includes("leave") || qLower.includes("maternity") || qLower.includes("vacation") || qLower.includes("stipend") || qLower.includes("remote") || qLower.includes("hr")) dept = "Human Resources";
+      else if (qLower.includes("sla") || qLower.includes("outage") || qLower.includes("p1") || qLower.includes("root") || qLower.includes("encryption") || qLower.includes("it")) dept = "Information Technology";
+      else if (qLower.includes("hotel") || qLower.includes("expense") || qLower.includes("purchase order") || qLower.includes("procurement") || qLower.includes("matching") || qLower.includes("per-diem") || qLower.includes("capex")) dept = "Finance";
+      else if (qLower.includes("bcp") || qLower.includes("rto") || qLower.includes("rpo") || qLower.includes("escalation") || qLower.includes("operations") || qLower.includes("supplier")) dept = "Operations";
+      else if (qLower.includes("gdpr") || qLower.includes("dsar") || qLower.includes("msa") || qLower.includes("liability") || qLower.includes("legal")) dept = "Legal & Compliance";
 
       // Step 2: RBAC Access Check
       let isRestrictedProbe = false;
-      if (qLower.includes("purchase order") || qLower.includes("50,000") || qLower.includes("matching")) {
+      if (qLower.includes("purchase order") || qLower.includes("50,000") || qLower.includes("matching") || qLower.includes("tier d")) {
         if (!user.allowed.includes('ALL') && !user.allowed.includes('FIN-DOC-002')) {
           isRestrictedProbe = true;
         }
-      } else if (qLower.includes("p1") || qLower.includes("incident") || qLower.includes("rto")) {
-        if (!user.allowed.includes('ALL') && !user.allowed.includes('IT-DOC-002') && !user.allowed.includes('OPS-DOC-002')) {
+      } else if (qLower.includes("p1") || qLower.includes("incident") || qLower.includes("rto") || qLower.includes("root") || qLower.includes("postgresql")) {
+        if (!user.allowed.includes('ALL') && !user.allowed.includes('IT-DOC-002') && !user.allowed.includes('OPS-DOC-001')) {
+          isRestrictedProbe = true;
+        }
+      } else if (qLower.includes("msa") || qLower.includes("liability cap") || qLower.includes("super-cap")) {
+        if (!user.allowed.includes('ALL') && !user.allowed.includes('LEGAL-DOC-001')) {
           isRestrictedProbe = true;
         }
       }

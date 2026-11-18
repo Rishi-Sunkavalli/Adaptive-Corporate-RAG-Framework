@@ -1,0 +1,177 @@
+[
+  {
+    "doc_id": "IT-DOC-001",
+    "title": "IT Infrastructure Incident Response and Service Level Agreement SOP",
+    "department": "IT",
+    "category": "Infrastructure & Operations",
+    "security_clearance": "Internal",
+    "version": "5.0",
+    "effective_date": "2026-01-15",
+    "owner": "IT Infrastructure & Cloud Reliability Engineering",
+    "allowed_roles": [
+      "General_Employee",
+      "HR_Staff",
+      "IT_Staff",
+      "Finance_Staff",
+      "Operations_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Incident Classification and Severity Levels",
+        "content": "IT production incidents are classified into 4 standardized severity tiers: P1 (Critical Outage: Core customer-facing services or entire enterprise network down); P2 (Major Degradation: Vital service heavily impaired with no viable workaround); P3 (Moderate Impact: Non-critical feature failure affecting limited users); P4 (Minor Request: Routine inquiry, documentation bug, or non-urgent config change).",
+        "key_entities": [
+          "P1 Critical Outage",
+          "P2 Major Degradation",
+          "P3 Moderate Impact",
+          "P4 Minor Request"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. SLA Response and Resolution Targets",
+        "content": "Mandatory SLAs are defined as follows: P1 Critical incidents require initial acknowledgment within 15 minutes and target resolution or failover within 2 hours. P2 Major incidents require acknowledgment within 30 minutes and target resolution within 6 hours. P3 incidents require acknowledgment within 4 business hours and resolution within 24 hours. P4 requests require response within 8 business hours and resolution within 5 business days.",
+        "key_entities": [
+          "P1: 15 min response / 2 hr resolution",
+          "P2: 30 min response / 6 hr resolution",
+          "P3: 4 hr response / 24 hr resolution",
+          "P4: 8 hr response / 5 business days"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Critical Outage (P1) Escalation Ladder",
+        "content": "When a P1 incident is declared: at T+0, Incident Commander activates War Room bridge and PagerDuty alert. At T+15m, first status bulletin posted to status.company.internal. At T+30m with no resolution, Director of Infrastructure notified. At T+60m without root cause containment, Chief Information Officer (CIO) and VP of Engineering are briefed. Executive stakeholder updates occur every 30 minutes thereafter.",
+        "key_entities": [
+          "T+0 War Room bridge",
+          "T+15m status bulletin",
+          "T+30m Director notification",
+          "T+60m CIO and VP briefing",
+          "status.company.internal"
+        ]
+      },
+      {
+        "section_number": "4",
+        "section_title": "4. Post-Incident Review and RCA Requirements",
+        "content": "For every P1 and P2 incident, an engineering blameless Post-Incident Review (PIR) must be completed within 72 hours of incident resolution. The resulting Root Cause Analysis (RCA) document must identify root causes, 5 Whys, timeline, and corrective preventive actions assigned with explicit JIRA owners.",
+        "key_entities": [
+          "72 hours post-incident review",
+          "Root Cause Analysis (RCA)",
+          "5 Whys",
+          "Blameless post-mortem"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "IT-DOC-002",
+    "title": "Enterprise Access Management and Cybersecurity Protocol Manual",
+    "department": "IT",
+    "category": "Information Security & IAM",
+    "security_clearance": "Confidential",
+    "version": "4.4",
+    "effective_date": "2026-01-01",
+    "owner": "Chief Information Security Officer (CISO) Directorate",
+    "allowed_roles": [
+      "IT_Staff",
+      "Operations_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Principle of Least Privilege and Role-Based Access Control",
+        "content": "Access to enterprise systems, production databases, and cloud infrastructure follows the Principle of Least Privilege. Access is granted strictly based on documented job responsibilities and must be approved by the system owner and employee line manager before provisioning. Blanket or wild-card permissions are prohibited.",
+        "key_entities": [
+          "Principle of Least Privilege",
+          "Role-Based Access Control (RBAC)",
+          "System owner approval",
+          "No blanket permissions"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Production Database and Root Access Provisioning",
+        "content": "Direct root or write access to production database clusters (PostgreSQL, BigQuery, Snowflake) is strictly restricted to senior reliability engineers during active emergency maintenance windows. Access requires a dual-authorization ticket in ServiceNow, approved by the Security Lead. All root sessions are screen-recorded and auto-terminated after a maximum duration of 120 minutes.",
+        "key_entities": [
+          "ServiceNow dual-authorization",
+          "Production database",
+          "Screen-recorded sessions",
+          "120 minutes maximum duration",
+          "Security Lead approval"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Multi-Factor Authentication (MFA) Standards",
+        "content": "FIDO2 WebAuthn hardware security keys (e.g. YubiKey) or managed enterprise authenticator applications with number matching are mandatory for all employees. SMS-based OTP is deprecated and rejected for production server authentication. Passwords must contain a minimum of 16 characters and expire every 90 days for privileged administrative accounts.",
+        "key_entities": [
+          "FIDO2 WebAuthn / YubiKey",
+          "Number matching",
+          "SMS OTP deprecated",
+          "16 characters min",
+          "90 days expiration for privileged"
+        ]
+      },
+      {
+        "section_number": "4",
+        "section_title": "4. Offboarding and Emergency Access Revocation",
+        "content": "Upon notification of an involuntary employee termination, IT Security must execute immediate automated access revocation across Okta SSO, Google Workspace, GitHub Enterprise, AWS IAM, and VPN within 15 minutes of HR notice. For voluntary resignations, revocation is scheduled for 5:00 PM local time on the employee's final business day.",
+        "key_entities": [
+          "15 minutes immediate revocation for involuntary",
+          "Okta SSO / AWS IAM",
+          "5:00 PM on final day for voluntary"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "IT-DOC-003",
+    "title": "Cloud Security, Data Encryption and Key Management Guidelines",
+    "department": "IT",
+    "category": "Security Engineering",
+    "security_clearance": "Confidential",
+    "version": "2.2",
+    "effective_date": "2026-02-15",
+    "owner": "Cloud Security Architecture",
+    "allowed_roles": [
+      "IT_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Encryption at Rest Standards",
+        "content": "All data stored in enterprise cloud storage buckets (AWS S3, Google Cloud Storage, Azure Blob) and relational databases must be encrypted at rest using AES-256 or customer-managed encryption keys (CMEK) managed via Cloud KMS. Unencrypted storage buckets are blocked automatically by Sentinel guardrails.",
+        "key_entities": [
+          "AES-256",
+          "Customer-Managed Encryption Keys (CMEK)",
+          "Cloud KMS",
+          "Sentinel guardrails"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Encryption in Transit Protocols",
+        "content": "All network communications traversing external networks or inter-service VPC perimeters must enforce TLS 1.3 encryption (TLS 1.2 minimum). Deprecated cipher suites (TLS 1.0, 1.1, SSLv3, RC4) are blocked at the perimeter API Gateway and Cloudflare Edge.",
+        "key_entities": [
+          "TLS 1.3",
+          "TLS 1.2 minimum",
+          "API Gateway",
+          "Cloudflare Edge"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Cryptographic Key Rotation Schedules",
+        "content": "Master KMS keys for database and token encryption must undergo automated key rotation every 365 days. Data encryption keys (DEKs) for sensitive financial records must be regenerated at least every 90 days. Key export is strictly disabled across all KMS HSM instances.",
+        "key_entities": [
+          "365 days KMS key rotation",
+          "90 days DEK regeneration",
+          "HSM hardware protection"
+        ]
+      }
+    ]
+  }
+]

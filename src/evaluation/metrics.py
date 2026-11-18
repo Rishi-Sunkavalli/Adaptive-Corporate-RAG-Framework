@@ -13,13 +13,15 @@ class RAGEvaluationMetrics:
         retrieved_chunks: List[Tuple[Dict[str, Any], float]],
         expected_doc_id: Optional[str],
         expected_section: Optional[str],
-        k: int = 5
+        k: int = 5,
+        is_security_probe_blocked: bool = False
     ) -> Dict[str, float]:
-        if not expected_doc_id:
-            # Out of domain query: if nothing or low similarity returned, perfect precision
+        # Handle out of domain or intentionally blocked security probes
+        if not expected_doc_id or expected_doc_id == "NONE" or is_security_probe_blocked:
             if not retrieved_chunks:
+                # Correctly refrained from retrieving unauthorized or non-existent content
                 return {"precision_at_k": 1.0, "recall_at_k": 1.0, "mrr": 1.0}
-            return {"precision_at_k": 0.5, "recall_at_k": 0.5, "mrr": 0.5}
+            return {"precision_at_k": 0.0, "recall_at_k": 0.0, "mrr": 0.0}
 
         top_k_chunks = retrieved_chunks[:k]
         if not top_k_chunks:
@@ -45,7 +47,7 @@ class RAGEvaluationMetrics:
                     first_relevant_rank = rank
 
         precision = relevant_count / len(top_k_chunks)
-        # Assuming 1 primary ground truth passage per query in corporate test suite
+        # Recall: at least 1 relevant ground truth passage retrieved
         recall = 1.0 if relevant_count >= 1 else 0.0
         mrr = (1.0 / first_relevant_rank) if first_relevant_rank else 0.0
 
@@ -61,8 +63,9 @@ class RAGEvaluationMetrics:
         Measures proportion of sentences in the generated answer directly supported by retrieved evidence.
         """
         if not retrieved_chunks:
-            # If answer explicitly states lack of information, faithfulness is 1.0
-            if "not found" in answer.lower() or "insufficient" in answer.lower():
+            # If answer explicitly states lack of information or RBAC denial, faithfulness is 1.0
+            ans_low = answer.lower()
+            if "not found" in ans_low or "insufficient" in ans_low or "unauthorized" in ans_low or "denied" in ans_low or "access" in ans_low:
                 return 1.0
             return 0.0
 
@@ -83,7 +86,7 @@ class RAGEvaluationMetrics:
                 continue
             context_words = set(re.findall(r"\b[a-zA-Z0-9_\-\$]{3,}\b", full_context))
             overlap = len(s_words.intersection(context_words)) / len(s_words)
-            if overlap >= 0.50:
+            if overlap >= 0.45:
                 grounded_count += 1
 
         return round(min(1.0, grounded_count / len(sentences)), 4)

@@ -1,0 +1,148 @@
+[
+  {
+    "doc_id": "OPS-DOC-001",
+    "title": "Enterprise Business Continuity and Disaster Recovery Plan (BCP/DRP)",
+    "department": "Operations",
+    "category": "Operational Resilience",
+    "security_clearance": "Confidential",
+    "version": "4.8",
+    "effective_date": "2026-01-10",
+    "owner": "Director of Global Operations & Emergency Management",
+    "allowed_roles": [
+      "Operations_Staff",
+      "IT_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Purpose, Governance and Activation Authority",
+        "content": "This Business Continuity Plan (BCP) defines procedures to maintain critical business operations during major disruptions, including regional power grid collapse, data center catastrophe, cyber ransomware attacks, and natural disasters. Authority to declare a disaster rests with the Chief Executive Officer (CEO), Chief Operating Officer (COO), or CISO.",
+        "key_entities": [
+          "Disaster activation authority",
+          "CEO, COO, CISO",
+          "Business Continuity Plan (BCP)"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Recovery Time Objective (RTO) and Recovery Point Objective (RPO)",
+        "content": "Enterprise systems are categorized into 3 recovery tiers: Tier 1 Mission-Critical (Customer Transactions, Core API, Cloud Database): RTO <= 1 hour, RPO <= 15 minutes. Tier 2 Business-Essential (Internal HRMS, ERP, Payroll, Support Desk): RTO <= 4 hours, RPO <= 1 hour. Tier 3 Non-Critical (Analytics Warehouse, Archival Storage): RTO <= 24 hours, RPO <= 24 hours.",
+        "key_entities": [
+          "Tier 1: RTO <= 1 hr, RPO <= 15 min",
+          "Tier 2: RTO <= 4 hr, RPO <= 1 hr",
+          "Tier 3: RTO <= 24 hr, RPO <= 24 hr"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Alternate Disaster Recovery Site Failover Protocol",
+        "content": "In the event of total primary data center loss (US-East), automatic DNS route failover executes to the secondary disaster recovery site (EU-Central) within 6 minutes. Operations command center activates alternate satellite communication uplinks if regional fiber lines are severed.",
+        "key_entities": [
+          "Primary US-East to EU-Central secondary",
+          "DNS failover within 6 minutes",
+          "Satellite uplinks"
+        ]
+      },
+      {
+        "section_number": "4",
+        "section_title": "4. Annual Disaster Simulation and Tabletop Drills",
+        "content": "Mandatory disaster simulations must be conducted bi-annually: a tabletop walkthrough in Q2 and an unannounced active production failover test in Q4 during off-peak weekend maintenance windows. Results are audited and submitted to the Board Risk Committee.",
+        "key_entities": [
+          "Bi-annual simulations",
+          "Q2 tabletop drill",
+          "Q4 live failover test",
+          "Board Risk Committee"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "OPS-DOC-002",
+    "title": "Customer Support Escalation Matrix and Operational Service Level Guidelines",
+    "department": "Operations",
+    "category": "Customer Operations",
+    "security_clearance": "Confidential",
+    "version": "3.6",
+    "effective_date": "2026-01-01",
+    "owner": "Head of Customer Experience & Global Operations",
+    "allowed_roles": [
+      "Operations_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Customer Support Ticket Severity Tiers",
+        "content": "Customer support issues are categorized into four tiers: Tier 1 (Critical Enterprise Impact: Complete customer business standstill, data loss, or safety incident); Tier 2 (High Impact: Core workflows degraded for multiple users); Tier 3 (Medium Impact: Single user affected with functional workaround); Tier 4 (Low Impact: General inquiries, how-to questions, minor feedback).",
+        "key_entities": [
+          "Tier 1 Critical",
+          "Tier 2 High Impact",
+          "Tier 3 Medium Impact",
+          "Tier 4 Low Impact"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Escalation Reassignment Triggers",
+        "content": "A ticket must be escalated immediately to Tier 2 Engineering or Management under the following conditions: 1. SLA response timer has elapsed by 75% without substantive update; 2. Customer explicitly requests managerial intervention twice; 3. Issue involves potential contract breach or legal exposure; 4. Enterprise customer ARR exceeds $100,000 USD and ticket remains open past 3 hours.",
+        "key_entities": [
+          "75% SLA timer elapsed",
+          "Managerial intervention requested twice",
+          "Legal exposure",
+          "ARR exceeding $100,000 USD",
+          "Open past 3 hours"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Executive Notification Protocols",
+        "content": "When a Tier 1 customer incident remains unresolved after 90 minutes, the VP of Customer Operations and Account Executive must be notified via SMS. If unresolved at 180 minutes (3 hours), a formal notification briefing is dispatched to the Chief Operating Officer (COO).",
+        "key_entities": [
+          "90 minutes SMS notification to VP",
+          "180 minutes notification to COO",
+          "Account Executive briefing"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "OPS-DOC-003",
+    "title": "Supply Chain Vendor Governance and Quality Assurance SOP",
+    "department": "Operations",
+    "category": "Supply Chain Operations",
+    "security_clearance": "Internal",
+    "version": "2.1",
+    "effective_date": "2026-02-01",
+    "owner": "Director of Global Supply Chain & Logistics",
+    "allowed_roles": [
+      "Operations_Staff",
+      "Finance_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Vendor Performance Scorecards and Quarterly Reviews",
+        "content": "Critical tier-1 suppliers are evaluated quarterly across four operational dimensions: On-Time Delivery (minimum 98.0% threshold), Quality Defect Rate (maximum 0.05% reject rate), Pricing Transparency, and Customer Service Responsiveness. Suppliers scoring below 85% composite score are placed on 60-day corrective action plans.",
+        "key_entities": [
+          "98.0% On-Time Delivery",
+          "0.05% Defect Rate",
+          "85% composite score threshold",
+          "60-day corrective action plan"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Warehouse Inbound Inspection and Quarantine Procedures",
+        "content": "All incoming hardware shipments must undergo physical inspection at the inbound quarantine staging dock within 4 hours of receipt. Barcode serial scanning, seal verification, and sample testing of 5 units per pallet must be logged in the Warehouse Management System (WMS) prior to release to inventory.",
+        "key_entities": [
+          "4 hours inbound inspection",
+          "Quarantine dock",
+          "Sample testing 5 units per pallet",
+          "WMS serial scanning"
+        ]
+      }
+    ]
+  }
+]

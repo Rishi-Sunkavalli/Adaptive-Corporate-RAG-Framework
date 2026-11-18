@@ -1,0 +1,20 @@
+# DOCUMENT METADATA
+# Document ID: IT-DOC-002
+# Title: Enterprise Access Management and Cybersecurity Protocol Manual
+# Department: IT
+# Version: 4.4
+# Effective Date: 2026-01-01
+# Security Clearance: Confidential
+
+## 1. Principle of Least Privilege and Role-Based Access Control
+Access to enterprise systems, production databases, and cloud infrastructure follows the Principle of Least Privilege. Access is granted strictly based on documented job responsibilities and must be approved by the system owner and employee line manager before provisioning. Blanket or wild-card permissions are prohibited.
+
+## 2. Production Database and Root Access Provisioning
+Direct root or write access to production database clusters (PostgreSQL, BigQuery, Snowflake) is strictly restricted to senior reliability engineers during active emergency maintenance windows. Access requires a dual-authorization ticket in ServiceNow, approved by the Security Lead. All root sessions are screen-recorded and auto-terminated after a maximum duration of 120 minutes.
+
+## 3. Multi-Factor Authentication (MFA) Standards
+FIDO2 WebAuthn hardware security keys (e.g. YubiKey) or managed enterprise authenticator applications with number matching are mandatory for all employees. SMS-based OTP is deprecated and rejected for production server authentication. Passwords must contain a minimum of 16 characters and expire every 90 days for privileged administrative accounts.
+
+## 4. Offboarding and Emergency Access Revocation
+Upon notification of an involuntary employee termination, IT Security must execute immediate automated access revocation across Okta SSO, Google Workspace, GitHub Enterprise, AWS IAM, and VPN within 15 minutes of HR notice. For voluntary resignations, revocation is scheduled for 5:00 PM local time on the employee's final business day.
+

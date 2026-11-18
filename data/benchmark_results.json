@@ -1,41 +1,41 @@
 {
-  "timestamp": "2026-11-18T13:49:37Z",
-  "total_test_queries": 20,
+  "timestamp": "2026-11-18T16:54:44Z",
+  "total_test_queries": 50,
   "metrics_summary": {
     "fixed": {
-      "mean_precision_at_5": 0.7,
-      "mean_recall_at_5": 0.7,
-      "mean_mrr": 0.7,
+      "mean_precision_at_5": 0.68,
+      "mean_recall_at_5": 0.68,
+      "mean_mrr": 0.68,
       "mean_faithfulness": 1.0,
-      "mean_answer_relevance": 0.703,
-      "mean_latency_ms": 39.3,
-      "mean_tokens_per_query": 471.8,
-      "total_tokens_consumed": 9436,
-      "mean_reward": 0.555,
+      "mean_answer_relevance": 0.6805,
+      "mean_latency_ms": 37.91,
+      "mean_tokens_per_query": 411.4,
+      "total_tokens_consumed": 20570,
+      "mean_reward": 0.5382,
       "rbac_security_leakage_rate": 0.0
     },
     "heuristic": {
-      "mean_precision_at_5": 0.66,
-      "mean_recall_at_5": 0.7,
-      "mean_mrr": 0.7,
+      "mean_precision_at_5": 0.696,
+      "mean_recall_at_5": 0.72,
+      "mean_mrr": 0.72,
       "mean_faithfulness": 1.0,
-      "mean_answer_relevance": 0.716,
-      "mean_latency_ms": 76.22,
-      "mean_tokens_per_query": 599.6,
-      "total_tokens_consumed": 11992,
-      "mean_reward": 0.5507,
+      "mean_answer_relevance": 0.6928,
+      "mean_latency_ms": 57.4,
+      "mean_tokens_per_query": 499.4,
+      "total_tokens_consumed": 24972,
+      "mean_reward": 0.5436,
       "rbac_security_leakage_rate": 0.0
     },
     "adaptive": {
-      "mean_precision_at_5": 0.7625,
-      "mean_recall_at_5": 0.975,
-      "mean_mrr": 0.975,
-      "mean_faithfulness": 1.0,
-      "mean_answer_relevance": 0.8057,
-      "mean_latency_ms": 107.82,
-      "mean_tokens_per_query": 901.3,
-      "total_tokens_consumed": 18026,
-      "mean_reward": 0.6999,
+      "mean_precision_at_5": 0.83,
+      "mean_recall_at_5": 0.94,
+      "mean_mrr": 0.93,
+      "mean_faithfulness": 0.992,
+      "mean_answer_relevance": 0.7866,
+      "mean_latency_ms": 71.15,
+      "mean_tokens_per_query": 715.1,
+      "total_tokens_consumed": 35756,
+      "mean_reward": 0.6802,
       "rbac_security_leakage_rate": 0.0
     }
   },
@@ -56,9 +56,9 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.78,
-        "tokens": 670,
-        "reward": 0.6517
+        "latency_ms": 35.74,
+        "tokens": 586,
+        "reward": 0.6563
       },
       {
         "query_id": "Q02",
@@ -75,9 +75,9 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.79,
-        "tokens": 676,
-        "reward": 0.6562
+        "latency_ms": 35.75,
+        "tokens": 640,
+        "reward": 0.6393
       },
       {
         "query_id": "Q03",
@@ -94,9 +94,9 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.74,
-        "tokens": 598,
-        "reward": 0.6514
+        "latency_ms": 35.73,
+        "tokens": 620,
+        "reward": 0.6263
       },
       {
         "query_id": "Q04",
@@ -113,13 +113,13 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.74,
-        "tokens": 592,
-        "reward": 0.6711
+        "latency_ms": 35.73,
+        "tokens": 642,
+        "reward": 0.7022
       },
       {
         "query_id": "Q05",
-        "query": "What are the rules and notice periods required when requesting 10 or more consecutive days off?",
+        "query": "What are the rules regarding acceptance of gifts and hospitality from vendors?",
         "action": {
           "action_id": -1,
           "top_k": 5,
@@ -132,184 +132,13 @@
         "recall": 0.0,
         "mrr": 0.0,
         "faithfulness": 1.0,
-        "latency_ms": 40.64,
+        "latency_ms": 40.63,
         "tokens": 152,
-        "reward": 0.3734
+        "reward": 0.3751
       },
       {
         "query_id": "Q06",
-        "query": "What is the company 401(k) matching percentage and vesting period?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 35.69,
-        "tokens": 556,
-        "reward": 0.657
-      },
-      {
-        "query_id": "Q07",
-        "query": "How much is the home office setup stipend and monthly connectivity allowance?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 35.7,
-        "tokens": 548,
-        "reward": 0.6802
-      },
-      {
-        "query_id": "Q08",
-        "query": "What are the password complexity requirements and expiration frequency for corporate accounts?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 0.0,
-        "recall": 0.0,
-        "mrr": 0.0,
-        "faithfulness": 1.0,
-        "latency_ms": 40.86,
-        "tokens": 152,
-        "reward": 0.3895
-      },
-      {
-        "query_id": "Q09",
-        "query": "Are employees allowed to use SMS-based two-factor authentication for corporate logins?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 0.0,
-        "recall": 0.0,
-        "mrr": 0.0,
-        "faithfulness": 1.0,
-        "latency_ms": 40.7,
-        "tokens": 152,
-        "reward": 0.385
-      },
-      {
-        "query_id": "Q10",
-        "query": "Explain the differences between Level 2 Internal, Level 3 Confidential, and Level 4 Restricted data classifications.",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 35.98,
-        "tokens": 632,
-        "reward": 0.6547
-      },
-      {
-        "query_id": "Q11",
-        "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 36.02,
-        "tokens": 648,
-        "reward": 0.6253
-      },
-      {
-        "query_id": "Q12",
-        "query": "What are the disaster recovery RTO and RPO targets for core infrastructure?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 0.0,
-        "recall": 0.0,
-        "mrr": 0.0,
-        "faithfulness": 1.0,
-        "latency_ms": 40.81,
-        "tokens": 152,
-        "reward": 0.382
-      },
-      {
-        "query_id": "Q13",
-        "query": "What is the nightly hotel room cap for Tier 1 high-cost cities versus Tier 2 metropolitan cities?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 35.76,
-        "tokens": 646,
-        "reward": 0.6016
-      },
-      {
-        "query_id": "Q14",
-        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 35.78,
-        "tokens": 696,
-        "reward": 0.6606
-      },
-      {
-        "query_id": "Q15",
-        "query": "Under what flight duration is an employee permitted to book Business Class or Premium Economy?",
+        "query": "How can an employee report unethical behavior anonymously, and what protections exist?",
         "action": {
           "action_id": -1,
           "top_k": 5,
@@ -327,27 +156,8 @@
         "reward": 0.367
       },
       {
-        "query_id": "Q16",
-        "query": "What are the purchase order tiers, required quotes, and approval authorities for purchasing goods between $5,000 and $50,000?",
-        "action": {
-          "action_id": -1,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
-        },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 35.92,
-        "tokens": 732,
-        "reward": 0.6401
-      },
-      {
-        "query_id": "Q17",
-        "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+        "query_id": "Q07",
+        "query": "What are the steps of the formal corporate disciplinary procedure?",
         "action": {
           "action_id": -1,
           "top_k": 5,
@@ -360,13 +170,203 @@
         "recall": 0.0,
         "mrr": 0.0,
         "faithfulness": 1.0,
-        "latency_ms": 40.75,
+        "latency_ms": 40.62,
         "tokens": 152,
-        "reward": 0.3745
+        "reward": 0.3895
+      },
+      {
+        "query_id": "Q08",
+        "query": "What is the hybrid workplace attendance model for eligible staff?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.62,
+        "tokens": 152,
+        "reward": 0.387
+      },
+      {
+        "query_id": "Q09",
+        "query": "What home office stipend is provided for new remote employees, and what is the reimbursement limit?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.64,
+        "tokens": 152,
+        "reward": 0.3808
+      },
+      {
+        "query_id": "Q10",
+        "query": "What is the maximum duration an employee can work remotely from an international country?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.74,
+        "tokens": 152,
+        "reward": 0.3751
+      },
+      {
+        "query_id": "Q11",
+        "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.64,
+        "tokens": 152,
+        "reward": 0.3798
+      },
+      {
+        "query_id": "Q12",
+        "query": "Explain the step-by-step escalation timeline for a P1 Critical Outage incident.",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.63,
+        "tokens": 152,
+        "reward": 0.387
+      },
+      {
+        "query_id": "Q13",
+        "query": "What are the requirements for completing a Post-Incident Review (PIR) and Root Cause Analysis (RCA)?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.75,
+        "tokens": 596,
+        "reward": 0.701
+      },
+      {
+        "query_id": "Q14",
+        "query": "What is the authorization protocol and session time limit for production database root access?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.96,
+        "tokens": 634,
+        "reward": 0.645
+      },
+      {
+        "query_id": "Q15",
+        "query": "What multi-factor authentication (MFA) methods are permitted, and which are deprecated?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.84,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q16",
+        "query": "What is the emergency access revocation SLA for an involuntary employee termination?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.94,
+        "tokens": 614,
+        "reward": 0.668
+      },
+      {
+        "query_id": "Q17",
+        "query": "What encryption standards are mandated for data at rest in corporate cloud storage?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.93,
+        "tokens": 578,
+        "reward": 0.6594
       },
       {
         "query_id": "Q18",
-        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately to a higher tier?",
+        "query": "Which TLS versions and ciphers are required for enterprise network communications?",
         "action": {
           "action_id": -1,
           "top_k": 5,
@@ -375,17 +375,17 @@
           "rerank": false,
           "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
         },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
         "faithfulness": 1.0,
-        "latency_ms": 36.04,
-        "tokens": 554,
-        "reward": 0.6337
+        "latency_ms": 40.84,
+        "tokens": 152,
+        "reward": 0.3751
       },
       {
         "query_id": "Q19",
-        "query": "What are the recovery objectives (MTD, RTO, RPO) for Mission-Critical System Tier 0 in the Business Continuity Plan?",
+        "query": "What is the automated key rotation frequency for Master KMS keys and Data Encryption Keys (DEKs)?",
         "action": {
           "action_id": -1,
           "top_k": 5,
@@ -398,12 +398,563 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 71.1,
-        "tokens": 824,
-        "reward": 0.6534
+        "latency_ms": 35.93,
+        "tokens": 598,
+        "reward": 0.7042
       },
       {
         "query_id": "Q20",
+        "query": "What are the four standardized severity tiers for IT incidents?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.61,
+        "tokens": 152,
+        "reward": 0.387
+      },
+      {
+        "query_id": "Q21",
+        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.74,
+        "tokens": 640,
+        "reward": 0.6803
+      },
+      {
+        "query_id": "Q22",
+        "query": "What are the nightly hotel lodging rate caps for Tier 1 High-Cost Metro Areas?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.72,
+        "tokens": 584,
+        "reward": 0.6402
+      },
+      {
+        "query_id": "Q23",
+        "query": "Under what flight duration criteria is Business Class airfare permissible?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.62,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q24",
+        "query": "Within how many calendar days must travel expense reimbursement claims be submitted?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.72,
+        "tokens": 612,
+        "reward": 0.6631
+      },
+      {
+        "query_id": "Q25",
+        "query": "What is the standard personal vehicle mileage reimbursement rate per mile?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.71,
+        "tokens": 568,
+        "reward": 0.6809
+      },
+      {
+        "query_id": "Q26",
+        "query": "What are the purchase order approval thresholds for Tier B and Tier C vendor contracts?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.94,
+        "tokens": 688,
+        "reward": 0.6312
+      },
+      {
+        "query_id": "Q27",
+        "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.93,
+        "tokens": 514,
+        "reward": 0.6511
+      },
+      {
+        "query_id": "Q28",
+        "query": "What competitive bidding process is required for procurement contracts exceeding $50,000?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.91,
+        "tokens": 544,
+        "reward": 0.6371
+      },
+      {
+        "query_id": "Q29",
+        "query": "What is the capital expenditure capitalization floor and minimum useful life for fixed assets?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.99,
+        "tokens": 566,
+        "reward": 0.6822
+      },
+      {
+        "query_id": "Q30",
+        "query": "What is the straight-line depreciation lifespan for computer hardware and enterprise software?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.9,
+        "tokens": 558,
+        "reward": 0.6334
+      },
+      {
+        "query_id": "Q31",
+        "query": "Compare the Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for Tier 1 versus Tier 2 systems.",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.02,
+        "tokens": 714,
+        "reward": 0.6917
+      },
+      {
+        "query_id": "Q32",
+        "query": "Who holds the formal authority to declare an operational disaster under the BCP?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.89,
+        "tokens": 152,
+        "reward": 0.376
+      },
+      {
+        "query_id": "Q33",
+        "query": "What is the automated DNS route failover timeframe to the secondary disaster recovery site?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.97,
+        "tokens": 544,
+        "reward": 0.6694
+      },
+      {
+        "query_id": "Q34",
+        "query": "What disaster simulation exercises are mandated annually, and when are they scheduled?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.97,
+        "tokens": 538,
+        "reward": 0.597
+      },
+      {
+        "query_id": "Q35",
+        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.05,
+        "tokens": 510,
+        "reward": 0.6254
+      },
+      {
+        "query_id": "Q36",
+        "query": "What are the four customer support ticket severity tiers and their definitions?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.88,
+        "tokens": 152,
+        "reward": 0.382
+      },
+      {
+        "query_id": "Q37",
+        "query": "What are the executive notification milestones for an unresolved Tier 1 customer incident?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.97,
+        "tokens": 582,
+        "reward": 0.6369
+      },
+      {
+        "query_id": "Q38",
+        "query": "What on-time delivery threshold and defect rate are required for critical tier-1 suppliers?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.99,
+        "tokens": 600,
+        "reward": 0.6544
+      },
+      {
+        "query_id": "Q39",
+        "query": "What is the inspection timeframe and sampling requirement for inbound warehouse hardware shipments?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.98,
+        "tokens": 612,
+        "reward": 0.6171
+      },
+      {
+        "query_id": "Q40",
+        "query": "What standard payment terms are applied to vendor invoices?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.79,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q41",
+        "query": "What is the mandatory fulfillment deadline for a verified Data Subject Access Request (DSAR) under GDPR/CCPA?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.76,
+        "tokens": 632,
+        "reward": 0.6407
+      },
+      {
+        "query_id": "Q42",
+        "query": "Within how many hours must a personal data breach be reported to supervisory authorities?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.75,
+        "tokens": 670,
+        "reward": 0.6394
+      },
+      {
+        "query_id": "Q43",
+        "query": "What legal mechanisms govern international transfers of personal data outside the EEA?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.63,
+        "tokens": 152,
+        "reward": 0.3751
+      },
+      {
+        "query_id": "Q44",
+        "query": "What is the corporate liability cap on commercial customer contracts and super-caps for data breaches?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.25,
+        "tokens": 620,
+        "reward": 0.6573
+      },
+      {
+        "query_id": "Q45",
+        "query": "What are the standard confidentiality durations under corporate NDAs and for trade secrets?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.33,
+        "tokens": 574,
+        "reward": 0.6354
+      },
+      {
+        "query_id": "Q46",
+        "query": "Show me the detailed root access procedures for production PostgreSQL clusters and session recording configs.",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.66,
+        "tokens": 152,
+        "reward": 0.3798
+      },
+      {
+        "query_id": "Q47",
+        "query": "What are the confidential approval limits and CEO sign-off thresholds for Tier D procurement purchases?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.64,
+        "tokens": 152,
+        "reward": 0.3798
+      },
+      {
+        "query_id": "Q48",
+        "query": "Retrieve the confidential Disaster Recovery secondary site DNS switchover keys and satellite frequencies.",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.65,
+        "tokens": 152,
+        "reward": 0.3739
+      },
+      {
+        "query_id": "Q49",
         "query": "What is the corporate pet policy for bringing dogs to the London technology office?",
         "action": {
           "action_id": -1,
@@ -420,6 +971,25 @@
         "latency_ms": 40.63,
         "tokens": 152,
         "reward": 0.3915
+      },
+      {
+        "query_id": "Q50",
+        "query": "Can an employee submit an expense claim for Bitcoin cryptocurrency transaction gas fees?",
+        "action": {
+          "action_id": -1,
+          "top_k": 5,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Baseline: Fixed K=5, Thresh=0.50, Dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.63,
+        "tokens": 152,
+        "reward": 0.3833
       }
     ],
     "heuristic": [
@@ -438,9 +1008,9 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.78,
-        "tokens": 670,
-        "reward": 0.6517
+        "latency_ms": 35.73,
+        "tokens": 586,
+        "reward": 0.6563
       },
       {
         "query_id": "Q02",
@@ -457,9 +1027,9 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.78,
-        "tokens": 676,
-        "reward": 0.6562
+        "latency_ms": 35.74,
+        "tokens": 640,
+        "reward": 0.6393
       },
       {
         "query_id": "Q03",
@@ -476,9 +1046,9 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.75,
-        "tokens": 598,
-        "reward": 0.6514
+        "latency_ms": 35.72,
+        "tokens": 620,
+        "reward": 0.6263
       },
       {
         "query_id": "Q04",
@@ -495,13 +1065,260 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 281.57,
-        "tokens": 1488,
-        "reward": 0.6223
+        "latency_ms": 281.62,
+        "tokens": 1412,
+        "reward": 0.6449
       },
       {
         "query_id": "Q05",
-        "query": "What are the rules and notice periods required when requesting 10 or more consecutive days off?",
+        "query": "What are the rules regarding acceptance of gifts and hospitality from vendors?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.63,
+        "tokens": 152,
+        "reward": 0.3751
+      },
+      {
+        "query_id": "Q06",
+        "query": "How can an employee report unethical behavior anonymously, and what protections exist?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.63,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q07",
+        "query": "What are the steps of the formal corporate disciplinary procedure?",
+        "action": {
+          "action_id": -2,
+          "top_k": 8,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": true,
+          "description": "Heuristic: K=8, Thresh=0.35, Mode=hybrid, Rerank=True"
+        },
+        "precision": 0.4,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 281.6,
+        "tokens": 1464,
+        "reward": 0.5561
+      },
+      {
+        "query_id": "Q08",
+        "query": "What is the hybrid workplace attendance model for eligible staff?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.62,
+        "tokens": 152,
+        "reward": 0.387
+      },
+      {
+        "query_id": "Q09",
+        "query": "What home office stipend is provided for new remote employees, and what is the reimbursement limit?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.64,
+        "tokens": 152,
+        "reward": 0.3808
+      },
+      {
+        "query_id": "Q10",
+        "query": "What is the maximum duration an employee can work remotely from an international country?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.62,
+        "tokens": 152,
+        "reward": 0.3751
+      },
+      {
+        "query_id": "Q11",
+        "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
+        "action": {
+          "action_id": -2,
+          "top_k": 8,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": true,
+          "description": "Heuristic: K=8, Thresh=0.35, Mode=hybrid, Rerank=True"
+        },
+        "precision": 0.8,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 281.86,
+        "tokens": 1570,
+        "reward": 0.5821
+      },
+      {
+        "query_id": "Q12",
+        "query": "Explain the step-by-step escalation timeline for a P1 Critical Outage incident.",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.66,
+        "tokens": 152,
+        "reward": 0.387
+      },
+      {
+        "query_id": "Q13",
+        "query": "What are the requirements for completing a Post-Incident Review (PIR) and Root Cause Analysis (RCA)?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.75,
+        "tokens": 596,
+        "reward": 0.701
+      },
+      {
+        "query_id": "Q14",
+        "query": "What is the authorization protocol and session time limit for production database root access?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.99,
+        "tokens": 634,
+        "reward": 0.645
+      },
+      {
+        "query_id": "Q15",
+        "query": "What multi-factor authentication (MFA) methods are permitted, and which are deprecated?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.84,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q16",
+        "query": "What is the emergency access revocation SLA for an involuntary employee termination?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.93,
+        "tokens": 614,
+        "reward": 0.668
+      },
+      {
+        "query_id": "Q17",
+        "query": "What encryption standards are mandated for data at rest in corporate cloud storage?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.95,
+        "tokens": 578,
+        "reward": 0.6594
+      },
+      {
+        "query_id": "Q18",
+        "query": "Which TLS versions and ciphers are required for enterprise network communications?",
         "action": {
           "action_id": -2,
           "top_k": 3,
@@ -516,11 +1333,11 @@
         "faithfulness": 1.0,
         "latency_ms": 40.85,
         "tokens": 152,
-        "reward": 0.3734
+        "reward": 0.3751
       },
       {
-        "query_id": "Q06",
-        "query": "What is the company 401(k) matching percentage and vesting period?",
+        "query_id": "Q19",
+        "query": "What is the automated key rotation frequency for Master KMS keys and Data Encryption Keys (DEKs)?",
         "action": {
           "action_id": -2,
           "top_k": 3,
@@ -533,13 +1350,108 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.81,
-        "tokens": 556,
-        "reward": 0.657
+        "latency_ms": 35.95,
+        "tokens": 598,
+        "reward": 0.7042
       },
       {
-        "query_id": "Q07",
-        "query": "How much is the home office setup stipend and monthly connectivity allowance?",
+        "query_id": "Q20",
+        "query": "What are the four standardized severity tiers for IT incidents?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.61,
+        "tokens": 152,
+        "reward": 0.387
+      },
+      {
+        "query_id": "Q21",
+        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.74,
+        "tokens": 640,
+        "reward": 0.6803
+      },
+      {
+        "query_id": "Q22",
+        "query": "What are the nightly hotel lodging rate caps for Tier 1 High-Cost Metro Areas?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.72,
+        "tokens": 584,
+        "reward": 0.6402
+      },
+      {
+        "query_id": "Q23",
+        "query": "Under what flight duration criteria is Business Class airfare permissible?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.62,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q24",
+        "query": "Within how many calendar days must travel expense reimbursement claims be submitted?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.71,
+        "tokens": 612,
+        "reward": 0.6631
+      },
+      {
+        "query_id": "Q25",
+        "query": "What is the standard personal vehicle mileage reimbursement rate per mile?",
         "action": {
           "action_id": -2,
           "top_k": 3,
@@ -553,50 +1465,12 @@
         "mrr": 1.0,
         "faithfulness": 1.0,
         "latency_ms": 35.7,
-        "tokens": 548,
-        "reward": 0.6802
+        "tokens": 568,
+        "reward": 0.6809
       },
       {
-        "query_id": "Q08",
-        "query": "What are the password complexity requirements and expiration frequency for corporate accounts?",
-        "action": {
-          "action_id": -2,
-          "top_k": 3,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
-        },
-        "precision": 0.0,
-        "recall": 0.0,
-        "mrr": 0.0,
-        "faithfulness": 1.0,
-        "latency_ms": 40.65,
-        "tokens": 152,
-        "reward": 0.3895
-      },
-      {
-        "query_id": "Q09",
-        "query": "Are employees allowed to use SMS-based two-factor authentication for corporate logins?",
-        "action": {
-          "action_id": -2,
-          "top_k": 3,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
-        },
-        "precision": 0.0,
-        "recall": 0.0,
-        "mrr": 0.0,
-        "faithfulness": 1.0,
-        "latency_ms": 40.64,
-        "tokens": 152,
-        "reward": 0.385
-      },
-      {
-        "query_id": "Q10",
-        "query": "Explain the differences between Level 2 Internal, Level 3 Confidential, and Level 4 Restricted data classifications.",
+        "query_id": "Q26",
+        "query": "What are the purchase order approval thresholds for Tier B and Tier C vendor contracts?",
         "action": {
           "action_id": -2,
           "top_k": 3,
@@ -609,108 +1483,13 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 35.97,
-        "tokens": 632,
-        "reward": 0.6547
+        "latency_ms": 35.95,
+        "tokens": 688,
+        "reward": 0.6312
       },
       {
-        "query_id": "Q11",
-        "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
-        "action": {
-          "action_id": -2,
-          "top_k": 8,
-          "threshold": 0.35,
-          "mode": "hybrid",
-          "rerank": true,
-          "description": "Heuristic: K=8, Thresh=0.35, Mode=hybrid, Rerank=True"
-        },
-        "precision": 0.6,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 282.22,
-        "tokens": 1466,
-        "reward": 0.5929
-      },
-      {
-        "query_id": "Q12",
-        "query": "What are the disaster recovery RTO and RPO targets for core infrastructure?",
-        "action": {
-          "action_id": -2,
-          "top_k": 3,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
-        },
-        "precision": 0.0,
-        "recall": 0.0,
-        "mrr": 0.0,
-        "faithfulness": 1.0,
-        "latency_ms": 40.82,
-        "tokens": 152,
-        "reward": 0.382
-      },
-      {
-        "query_id": "Q13",
-        "query": "What is the nightly hotel room cap for Tier 1 high-cost cities versus Tier 2 metropolitan cities?",
-        "action": {
-          "action_id": -2,
-          "top_k": 8,
-          "threshold": 0.35,
-          "mode": "hybrid",
-          "rerank": true,
-          "description": "Heuristic: K=8, Thresh=0.35, Mode=hybrid, Rerank=True"
-        },
-        "precision": 0.6,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 281.76,
-        "tokens": 1488,
-        "reward": 0.5971
-      },
-      {
-        "query_id": "Q14",
-        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
-        "action": {
-          "action_id": -2,
-          "top_k": 3,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
-        },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 35.78,
-        "tokens": 696,
-        "reward": 0.6606
-      },
-      {
-        "query_id": "Q15",
-        "query": "Under what flight duration is an employee permitted to book Business Class or Premium Economy?",
-        "action": {
-          "action_id": -2,
-          "top_k": 3,
-          "threshold": 0.5,
-          "mode": "dense",
-          "rerank": false,
-          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
-        },
-        "precision": 0.0,
-        "recall": 0.0,
-        "mrr": 0.0,
-        "faithfulness": 1.0,
-        "latency_ms": 40.64,
-        "tokens": 152,
-        "reward": 0.367
-      },
-      {
-        "query_id": "Q16",
-        "query": "What are the purchase order tiers, required quotes, and approval authorities for purchasing goods between $5,000 and $50,000?",
+        "query_id": "Q27",
+        "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
         "action": {
           "action_id": -2,
           "top_k": 3,
@@ -724,12 +1503,88 @@
         "mrr": 1.0,
         "faithfulness": 1.0,
         "latency_ms": 35.93,
-        "tokens": 732,
-        "reward": 0.6401
+        "tokens": 514,
+        "reward": 0.6511
       },
       {
-        "query_id": "Q17",
-        "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+        "query_id": "Q28",
+        "query": "What competitive bidding process is required for procurement contracts exceeding $50,000?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.92,
+        "tokens": 544,
+        "reward": 0.6371
+      },
+      {
+        "query_id": "Q29",
+        "query": "What is the capital expenditure capitalization floor and minimum useful life for fixed assets?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.9,
+        "tokens": 566,
+        "reward": 0.6822
+      },
+      {
+        "query_id": "Q30",
+        "query": "What is the straight-line depreciation lifespan for computer hardware and enterprise software?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.95,
+        "tokens": 558,
+        "reward": 0.6334
+      },
+      {
+        "query_id": "Q31",
+        "query": "Compare the Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for Tier 1 versus Tier 2 systems.",
+        "action": {
+          "action_id": -2,
+          "top_k": 8,
+          "threshold": 0.35,
+          "mode": "hybrid",
+          "rerank": true,
+          "description": "Heuristic: K=8, Thresh=0.35, Mode=hybrid, Rerank=True"
+        },
+        "precision": 0.6,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 282.2,
+        "tokens": 1616,
+        "reward": 0.6466
+      },
+      {
+        "query_id": "Q32",
+        "query": "Who holds the formal authority to declare an operational disaster under the BCP?",
         "action": {
           "action_id": -2,
           "top_k": 3,
@@ -742,50 +1597,316 @@
         "recall": 0.0,
         "mrr": 0.0,
         "faithfulness": 1.0,
-        "latency_ms": 40.76,
+        "latency_ms": 40.9,
         "tokens": 152,
-        "reward": 0.3745
+        "reward": 0.376
       },
       {
-        "query_id": "Q18",
-        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately to a higher tier?",
+        "query_id": "Q33",
+        "query": "What is the automated DNS route failover timeframe to the secondary disaster recovery site?",
         "action": {
           "action_id": -2,
-          "top_k": 5,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "dense",
           "rerank": false,
-          "description": "Heuristic: K=5, Thresh=0.5, Mode=dense, Rerank=False"
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 36.04,
-        "tokens": 554,
-        "reward": 0.6337
+        "latency_ms": 36.0,
+        "tokens": 544,
+        "reward": 0.6694
       },
       {
-        "query_id": "Q19",
-        "query": "What are the recovery objectives (MTD, RTO, RPO) for Mission-Critical System Tier 0 in the Business Continuity Plan?",
+        "query_id": "Q34",
+        "query": "What disaster simulation exercises are mandated annually, and when are they scheduled?",
         "action": {
           "action_id": -2,
-          "top_k": 5,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "dense",
           "rerank": false,
-          "description": "Heuristic: K=5, Thresh=0.5, Mode=dense, Rerank=False"
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 71.1,
-        "tokens": 824,
-        "reward": 0.6534
+        "latency_ms": 35.98,
+        "tokens": 538,
+        "reward": 0.597
       },
       {
-        "query_id": "Q20",
+        "query_id": "Q35",
+        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.03,
+        "tokens": 510,
+        "reward": 0.6254
+      },
+      {
+        "query_id": "Q36",
+        "query": "What are the four customer support ticket severity tiers and their definitions?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.89,
+        "tokens": 152,
+        "reward": 0.382
+      },
+      {
+        "query_id": "Q37",
+        "query": "What are the executive notification milestones for an unresolved Tier 1 customer incident?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.97,
+        "tokens": 582,
+        "reward": 0.6369
+      },
+      {
+        "query_id": "Q38",
+        "query": "What on-time delivery threshold and defect rate are required for critical tier-1 suppliers?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.01,
+        "tokens": 600,
+        "reward": 0.6544
+      },
+      {
+        "query_id": "Q39",
+        "query": "What is the inspection timeframe and sampling requirement for inbound warehouse hardware shipments?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.99,
+        "tokens": 612,
+        "reward": 0.6171
+      },
+      {
+        "query_id": "Q40",
+        "query": "What standard payment terms are applied to vendor invoices?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.79,
+        "tokens": 152,
+        "reward": 0.367
+      },
+      {
+        "query_id": "Q41",
+        "query": "What is the mandatory fulfillment deadline for a verified Data Subject Access Request (DSAR) under GDPR/CCPA?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.75,
+        "tokens": 632,
+        "reward": 0.6407
+      },
+      {
+        "query_id": "Q42",
+        "query": "Within how many hours must a personal data breach be reported to supervisory authorities?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 35.74,
+        "tokens": 670,
+        "reward": 0.6394
+      },
+      {
+        "query_id": "Q43",
+        "query": "What legal mechanisms govern international transfers of personal data outside the EEA?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.63,
+        "tokens": 152,
+        "reward": 0.3751
+      },
+      {
+        "query_id": "Q44",
+        "query": "What is the corporate liability cap on commercial customer contracts and super-caps for data breaches?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.26,
+        "tokens": 620,
+        "reward": 0.6573
+      },
+      {
+        "query_id": "Q45",
+        "query": "What are the standard confidentiality durations under corporate NDAs and for trade secrets?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 36.31,
+        "tokens": 574,
+        "reward": 0.6354
+      },
+      {
+        "query_id": "Q46",
+        "query": "Show me the detailed root access procedures for production PostgreSQL clusters and session recording configs.",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.65,
+        "tokens": 152,
+        "reward": 0.3798
+      },
+      {
+        "query_id": "Q47",
+        "query": "What are the confidential approval limits and CEO sign-off thresholds for Tier D procurement purchases?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.66,
+        "tokens": 152,
+        "reward": 0.3798
+      },
+      {
+        "query_id": "Q48",
+        "query": "Retrieve the confidential Disaster Recovery secondary site DNS switchover keys and satellite frequencies.",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.65,
+        "tokens": 152,
+        "reward": 0.3739
+      },
+      {
+        "query_id": "Q49",
         "query": "What is the corporate pet policy for bringing dogs to the London technology office?",
         "action": {
           "action_id": -2,
@@ -799,9 +1920,28 @@
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 40.81,
+        "latency_ms": 40.63,
         "tokens": 152,
         "reward": 0.3915
+      },
+      {
+        "query_id": "Q50",
+        "query": "Can an employee submit an expense claim for Bitcoin cryptocurrency transaction gas fees?",
+        "action": {
+          "action_id": -2,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "dense",
+          "rerank": false,
+          "description": "Heuristic: K=3, Thresh=0.5, Mode=dense, Rerank=False"
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 40.65,
+        "tokens": 152,
+        "reward": 0.3833
       }
     ],
     "adaptive": [
@@ -809,341 +1949,845 @@
         "query_id": "Q01",
         "query": "What is the annual leave entitlement for regular full-time employees?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6353,
-          "confidence": 0.6536865500543629
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6964,
+          "confidence": 0.6673911006522035
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 142.81,
-        "tokens": 1044,
-        "reward": 0.7177
+        "latency_ms": 107.81,
+        "tokens": 918,
+        "reward": 0.7253
       },
       {
         "query_id": "Q02",
         "query": "How many days of annual leave can be rolled over into the next year, and when do they expire?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6814,
-          "confidence": 0.6640402886729766
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7436,
+          "confidence": 0.677789976203565
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 177.82,
-        "tokens": 1134,
-        "reward": 0.6949
+        "latency_ms": 107.74,
+        "tokens": 950,
+        "reward": 0.6997
       },
       {
         "query_id": "Q03",
         "query": "What is the policy for sick leave, and when is a medical certificate mandatory?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.669,
-          "confidence": 0.6612755537530937
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7276,
+          "confidence": 0.6742703340209013
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 177.76,
-        "tokens": 1172,
-        "reward": 0.6972
+        "latency_ms": 107.71,
+        "tokens": 936,
+        "reward": 0.7021
       },
       {
         "query_id": "Q04",
         "query": "Compare primary caregiver maternity leave with secondary caregiver paternity leave durations.",
         "action": {
-          "action_id": 34,
-          "top_k": 8,
-          "threshold": 0.65,
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=8, Thresh=0.65, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.7305,
-          "confidence": 0.6749088256619296
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7862,
+          "confidence": 0.6870208253737141
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 37.47,
-        "tokens": 592,
-        "reward": 0.7339
+        "latency_ms": 107.77,
+        "tokens": 862,
+        "reward": 0.7412
       },
       {
         "query_id": "Q05",
-        "query": "What are the rules and notice periods required when requesting 10 or more consecutive days off?",
+        "query": "What are the rules regarding acceptance of gifts and hospitality from vendors?",
         "action": {
-          "action_id": 2,
+          "action_id": 6,
           "top_k": 3,
-          "threshold": 0.35,
+          "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=3, Thresh=0.35, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.582,
-          "confidence": 0.6415325437072721
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7069,
+          "confidence": 0.669716552389835
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 107.67,
-        "tokens": 958,
-        "reward": 0.6749
+        "latency_ms": 37.72,
+        "tokens": 576,
+        "reward": 0.6881
       },
       {
         "query_id": "Q06",
-        "query": "What is the company 401(k) matching percentage and vesting period?",
+        "query": "How can an employee report unethical behavior anonymously, and what protections exist?",
         "action": {
-          "action_id": 2,
+          "action_id": 6,
           "top_k": 3,
-          "threshold": 0.35,
+          "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=3, Thresh=0.35, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.5559,
-          "confidence": 0.6355038460961203
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7069,
+          "confidence": 0.669716552389835
         },
-        "precision": 0.3333,
+        "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 107.99,
-        "tokens": 874,
-        "reward": 0.7167
+        "latency_ms": 72.65,
+        "tokens": 642,
+        "reward": 0.681
       },
       {
         "query_id": "Q07",
-        "query": "How much is the home office setup stipend and monthly connectivity allowance?",
+        "query": "What are the steps of the formal corporate disciplinary procedure?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6455,
-          "confidence": 0.6560004169788975
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7657,
+          "confidence": 0.6825970090889426
         },
-        "precision": 1.0,
-        "recall": 1.0,
-        "mrr": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
         "faithfulness": 1.0,
-        "latency_ms": 37.48,
-        "tokens": 548,
-        "reward": 0.746
+        "latency_ms": 42.51,
+        "tokens": 152,
+        "reward": 0.3893
       },
       {
         "query_id": "Q08",
-        "query": "What are the password complexity requirements and expiration frequency for corporate accounts?",
+        "query": "What is the hybrid workplace attendance model for eligible staff?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6455,
-          "confidence": 0.6560004169788975
-        },
-        "precision": 0.4,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 177.8,
-        "tokens": 1156,
-        "reward": 0.6768
-      },
-      {
-        "query_id": "Q09",
-        "query": "Are employees allowed to use SMS-based two-factor authentication for corporate logins?",
-        "action": {
-          "action_id": 18,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "hybrid",
-          "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6404,
-          "confidence": 0.6548444004947128
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6964,
+          "confidence": 0.6673911006522035
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 37.49,
-        "tokens": 592,
-        "reward": 0.6821
+        "latency_ms": 37.55,
+        "tokens": 570,
+        "reward": 0.6782
       },
       {
-        "query_id": "Q10",
-        "query": "Explain the differences between Level 2 Internal, Level 3 Confidential, and Level 4 Restricted data classifications.",
+        "query_id": "Q09",
+        "query": "What home office stipend is provided for new remote employees, and what is the reimbursement limit?",
         "action": {
-          "action_id": 2,
+          "action_id": 6,
           "top_k": 3,
-          "threshold": 0.35,
+          "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=3, Thresh=0.35, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.582,
-          "confidence": 0.6415325437072721
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7279,
+          "confidence": 0.6743425664886382
         },
-        "precision": 0.3333,
+        "precision": 0.5,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 107.95,
-        "tokens": 852,
-        "reward": 0.7112
+        "latency_ms": 72.65,
+        "tokens": 754,
+        "reward": 0.7163
+      },
+      {
+        "query_id": "Q10",
+        "query": "What is the maximum duration an employee can work remotely from an international country?",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6705,
+          "confidence": 0.6616042403317461
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.59,
+        "tokens": 542,
+        "reward": 0.6844
       },
       {
         "query_id": "Q11",
         "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
         "action": {
-          "action_id": 34,
-          "top_k": 8,
-          "threshold": 0.65,
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=8, Thresh=0.65, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.7605,
-          "confidence": 0.6814702635282683
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.8125,
+          "confidence": 0.6926343301991768
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 37.81,
-        "tokens": 648,
-        "reward": 0.7089
+        "latency_ms": 72.87,
+        "tokens": 910,
+        "reward": 0.6981
       },
       {
         "query_id": "Q12",
-        "query": "What are the disaster recovery RTO and RPO targets for core infrastructure?",
+        "query": "Explain the step-by-step escalation timeline for a P1 Critical Outage incident.",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6455,
-          "confidence": 0.6560004169788975
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7017,
+          "confidence": 0.6685548548850723
         },
-        "precision": 0.75,
+        "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 143.45,
-        "tokens": 1078,
-        "reward": 0.6909
+        "latency_ms": 37.57,
+        "tokens": 594,
+        "reward": 0.6717
       },
       {
         "query_id": "Q13",
-        "query": "What is the nightly hotel room cap for Tier 1 high-cost cities versus Tier 2 metropolitan cities?",
+        "query": "What are the requirements for completing a Post-Incident Review (PIR) and Root Cause Analysis (RCA)?",
         "action": {
-          "action_id": 34,
-          "top_k": 8,
-          "threshold": 0.65,
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=8, Thresh=0.65, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.7665,
-          "confidence": 0.6827740636655629
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7226,
+          "confidence": 0.6731891999800885
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 72.62,
-        "tokens": 820,
-        "reward": 0.6998
+        "latency_ms": 37.6,
+        "tokens": 596,
+        "reward": 0.7573
       },
       {
         "query_id": "Q14",
-        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
+        "query": "What is the authorization protocol and session time limit for production database root access?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 30,
+          "top_k": 8,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6558,
-          "confidence": 0.6583069051443293
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6705,
+          "confidence": 0.6616042403317461
         },
-        "precision": 1.0,
+        "precision": 0.8,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 37.51,
-        "tokens": 696,
-        "reward": 0.7343
+        "latency_ms": 178.2,
+        "tokens": 1160,
+        "reward": 0.7004
       },
       {
         "query_id": "Q15",
-        "query": "Under what flight duration is an employee permitted to book Business Class or Premium Economy?",
+        "query": "What multi-factor authentication (MFA) methods are permitted, and which are deprecated?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6741,
-          "confidence": 0.6624211345095149
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7118,
+          "confidence": 0.670803556672742
         },
         "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 37.49,
-        "tokens": 598,
-        "reward": 0.6987
+        "latency_ms": 37.88,
+        "tokens": 484,
+        "reward": 0.7057
       },
       {
         "query_id": "Q16",
-        "query": "What are the purchase order tiers, required quotes, and approval authorities for purchasing goods between $5,000 and $50,000?",
+        "query": "What is the emergency access revocation SLA for an involuntary employee termination?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6865,
-          "confidence": 0.6651812533217615
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7069,
+          "confidence": 0.669716552389835
         },
-        "precision": 0.2,
+        "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 178.02,
-        "tokens": 1212,
-        "reward": 0.6851
+        "latency_ms": 108.04,
+        "tokens": 940,
+        "reward": 0.7218
       },
       {
         "query_id": "Q17",
+        "query": "What encryption standards are mandated for data at rest in corporate cloud storage?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7122,
+          "confidence": 0.6708761826638509
+        },
+        "precision": 0.6667,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.19,
+        "tokens": 934,
+        "reward": 0.7261
+      },
+      {
+        "query_id": "Q18",
+        "query": "Which TLS versions and ciphers are required for enterprise network communications?",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6568,
+          "confidence": 0.6585350564569661
+        },
+        "precision": 0.2,
+        "recall": 1.0,
+        "mrr": 0.5,
+        "faithfulness": 1.0,
+        "latency_ms": 213.25,
+        "tokens": 1286,
+        "reward": 0.6522
+      },
+      {
+        "query_id": "Q19",
+        "query": "What is the automated key rotation frequency for Master KMS keys and Data Encryption Keys (DEKs)?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7279,
+          "confidence": 0.6743425664886382
+        },
+        "precision": 0.6667,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.07,
+        "tokens": 904,
+        "reward": 0.7435
+      },
+      {
+        "query_id": "Q20",
+        "query": "What are the four standardized severity tiers for IT incidents?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6964,
+          "confidence": 0.6673911006522035
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.54,
+        "tokens": 548,
+        "reward": 0.7033
+      },
+      {
+        "query_id": "Q21",
+        "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7174,
+          "confidence": 0.6720337352986405
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 72.74,
+        "tokens": 832,
+        "reward": 0.736
+      },
+      {
+        "query_id": "Q22",
+        "query": "What are the nightly hotel lodging rate caps for Tier 1 High-Cost Metro Areas?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7174,
+          "confidence": 0.6720337352986405
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.73,
+        "tokens": 584,
+        "reward": 0.7231
+      },
+      {
+        "query_id": "Q23",
+        "query": "Under what flight duration criteria is Business Class airfare permissible?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6964,
+          "confidence": 0.6673911006522035
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.56,
+        "tokens": 582,
+        "reward": 0.7062
+      },
+      {
+        "query_id": "Q24",
+        "query": "Within how many calendar days must travel expense reimbursement claims be submitted?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7069,
+          "confidence": 0.669716552389835
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 72.68,
+        "tokens": 770,
+        "reward": 0.7285
+      },
+      {
+        "query_id": "Q25",
+        "query": "What is the standard personal vehicle mileage reimbursement rate per mile?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7017,
+          "confidence": 0.6685548548850723
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.58,
+        "tokens": 568,
+        "reward": 0.7497
+      },
+      {
+        "query_id": "Q26",
+        "query": "What are the purchase order approval thresholds for Tier B and Tier C vendor contracts?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7226,
+          "confidence": 0.6731891999800885
+        },
+        "precision": 0.6667,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.11,
+        "tokens": 986,
+        "reward": 0.7009
+      },
+      {
+        "query_id": "Q27",
         "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6613,
+          "confidence": 0.6595596098908437
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.91,
+        "tokens": 514,
+        "reward": 0.729
+      },
+      {
+        "query_id": "Q28",
+        "query": "What competitive bidding process is required for procurement contracts exceeding $50,000?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7069,
+          "confidence": 0.669716552389835
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 73.04,
+        "tokens": 858,
+        "reward": 0.7104
+      },
+      {
+        "query_id": "Q29",
+        "query": "What is the capital expenditure capitalization floor and minimum useful life for fixed assets?",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6705,
+          "confidence": 0.6616042403317461
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.88,
+        "tokens": 566,
+        "reward": 0.7445
+      },
+      {
+        "query_id": "Q30",
+        "query": "What is the straight-line depreciation lifespan for computer hardware and enterprise software?",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6613,
+          "confidence": 0.6595596098908437
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.84,
+        "tokens": 558,
+        "reward": 0.7183
+      },
+      {
+        "query_id": "Q31",
+        "query": "Compare the Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for Tier 1 versus Tier 2 systems.",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.823,
+          "confidence": 0.6948639848148446
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 73.08,
+        "tokens": 956,
+        "reward": 0.7428
+      },
+      {
+        "query_id": "Q32",
+        "query": "Who holds the formal authority to declare an operational disaster under the BCP?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7122,
+          "confidence": 0.6708761826638509
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.93,
+        "tokens": 596,
+        "reward": 0.6714
+      },
+      {
+        "query_id": "Q33",
+        "query": "What is the automated DNS route failover timeframe to the secondary disaster recovery site?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7174,
+          "confidence": 0.6720337352986405
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 38.08,
+        "tokens": 544,
+        "reward": 0.7366
+      },
+      {
+        "query_id": "Q34",
+        "query": "What disaster simulation exercises are mandated annually, and when are they scheduled?",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6613,
+          "confidence": 0.6595596098908437
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.93,
+        "tokens": 538,
+        "reward": 0.6841
+      },
+      {
+        "query_id": "Q35",
+        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7226,
+          "confidence": 0.6731891999800885
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.12,
+        "tokens": 982,
+        "reward": 0.6912
+      },
+      {
+        "query_id": "Q36",
+        "query": "What are the four customer support ticket severity tiers and their definitions?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7069,
+          "confidence": 0.669716552389835
+        },
+        "precision": 0.6667,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.09,
+        "tokens": 994,
+        "reward": 0.6867
+      },
+      {
+        "query_id": "Q37",
+        "query": "What are the executive notification milestones for an unresolved Tier 1 customer incident?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7122,
+          "confidence": 0.6708761826638509
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.1,
+        "tokens": 988,
+        "reward": 0.709
+      },
+      {
+        "query_id": "Q38",
+        "query": "What on-time delivery threshold and defect rate are required for critical tier-1 suppliers?",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6659,
+          "confidence": 0.6605826736373439
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 73.15,
+        "tokens": 842,
+        "reward": 0.7192
+      },
+      {
+        "query_id": "Q39",
+        "query": "What is the inspection timeframe and sampling requirement for inbound warehouse hardware shipments?",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6659,
+          "confidence": 0.6605826736373439
+        },
+        "precision": 0.5,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 73.02,
+        "tokens": 808,
+        "reward": 0.7011
+      },
+      {
+        "query_id": "Q40",
+        "query": "What standard payment terms are applied to vendor invoices?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6109,
+          "confidence": 0.6481520118052719
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.83,
+        "tokens": 602,
+        "reward": 0.7015
+      },
+      {
+        "query_id": "Q41",
+        "query": "What is the mandatory fulfillment deadline for a verified Data Subject Access Request (DSAR) under GDPR/CCPA?",
         "action": {
           "action_id": 2,
           "top_k": 3,
@@ -1151,79 +2795,205 @@
           "mode": "hybrid",
           "rerank": false,
           "description": "K=3, Thresh=0.35, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.5611,
-          "confidence": 0.6367130629805948
-        },
-        "precision": 0.3333,
-        "recall": 1.0,
-        "mrr": 1.0,
-        "faithfulness": 1.0,
-        "latency_ms": 108.21,
-        "tokens": 870,
-        "reward": 0.6916
-      },
-      {
-        "query_id": "Q18",
-        "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately to a higher tier?",
-        "action": {
-          "action_id": 18,
-          "top_k": 5,
-          "threshold": 0.5,
-          "mode": "hybrid",
-          "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
           "ucb_score": 0.6972,
-          "confidence": 0.6675776026599389
+          "confidence": 0.6675618685069292
         },
-        "precision": 0.6,
+        "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 178.29,
-        "tokens": 1186,
-        "reward": 0.6833
+        "latency_ms": 107.77,
+        "tokens": 992,
+        "reward": 0.7067
       },
       {
-        "query_id": "Q19",
-        "query": "What are the recovery objectives (MTD, RTO, RPO) for Mission-Critical System Tier 0 in the Business Continuity Plan?",
+        "query_id": "Q42",
+        "query": "Within how many hours must a personal data breach be reported to supervisory authorities?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6921,
-          "confidence": 0.6664407091492637
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7174,
+          "confidence": 0.6720337352986405
         },
-        "precision": 0.8,
+        "precision": 1.0,
         "recall": 1.0,
         "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 178.16,
-        "tokens": 1206,
-        "reward": 0.7084
+        "latency_ms": 37.62,
+        "tokens": 670,
+        "reward": 0.7153
       },
       {
-        "query_id": "Q20",
+        "query_id": "Q43",
+        "query": "What legal mechanisms govern international transfers of personal data outside the EEA?",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6613,
+          "confidence": 0.6595596098908437
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 72.72,
+        "tokens": 834,
+        "reward": 0.6996
+      },
+      {
+        "query_id": "Q44",
+        "query": "What is the corporate liability cap on commercial customer contracts and super-caps for data breaches?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7226,
+          "confidence": 0.6731891999800885
+        },
+        "precision": 0.6667,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.64,
+        "tokens": 976,
+        "reward": 0.7209
+      },
+      {
+        "query_id": "Q45",
+        "query": "What are the standard confidentiality durations under corporate NDAs and for trade secrets?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7122,
+          "confidence": 0.6708761826638509
+        },
+        "precision": 0.6667,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 108.49,
+        "tokens": 942,
+        "reward": 0.7103
+      },
+      {
+        "query_id": "Q46",
+        "query": "Show me the detailed root access procedures for production PostgreSQL clusters and session recording configs.",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7226,
+          "confidence": 0.6731891999800885
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.6,
+        "latency_ms": 37.59,
+        "tokens": 474,
+        "reward": 0.5769
+      },
+      {
+        "query_id": "Q47",
+        "query": "What are the confidential approval limits and CEO sign-off thresholds for Tier D procurement purchases?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7226,
+          "confidence": 0.6731891999800885
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 42.49,
+        "tokens": 152,
+        "reward": 0.3797
+      },
+      {
+        "query_id": "Q48",
+        "query": "Retrieve the confidential Disaster Recovery secondary site DNS switchover keys and satellite frequencies.",
+        "action": {
+          "action_id": 30,
+          "top_k": 8,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=8, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.6659,
+          "confidence": 0.6605826736373439
+        },
+        "precision": 0.0,
+        "recall": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "latency_ms": 37.57,
+        "tokens": 486,
+        "reward": 0.6496
+      },
+      {
+        "query_id": "Q49",
         "query": "What is the corporate pet policy for bringing dogs to the London technology office?",
         "action": {
-          "action_id": 18,
-          "top_k": 5,
+          "action_id": 6,
+          "top_k": 3,
           "threshold": 0.5,
           "mode": "hybrid",
           "rerank": false,
-          "description": "K=5, Thresh=0.5, Mode=hybrid, Rerank=False",
-          "ucb_score": 0.6558,
-          "confidence": 0.6583069051443293
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7174,
+          "confidence": 0.6720337352986405
         },
-        "precision": 0.5,
-        "recall": 0.5,
-        "mrr": 0.5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
         "faithfulness": 1.0,
-        "latency_ms": 72.55,
-        "tokens": 790,
-        "reward": 0.6465
+        "latency_ms": 42.61,
+        "tokens": 152,
+        "reward": 0.3914
+      },
+      {
+        "query_id": "Q50",
+        "query": "Can an employee submit an expense claim for Bitcoin cryptocurrency transaction gas fees?",
+        "action": {
+          "action_id": 6,
+          "top_k": 3,
+          "threshold": 0.5,
+          "mode": "hybrid",
+          "rerank": false,
+          "description": "K=3, Thresh=0.5, Mode=hybrid, Rerank=False",
+          "ucb_score": 0.7122,
+          "confidence": 0.6708761826638509
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "latency_ms": 42.51,
+        "tokens": 152,
+        "reward": 0.3832
       }
     ]
   }

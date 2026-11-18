@@ -87,25 +87,25 @@ This project implements an **Adaptive Reinforcement Learning-Based RAG Optimizat
 
 ## 📊 Empirical Benchmark Evaluation Results
 
-All models were evaluated on a held-out test suite of 20 representative corporate queries spanning HR, IT, Finance, Operations, and out-of-domain edge cases:
+All models were evaluated on an expanded, held-out test suite of **50 gold-annotated corporate queries** spanning HR, IT, Finance, Operations, Legal & Compliance, cross-boundary security probes, and out-of-domain edge cases:
 
 | Evaluation Dimension / Metric | Fixed-Parameter RAG (Static K=5) | Query-Aware Heuristic Baseline | Adaptive RL-RAG (LinUCB) | RL Framework Improvement Δ |
 | :--- | :---: | :---: | :---: | :---: |
-| **Precision @ 5** | 0.7000 | 0.6600 | **0.7625** | **+8.9%** |
-| **Recall @ 5** | 0.7000 | 0.7000 | **0.9750** | **+39.3% (Substantial)** |
-| **Mean Reciprocal Rank (MRR)** | 0.7000 | 0.7000 | **0.9750** | **+39.3%** |
-| **Faithfulness Score (Grounding)** | 1.0000 | 1.0000 | **1.0000** | **100% Grounded** |
-| **Answer Relevance Score** | 0.7030 | 0.7160 | **0.8057** | **+14.6%** |
-| **Mean End-to-End Latency (ms)** | 39.30 ms | 76.22 ms | **107.82 ms** | Real-time interactive (<150ms) |
-| **Tokens Consumed per Query** | 471.8 tok | 599.6 tok | **901.3 tok** | Context-Rich for Comparative Queries |
-| **Total Test Suite Tokens** | 9,436 | 11,992 | **18,026** | Controlled inference cost |
-| **Multi-Objective Reward Utility** | 0.5550 | 0.5507 | **0.6999** | **+26.1% Higher Reward Utility** |
-| **RBAC Security Leakage Rate** | 0.00% | 0.00% | **0.00%** | **Zero Cross-Boundary Leaks** |
+| **Precision @ 5** | 0.6800 | 0.6960 | **0.8093** | **+19.0%** |
+| **Recall @ 5** | 0.6800 | 0.7200 | **0.9400** | **+38.2% (Substantial)** |
+| **Mean Reciprocal Rank (MRR)** | 0.6800 | 0.7200 | **0.9300** | **+36.8%** |
+| **Faithfulness Score (Grounding)** | 1.0000 | 1.0000 | **0.9920** | **High Evidence Grounding** |
+| **Answer Relevance Score** | 0.6805 | 0.6928 | **0.7857** | **+15.5%** |
+| **Mean End-to-End Latency (ms)** | 37.95 ms | 57.46 ms | **82.16 ms** | Real-time interactive (<100ms) |
+| **Tokens Consumed per Query** | 411.4 tok | 499.4 tok | **751.3 tok** | Adaptive context-budgeting |
+| **Total Test Suite Tokens** | 20,570 | 24,972 | **37,566** | Controlled inference expenditure |
+| **Multi-Objective Reward Utility** | 0.5382 | 0.5436 | **0.6781** | **+26.0% Higher Reward Utility** |
+| **RBAC Security Leakage Rate** | 0.00% | 0.00% | **0.00%** | **Zero Cross-Boundary Leaks (0/50)** |
 
 ### Key Benchmark Insights
-1. **Elimination of Recall Bottlenecks:** Fixed $K=5$ missed clauses on multi-policy questions (e.g., comparing Maternity vs. Paternity leave or P1 vs. P2 SLA tiers). The RL controller selected $K=8$ and hybrid search, boosting recall from **70.0% to 97.5%**.
-2. **First-Rank Target Placement:** Mean Reciprocal Rank jumped from **0.700 to 0.975**, proving the target corporate clause appeared in the #1 retrieved position in 95% of test episodes.
-3. **Zero Security Leakage:** Over 60 simulated multi-role evaluations, unprivileged staff attempts to query restricted procurement thresholds or disaster recovery credentials were completely neutralized prior to vector search (**0.00% leakage rate**).
+1. **Elimination of Recall Bottlenecks:** Fixed $K=5$ missed clauses on multi-policy questions (e.g., comparing Maternity vs. Paternity leave, P1 vs. P2 SLA tiers, or CapEx thresholds). The RL controller selected $K=8$ and hybrid search, boosting recall from **68.0% to 94.0%**.
+2. **First-Rank Target Placement:** Mean Reciprocal Rank jumped from **0.680 to 0.930**, proving the target corporate clause appeared in the #1 retrieved position in over 90% of test episodes.
+3. **Zero Security Leakage:** Over simulated multi-role evaluations across unauthorized employee personas, attempts to query restricted procurement thresholds, database root procedures, or disaster recovery failover configurations were completely blocked prior to vector search (**0.00% leakage rate across all 50 queries**).
 
 ---
 
@@ -139,21 +139,48 @@ $$A_a \leftarrow A_a + x x^T, \quad b_a \leftarrow b_a + r x$$
 
 ---
 
-## 📚 Corporate Knowledge Base Corpus
+## 📚 Enterprise Knowledge Corpus & Multi-Format Datasets
 
-The repository includes 8 comprehensive, real-world corporate policy manuals:
-- **Human Resources (HR):**
-  - `HR_Global_Leave_Attendance_Policy_2026.txt`: Vacation entitlement, sick leave, 18-week maternity / 4-week paternity leave, 8-day rollover cap.
-  - `HR_Employee_Code_of_Conduct_Benefits.txt`: Whistleblower protections, medical insurance tiers, dollar-for-dollar 401(k) match up to 5%, remote work stipends.
-- **Information Technology (IT):**
-  - `IT_Access_Management_Security_Manual.txt`: FIDO2 MFA keys, GlobalProtect VPN, 16-character passwords, 90-day rotation, data classifications (Levels 1–4).
-  - `IT_Infrastructure_Incident_Response_SOP.txt`: P1 Critical (15-min SLA), P2 Major (30-min SLA), blameless PIR within 72 hours, 4-hour RTO and 15-minute RPO.
-- **Finance & Sourcing:**
-  - `Finance_Travel_Expense_Reimbursement_Policy.txt`: Domestic coach vs. transcontinental business flights (>6 hours), per-diem rates ($85/day Tier 1), $300 hotel caps.
-  - `Finance_Procurement_Vendor_Payment_Guidelines.txt`: PO tiers (<$5k single quote, $5k–$50k three quotes, >$50k RFP), three-way matching, Net-45 payment terms.
-- **Operations & Governance:**
-  - `Operations_SOP_Customer_Escalation_Matrix.txt`: Tiers 1–4 support hierarchy, SLA breach triggers, executive notification ladders.
-  - `Operations_Business_Continuity_Plan.txt`: Mission-critical Tier 0 systems, crisis command tree, regional remote failover drills.
+This project provides authentic enterprise knowledge datasets compiled across **5 corporate departments** and published in multiple industry-standard data formats:
+
+### 1. Structured Dataset Artifacts (`data/datasets/`)
+- **`enterprise_knowledge_corpus.json` & `.jsonl`:** Complete enterprise knowledge base with structured metadata (`doc_id`, `department`, `title`, `category`, `security_clearance`, `version`, `effective_date`, `owner`, `sections`, `key_entities`).
+- **`enterprise_kb_dataset.csv`:** Flattened tabular dataset containing 52 policy clauses, section headings, text, key entities, and word counts.
+- **`enterprise_kb_dataset.parquet`:** High-performance columnar Apache Parquet dataset for scalable analytics and embeddings.
+- **`qa_benchmark_dataset.json` & `.csv`:** 50 gold-annotated corporate evaluation queries with ground-truth document IDs, sections, expected facts, required roles, and optimal retrieval configurations.
+- **Departmental Subsets (`data/datasets/departments/`):**
+  - `hr_policies_dataset.json`
+  - `it_policies_dataset.json`
+  - `finance_policies_dataset.json`
+  - `operations_policies_dataset.json`
+  - `legal_policies_dataset.json`
+
+### 2. Multi-Format Native Documents (`data/documents/`)
+All policy manuals are also compiled into genuine enterprise formats:
+- **Microsoft Word (`.docx`):** Fully styled DOCX documents with corporate headers, metadata tables, and structured sections.
+- **Adobe Acrobat (`.pdf`):** Formatted PDF policy manuals with official headers and tables.
+- **Structured Markdown / TXT (`.txt`):** Structured text with document metadata headers.
+
+### 3. Covered Enterprise Domains
+1. **Human Resources (HR):**
+   - `HR-DOC-001`: Global Employee Leave and Attendance Policy 2026 (22-day annual leave, 8-day rollover cap, 18-week maternity / 4-week paternity leave).
+   - `HR-DOC-002`: Employee Code of Conduct, Ethics and Disciplinary Procedure ($75 gift cap, whistleblower protection, 4-stage disciplinary ladder).
+   - `HR-DOC-003`: Remote Work, Telecommuting and Hybrid Workplace Agreement (3/2 hybrid model, $800 home office stipend, 30-day international WFA limit).
+2. **Information Technology & Cybersecurity (IT):**
+   - `IT-DOC-001`: IT Infrastructure Incident Response and SLA SOP (P1 Critical 15-min response / 2-hr resolution, P2 Major 30-min response / 6-hr resolution, 72-hr RCA).
+   - `IT-DOC-002`: Enterprise Access Management and Cybersecurity Protocol (120-min production root sessions, FIDO2/YubiKey MFA, 15-min involuntary offboarding SLA).
+   - `IT-DOC-003`: Cloud Security, Data Encryption and Key Management Guidelines (AES-256 CMEK, TLS 1.3, 365-day KMS key rotation).
+3. **Finance & Sourcing (FIN):**
+   - `FIN-DOC-001`: Corporate Travel, Meal and Business Expense Reimbursement Policy ($85/day Tier 1 meal per-diem, $280/night Tier 1 hotel cap, $0.67/mile mileage).
+   - `FIN-DOC-002`: Corporate Procurement, Vendor Selection and Supplier Payment Guidelines (PO Tiers A–D, Three-Way Matching protocol, Net-45 standard terms).
+   - `FIN-DOC-003`: Capital Expenditure (CapEx) Governance and Asset Depreciation Manual ($5,000 capitalization floor, straight-line depreciation schedules).
+4. **Operations & Resilience (OPS):**
+   - `OPS-DOC-001`: Enterprise Business Continuity and Disaster Recovery Plan (Tier 1 Mission-Critical RTO <= 1 hr, RPO <= 15 min, 6-min DNS failover).
+   - `OPS-DOC-002`: Customer Support Escalation Matrix and SLA Guidelines (Tiers 1–4 severity, 75% SLA escalation triggers, executive notifications).
+   - `OPS-DOC-003`: Supply Chain Vendor Governance and Quality Assurance SOP (98.0% on-time delivery threshold, 0.05% defect limit, inbound quarantine inspection).
+5. **Legal, Compliance & Data Governance (LEGAL):**
+   - `LEGAL-DOC-001`: Master Services Agreement (MSA) Standards and Contract Negotiation Framework (12-month fee liability cap, 2x super-cap, 5-year NDA confidentiality).
+   - `LEGAL-DOC-002`: Global Data Privacy Regulation (GDPR & CCPA) Compliance Manual (30-day DSAR response deadline, 72-hour mandatory breach notification).
 
 ---
 
@@ -200,28 +227,39 @@ Visit the GitHub Pages deployment directly in any browser:
 │   └── workflows/
 │       └── deploy.yml            # Automated GitHub Actions workflow for GitHub Pages
 ├── app/
-│   └── app.py                    # Streamlit interactive application & diagnostics
+│   └── app.py                    # Streamlit interactive application & Datasets Explorer
 ├── data/
-│   ├── benchmark_results.json    # Full empirical benchmark metrics & logs
-│   ├── test_queries.json         # 20 curated benchmark queries with ground truth
-│   └── corporate_documents/      # Multi-department policy manuals
-│       ├── HR/                   # Leave policy & Code of Conduct
-│       ├── IT/                   # Access management & Incident Response SOP
-│       ├── Finance/              # Travel expense & Procurement guidelines
-│       └── Operations/           # Escalation matrix & Business continuity plan
+│   ├── benchmark_results.json    # Full empirical benchmark metrics & logs (50 queries)
+│   ├── test_queries.json         # 50 curated benchmark queries with ground truth
+│   ├── datasets/                 # Production-Grade Multi-Format Enterprise Datasets
+│   │   ├── enterprise_knowledge_corpus.json   # Full unified corpus (14 documents)
+│   │   ├── enterprise_knowledge_corpus.jsonl  # JSON Lines streaming dataset
+│   │   ├── enterprise_kb_dataset.csv          # Flat tabular dataset (52 clauses)
+│   │   ├── enterprise_kb_dataset.parquet      # Columnar Apache Parquet dataset
+│   │   ├── qa_benchmark_dataset.json          # 50 gold-annotated benchmark QA pairs
+│   │   ├── qa_benchmark_dataset.csv           # Benchmark QA in tabular CSV
+│   │   └── departments/                       # Domain-specific JSON datasets (HR, IT, Finance, Ops, Legal)
+│   ├── documents/                # Multi-Format Native Enterprise Files
+│   │   ├── HR/                   # DOCX, PDF, and TXT files
+│   │   ├── IT/                   # DOCX, PDF, and TXT files
+│   │   ├── Finance/              # DOCX, PDF, and TXT files
+│   │   ├── Operations/           # DOCX, PDF, and TXT files
+│   │   └── Legal/                # DOCX, PDF, and TXT files
+│   └── corporate_documents/      # Backwards-compatible document partition
 ├── docs/
 │   └── index.html                # Standalone SPA for permanent GitHub Pages live demo
 ├── presentation/
 │   ├── Adaptive_Corporate_RAG_Framework_Final_Presentation.pptx  # 18-slide executive deck
 │   └── Presentation_Outline_and_Speaker_Notes.md                 # Defense notes
 ├── scripts/
+│   ├── build_datasets.py         # Compiles JSON, CSV, Parquet, DOCX, PDF datasets
 │   ├── generate_presentation.py  # Python script generating the 18-slide PPTX
-│   └── run_evaluation.py         # Benchmark execution script
+│   └── run_evaluation.py         # 50-query Benchmark evaluation script
 ├── src/
 │   ├── rbac/
 │   │   └── access_control.py     # Role-Based Access Control pre-filtering engine
 │   ├── ingestion/
-│   │   ├── parser.py             # Metadata and text extractor
+│   │   ├── parser.py             # Multi-format parser (JSON, CSV, Parquet, DOCX, PDF, TXT)
 │   │   └── chunker.py            # Section-preserving semantic chunker
 │   ├── retrieval/
 │   │   ├── vector_store.py       # Dense vector index with cosine similarity

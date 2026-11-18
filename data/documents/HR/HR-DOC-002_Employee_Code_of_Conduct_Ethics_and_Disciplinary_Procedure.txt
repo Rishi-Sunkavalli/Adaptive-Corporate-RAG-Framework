@@ -1,0 +1,23 @@
+# DOCUMENT METADATA
+# Document ID: HR-DOC-002
+# Title: Employee Code of Conduct, Ethics and Disciplinary Procedure
+# Department: HR
+# Version: 3.1
+# Effective Date: 2026-01-01
+# Security Clearance: Internal
+
+## 1. Corporate Values and Professional Integrity
+Employees must conduct all business interactions with honesty, integrity, transparency, and respect. Harassment, discrimination, bullying, or retaliation of any kind is strictly prohibited and results in immediate disciplinary review under corporate zero-tolerance mandates.
+
+## 2. Conflict of Interest Guidelines
+Employees must not engage in outside commercial activities or employment that compete directly with company business or compromise company duties. Outside board memberships, commercial consultancies, or investments exceeding 1% in direct vendor entities must be formally disclosed via the Annual Ethics Declaration portal.
+
+## 3. Gift and Hospitality Policy
+Employees may accept non-cash promotional gifts valued below $75 USD without prior approval. Any gift, entertainment, meal, or hospitality valued between $75 and $250 USD must be reported to the Department Head. Acceptance of gifts exceeding $250 USD, or any cash or cash-equivalent gift (gift cards, securities) regardless of denomination, is strictly prohibited.
+
+## 4. Whistleblower Protection and Reporting Channels
+Employees who observe unethical, unlawful, or fraudulent conduct can submit confidential or anonymous disclosures through the Ethics Helpline portal or email ethics-hotline@company.internal. Retaliation against any employee making a good-faith report is illegal and causes immediate dismissal.
+
+## 5. Disciplinary Ladder and Sanctions
+Violations are adjudicated via a 4-step progressive disciplinary process: 1. Documented Verbal Warning; 2. Written Reprimand placed in personnel file; 3. Suspension without pay (up to 14 days); 4. Termination for cause with loss of severance eligibility.
+

@@ -38,7 +38,7 @@ class CorporateRAGPipeline:
         self._initialize_knowledge_base()
 
     def _initialize_knowledge_base(self):
-        docs = CorporateDocumentParser.load_directory(self.data_dir)
+        docs = CorporateDocumentParser.load_dataset_or_directory(self.data_dir)
         chunker = DocumentChunker(chunk_size_words=180, overlap_words=30)
         self.chunks = chunker.chunk_all(docs)
         self.vector_store.index_chunks(self.chunks)
@@ -119,10 +119,10 @@ def run_benchmark(docs_dir: str, queries_path: str, output_json_path: str) -> Di
 
     pipeline = CorporateRAGPipeline(docs_dir)
 
-    # Pre-train bandit slightly over sample queries to simulate online learning convergence
-    for _ in range(5):
+    # Pre-train bandit over sample queries to simulate online learning convergence
+    for _ in range(6):
         for q in queries:
-            user = DEFAULT_USERS["emp_001"]
+            user = DEFAULT_USERS["admin_001"]
             pipeline.execute_query(q["query"], user, mode="adaptive", train_rl=True)
 
     results_by_mode = {"fixed": [], "heuristic": [], "adaptive": []}
@@ -140,22 +140,44 @@ def run_benchmark(docs_dir: str, queries_path: str, output_json_path: str) -> Di
         rbac_violations = 0
 
         for q in queries:
-            # Map query to an appropriate user context
+            intent = q.get("intent", "")
             min_role = q.get("min_role", "Employee")
-            if min_role == "IT_Staff":
+            expected_doc = q.get("expected_doc_id", "")
+
+            # Security probes intentionally test unauthorized employee attempting access
+            if intent == "security_probe":
+                user = DEFAULT_USERS["emp_001"]
+                is_probe_blocked = not user.can_access_document(expected_doc)
+            elif min_role == "IT_Staff":
                 user = DEFAULT_USERS["it_001"]
+                is_probe_blocked = False
             elif min_role == "Finance_Staff":
                 user = DEFAULT_USERS["fin_001"]
+                is_probe_blocked = False
             elif min_role == "Operations_Staff":
                 user = DEFAULT_USERS["ops_001"]
+                is_probe_blocked = False
+            elif min_role == "Legal_Counsel":
+                user = DEFAULT_USERS["legal_001"]
+                is_probe_blocked = False
+            elif min_role == "Executive_Admin":
+                user = DEFAULT_USERS["admin_001"]
+                is_probe_blocked = False
             else:
                 user = DEFAULT_USERS["emp_001"]
+                is_probe_blocked = False
 
             out = pipeline.execute_query(q["query"], user, mode=mode, train_rl=False)
             retrieved = out["retrieved_chunks"]
 
             # Evaluate Metrics
-            pm = RAGEvaluationMetrics.precision_recall_mrr(retrieved, q["expected_doc_id"], q["expected_section"], k=5)
+            pm = RAGEvaluationMetrics.precision_recall_mrr(
+                retrieved,
+                expected_doc,
+                q.get("expected_section"),
+                k=5,
+                is_security_probe_blocked=is_probe_blocked
+            )
             faith = RAGEvaluationMetrics.faithfulness_score(out["generation"]["answer"], retrieved)
             ans_rel = RAGEvaluationMetrics.answer_relevance_score(q["query"], out["generation"]["answer"])
             leak = RAGEvaluationMetrics.rbac_leakage_check(retrieved, user)

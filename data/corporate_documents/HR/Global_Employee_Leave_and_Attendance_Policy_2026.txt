@@ -1,0 +1,26 @@
+# DOCUMENT METADATA
+# Document ID: HR-DOC-001
+# Title: Global Employee Leave and Attendance Policy 2026
+# Department: HR
+# Version: 4.2
+# Effective Date: 2026-01-01
+# Security Clearance: Internal
+
+## 1. Purpose and Scope
+This policy establishes standard corporate standards governing annual leave, medical absence, parental leave, bereavement, and public holidays for all permanent full-time and contracted employees across all worldwide subsidiaries. All leave requests must be logged through the Corporate HRMS portal.
+
+## 2. Working Hours and Core Collaboration Window
+Standard operational hours are 40 hours per week, Monday through Friday. Core collaborative business hours are 10:00 AM to 4:00 PM local office time, during which all active employees are expected to be reachable via Slack and email unless pre-approved for flexible asynchronous schedules.
+
+## 3. Annual Leave Entitlement
+Regular full-time employees accrue 22 days of paid annual leave per calendar year, accruing monthly at the rate of 1.83 days per completed month of service. A maximum of 8 unused annual leave days can be rolled over into the succeeding calendar year. Any carried-over leave must be fully utilized prior to March 31st; unutilized rollover balances are permanently forfeited without financial encashment.
+
+## 4. Sick and Medical Leave
+Employees are granted 12 days of fully paid medical and sick leave per annum. Any sick leave extending beyond two consecutive working days requires the submission of a medical certificate issued by a licensed medical practitioner within 48 hours of returning to duty. Medical leave does not roll over to subsequent years.
+
+## 5. Parental, Maternity, and Paternity Leave
+Primary caregivers (maternity leave) are entitled to 18 weeks of fully paid leave upon the birth or legal adoption of a child under 5 years old. Secondary caregivers (paternity leave) are entitled to 4 weeks of fully paid leave. Employees may request an additional 4 weeks of unpaid parental leave with HR Director approval.
+
+## 6. Compassionate and Bereavement Leave
+Employees may take up to 5 consecutive paid working days for the loss of an immediate family member (spouse, child, parent, sibling). For extended relatives (grandparent, in-laws), 3 paid working days are granted. International travel allowances for bereavement require People Partner clearance.
+

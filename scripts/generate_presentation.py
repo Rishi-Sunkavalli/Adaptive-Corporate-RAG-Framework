@@ -302,34 +302,35 @@ def create_slide_deck(output_pptx_path: str):
     # ==========================================
     # SLIDE 7: MULTI-DEPARTMENT CORPUS & RBAC
     # ==========================================
-    s7 = add_base_slide("Corporate Knowledge Corpus & RBAC Security Layer", "Data Architecture")
+    s7 = add_base_slide("Enterprise Knowledge Corpus & Multi-Format Datasets", "Data Architecture")
     depts = [
-        ("Human Resources (HR)", "• HR-DOC-001: Leave & Attendance Policy (Vacation, Parental, Sick, Rollover)\n• HR-DOC-002: Code of Conduct & Benefits (Insurance, 401k match, Stipends)\n\nAccess: All badge-authenticated employees.", Inches(0.8), Inches(2.0), Inches(5.6), Inches(2.2)),
-        ("Information Technology (IT)", "• IT-DOC-001: Access Management Manual (MFA, VPN, 90-day password rotation)\n• IT-DOC-002: Incident Response SOP (P1/P2 SLAs, DR Failover, RTO/RPO)\n\nAccess: IT-DOC-001 General; IT-DOC-002 Restricted to IT & Ops.", Inches(6.9), Inches(2.0), Inches(5.6), Inches(2.2)),
-        ("Finance & Sourcing", "• FIN-DOC-001: Travel & Expense Policy (Per-diems, Hotel caps, Airfare classes)\n• FIN-DOC-002: Procurement Guidelines (PO Tiers A-D, Three-Way Matching)\n\nAccess: FIN-DOC-001 General; FIN-DOC-002 Restricted to Finance & Execs.", Inches(0.8), Inches(4.5), Inches(5.6), Inches(2.2)),
-        ("Operations & Governance", "• OPS-DOC-001: Customer Escalation Matrix (Tiers 1-4, SLA breached tickets)\n• OPS-DOC-002: Business Continuity Plan (System Tier 0-2 MTD/RTO/RPO)\n\nAccess: Restricted to Operations & Executive Leadership.", Inches(6.9), Inches(4.5), Inches(5.6), Inches(2.2))
+        ("Human Resources (HR)", "• HR-DOC-001: Leave & Attendance Policy (Vacation, Parental, Sick, Rollover)\n• HR-DOC-002: Code of Conduct & Ethics (Gifts, Whistleblower)\n• HR-DOC-003: Hybrid Workplace & Remote Ergonomic Stipend ($800)\n\nAccess: All badge-authenticated employees.", Inches(0.8), Inches(1.8), Inches(3.7), Inches(2.4)),
+        ("Information Technology (IT)", "• IT-DOC-001: Infrastructure Incident Response SOP (P1-P4 SLAs)\n• IT-DOC-002: Access Management & Root Protocol (120m limit)\n• IT-DOC-003: Cloud Encryption & Key Rotation (365d KMS)\n\nAccess: IT Staff & Executive Directorate.", Inches(4.8), Inches(1.8), Inches(3.7), Inches(2.4)),
+        ("Finance & Sourcing", "• FIN-DOC-001: Travel Expense Reimbursement (Per-diems, Hotel caps)\n• FIN-DOC-002: Procurement Guidelines (Tiers A-D, 3-Way Match)\n• FIN-DOC-003: CapEx Asset Depreciation (Hardware 3y, Software 5y)\n\nAccess: Finance Staff & Executive Leadership.", Inches(8.8), Inches(1.8), Inches(3.7), Inches(2.4)),
+        ("Operations & Resilience", "• OPS-DOC-001: Business Continuity Plan (Tier 1 RTO <= 1h, RPO <= 15m)\n• OPS-DOC-002: Customer Escalation Matrix (Tier 1-4 triggers)\n• OPS-DOC-003: Supply Chain Vendor Scorecards (98% Delivery)\n\nAccess: Operations & Executive Leadership.", Inches(0.8), Inches(4.4), Inches(5.6), Inches(2.2)),
+        ("Legal, Compliance & Data Governance", "• LEGAL-DOC-001: Master Services Agreement Standards (Liability Caps)\n• LEGAL-DOC-002: GDPR & CCPA Compliance (30-day DSAR, 72-hour breach)\n\nAccess: LEGAL-001 Legal/Exec; LEGAL-002 Internal Organization.", Inches(6.9), Inches(4.4), Inches(5.6), Inches(2.2))
     ]
     for title, desc, left, top, w, h in depts:
         add_card(s7, left, top, w, h, title)
-        tb = s7.shapes.add_textbox(left + Inches(0.2), top + Inches(0.6), w - Inches(0.4), h - Inches(0.8))
+        tb = s7.shapes.add_textbox(left + Inches(0.2), top + Inches(0.5), w - Inches(0.4), h - Inches(0.6))
         tf = tb.text_frame
         tf.word_wrap = True
         p = tf.paragraphs[0]
         p.text = desc
-        p.font.size = Pt(10.5)
+        p.font.size = Pt(10)
         p.font.color.rgb = TEXT_DARK
 
     # ==========================================
     # SLIDE 8: INGESTION, CHUNKING & HYBRID RETRIEVAL
     # ==========================================
-    s8 = add_base_slide("Ingestion, Chunking & Hybrid Retrieval Engine", "Retrieval Mechanics")
+    s8 = add_base_slide("Multi-Format Ingestion & Hybrid Retrieval Engine", "Retrieval Mechanics")
     
-    add_card(s8, Inches(0.8), Inches(1.8), Inches(3.7), Inches(4.8), "Section-Aware Chunking")
+    add_card(s8, Inches(0.8), Inches(1.8), Inches(3.7), Inches(4.8), "Multi-Format Ingestion")
     tb = s8.shapes.add_textbox(Inches(1.0), Inches(2.4), Inches(3.3), Inches(4.0))
     tf = tb.text_frame
     tf.word_wrap = True
     p = tf.paragraphs[0]
-    p.text = "• Structured Parsing: Extracts headers, versions, and security tags.\n\n• Semantic Chunking: 180 words with 30-word overlap.\n\n• Breadcrumb Inheritance: Every chunk inherits Document Title, Section Heading, Version, and Date.\n\n• Metadata Tagging: Attaches doc_id, department, and security clearance for filtering."
+    p.text = "• Multi-Format Engine: Ingests JSON, JSONL, CSV, Apache Parquet, Word DOCX, PDF, and TXT.\n\n• Semantic Chunking: 180 words with 30-word overlap.\n\n• Breadcrumb Inheritance: Inherits Document Title, Section Heading, Version, Date, and Category.\n\n• Metadata Tagging: Attaches doc_id, department, and security clearance for pre-retrieval RBAC."
     p.font.size = Pt(11)
     p.font.color.rgb = TEXT_DARK
 
@@ -488,7 +489,7 @@ def create_slide_deck(output_pptx_path: str):
     tf = tb.text_frame
     tf.word_wrap = True
     p = tf.paragraphs[0]
-    p.text = "• 20 Curated Corporate Queries spanning all 4 departments.\n\n• Query Types: Factual (35%), Comparative (25%), Procedural (20%), Policy Verification (15%), and Out-of-Domain Refusal (5%).\n\n• Gold-standard ground truth document IDs and facts annotated for each query."
+    p.text = "• 50 Annotated Corporate Queries across 5 departments (HR, IT, Finance, Operations, Legal).\n\n• Query Types: Factual (30%), Numeric/Lookup (20%), Comparative (20%), Procedural (14%), RBAC Security Probes (6%), and Refusal Guards (10%).\n\n• Gold-standard ground truth doc IDs, sections, and facts."
     p.font.size = Pt(11)
     p.font.color.rgb = TEXT_DARK
 
@@ -513,7 +514,7 @@ def create_slide_deck(output_pptx_path: str):
     # ==========================================
     # SLIDE 14: BENCHMARK RESULTS & FINDINGS
     # ==========================================
-    s14 = add_base_slide("Empirical Results & Comparative Performance", "Key Findings")
+    s14 = add_base_slide("Empirical Results & Comparative Performance (50 Queries)", "Key Findings")
     add_card(s14, Inches(0.8), Inches(1.8), Inches(11.733), Inches(4.8))
     
     # Render Table in PowerPoint
@@ -532,16 +533,16 @@ def create_slide_deck(output_pptx_path: str):
             p.font.color.rgb = ACCENT_BLUE if c == 3 else TEXT_WHITE
 
     data = [
-        ("Precision @ 5", "0.7000", "0.6600", "0.7625", "+8.9%"),
-        ("Recall @ 5", "0.7000", "0.7000", "0.9750", "+39.3% (Substantial)"),
-        ("Mean Reciprocal Rank (MRR)", "0.7000", "0.7000", "0.9750", "+39.3%"),
-        ("Faithfulness (Grounding)", "1.0000", "1.0000", "1.0000", "100% Grounded"),
-        ("Answer Relevance Score", "0.7030", "0.7160", "0.8057", "+14.6%"),
-        ("Mean Latency (ms)", "39.30 ms", "76.22 ms", "107.82 ms", "Sub-150ms real-time"),
-        ("Tokens per Query", "471.8 tok", "599.6 tok", "901.3 tok", "Rich context depth"),
-        ("Total Tokens Consumed", "9,436", "11,992", "18,026", "Controlled budget"),
-        ("Multi-Objective Reward", "0.5550", "0.5507", "0.6999", "+26.1% Higher Utility"),
-        ("RBAC Security Leakage Rate", "0.00%", "0.00%", "0.00%", "Zero Security Leaks")
+        ("Precision @ 5", "0.6800", "0.6960", "0.8093", "+19.0%"),
+        ("Recall @ 5", "0.6800", "0.7200", "0.9400", "+38.2% (Substantial)"),
+        ("Mean Reciprocal Rank (MRR)", "0.6800", "0.7200", "0.9300", "+36.8%"),
+        ("Faithfulness (Grounding)", "1.0000", "1.0000", "0.9920", "High Evidence Grounding"),
+        ("Answer Relevance Score", "0.6805", "0.6928", "0.7857", "+15.5%"),
+        ("Mean Latency (ms)", "37.95 ms", "57.46 ms", "82.16 ms", "Sub-100ms real-time"),
+        ("Tokens per Query", "411.4 tok", "499.4 tok", "751.3 tok", "Adaptive context depth"),
+        ("Total Tokens Consumed", "20,570", "24,972", "37,566", "Optimized expenditure"),
+        ("Multi-Objective Reward", "0.5382", "0.5436", "0.6781", "+26.0% Higher Utility"),
+        ("RBAC Security Leakage Rate", "0.00%", "0.00%", "0.00%", "Zero Security Leaks (0/50)")
     ]
     for r, row_data in enumerate(data, start=1):
         for c, val in enumerate(row_data):
@@ -645,10 +646,10 @@ def create_slide_deck(output_pptx_path: str):
     tf = tb.text_frame
     tf.word_wrap = True
     bullets = [
-        ("Production-Grade Python Architecture:", "Complete modular codebase (src/rbac, src/ingestion, src/retrieval, src/rl_controller, src/generation, src/evaluation) with Streamlit interactive UI."),
-        ("Multi-Department Corporate Corpus:", "8 fully parsed corporate manuals across HR, IT, Finance, and Operations with section-preserving chunking and metadata."),
-        ("Rigorous Empirical Benchmark Suite:", "Comparative evaluation across Fixed RAG, Heuristic RAG, and Adaptive RL-RAG proving +39.3% recall gain and +26.1% reward gain."),
-        ("Permanent Live Deployment on GitHub Pages:", "https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/ with live interactive assistant, RBAC sandbox, and Chart.js analytics."),
+        ("Production-Grade Python Architecture:", "Complete modular codebase (src/rbac, src/ingestion, src/retrieval, src/rl_controller, src/generation, src/evaluation) with Streamlit interactive UI and Datasets Explorer."),
+        ("Comprehensive Multi-Format Datasets:", "Multi-department knowledge datasets across 5 domains (HR, IT, Finance, Operations, Legal) in JSON, JSONL, CSV, Apache Parquet, Word DOCX, and PDF formats."),
+        ("Rigorous 50-Query Empirical Benchmark Suite:", "Comparative evaluation across Fixed RAG, Heuristic RAG, and Adaptive RL-RAG proving +38.2% recall gain, +19.0% precision gain, and +26.0% reward gain with 0.00% RBAC leakage."),
+        ("Permanent Live Deployment on GitHub Pages:", "https://rishi-sunkavalli.github.io/Adaptive-Corporate-RAG-Framework/ with live interactive assistant, dataset explorer, and real-time simulator."),
         ("Executive Presentation & Complete Documentation:", "18-slide executive presentation (.pptx) and comprehensive publication-grade README in the GitHub repository."),
         ("Primary Author & Repository Contact:", "Rishi Sunkavalli (sunkavallirshi@gmail.com) • Repository: Rishi-Sunkavalli/Adaptive-Corporate-RAG-Framework")
     ]

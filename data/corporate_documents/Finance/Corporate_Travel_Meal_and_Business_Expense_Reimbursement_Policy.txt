@@ -1,0 +1,23 @@
+# DOCUMENT METADATA
+# Document ID: FIN-DOC-001
+# Title: Corporate Travel, Meal and Business Expense Reimbursement Policy
+# Department: Finance
+# Version: 6.0
+# Effective Date: 2026-01-01
+# Security Clearance: Internal
+
+## 1. Purpose and Expense Submission Timeline
+This policy governs the reimbursement of travel, lodging, meals, and business entertainment incurred during company business. All expense claims must be submitted via the Concur Expense portal within 30 calendar days of expense incurrence. Claims submitted beyond 60 days require VP Finance authorization.
+
+## 2. Commercial Airfare Class Standards
+Employees traveling on domestic flights or international flights under 6 hours duration must book Economy Class. Business Class bookings are permitted only for nonstop flight legs exceeding 6 continuous flight hours, or when medically necessary with Occupational Health documentation and CFO sign-off.
+
+## 3. Hotel Nightly Lodging Caps
+Maximum allowable nightly hotel rates (excluding local taxes) are categorized by geographic tier: Tier 1 High-Cost Metro Areas (New York, London, San Francisco, Tokyo, Singapore): $280 USD per night. Tier 2 Standard Metro Areas: $190 USD per night. Tier 3 Regional Cities: $140 USD per night. Bookings exceeding caps by more than 15% require Department VP pre-approval.
+
+## 4. Daily Per-Diem Meal Allowances
+Employees are provided daily per-diem meal allowances as follows: Tier 1 Cities: $85 USD per full travel day ($20 Breakfast, $25 Lunch, $40 Dinner). Tier 2 and Tier 3 Cities: $65 USD per full travel day ($15 Breakfast, $20 Lunch, $30 Dinner). Itemized receipts are mandatory for any individual business meal or transaction exceeding $25 USD. Alcohol is not reimbursable without client presence.
+
+## 5. Ground Transportation and Personal Mileage
+Use of rideshare (Uber/Lyft Standard) and public rapid transit is encouraged. Luxury or Black car services are non-reimbursable. Personal vehicle mileage for business travel is reimbursed at the statutory rate of $0.67 USD per mile, excluding regular daily home-to-office commutes.
+

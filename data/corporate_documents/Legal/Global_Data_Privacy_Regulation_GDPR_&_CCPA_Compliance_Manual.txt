@@ -1,0 +1,17 @@
+# DOCUMENT METADATA
+# Document ID: LEGAL-DOC-002
+# Title: Global Data Privacy Regulation (GDPR & CCPA) Compliance Manual
+# Department: Legal
+# Version: 3.2
+# Effective Date: 2026-01-10
+# Security Clearance: Internal
+
+## 1. Data Subject Access Requests (DSAR) Response Timelines
+Under GDPR Article 15 and California CCPA/CPRA regulations, verified Data Subject Access Requests (DSAR)—including requests to access, rectify, or delete personal data—must be fulfilled within 30 calendar days of identity verification. An extension of up to 60 additional days is permissible only for exceptionally complex requests upon written notification to the applicant.
+
+## 2. Personal Data Breach Mandatory Notification Window
+In the event of a confirmed personal data security incident affecting employee or customer data, the Data Protection Officer must notify the lead supervisory data authority (e.g. Irish DPC or UK ICO) within 72 hours of becoming aware of the breach, pursuant to GDPR Article 33. Affected individuals must be notified without undue delay if the breach carries a high risk to personal freedoms.
+
+## 3. International Data Transfer Mechanisms
+Transfers of personal data originating from the European Economic Area (EEA) to third countries must rely upon valid Standard Contractual Clauses (SCCs) approved by the European Commission, accompanied by a documented Transfer Impact Assessment (TIA), or an EU-US Data Privacy Framework certification.
+

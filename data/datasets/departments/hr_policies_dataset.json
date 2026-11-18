@@ -1,0 +1,214 @@
+[
+  {
+    "doc_id": "HR-DOC-001",
+    "title": "Global Employee Leave and Attendance Policy 2026",
+    "department": "HR",
+    "category": "Policy & Benefits",
+    "security_clearance": "Internal",
+    "version": "4.2",
+    "effective_date": "2026-01-01",
+    "owner": "Global Human Resources Operations",
+    "allowed_roles": [
+      "General_Employee",
+      "HR_Staff",
+      "IT_Staff",
+      "Finance_Staff",
+      "Operations_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Purpose and Scope",
+        "content": "This policy establishes standard corporate standards governing annual leave, medical absence, parental leave, bereavement, and public holidays for all permanent full-time and contracted employees across all worldwide subsidiaries. All leave requests must be logged through the Corporate HRMS portal.",
+        "key_entities": [
+          "Corporate HRMS",
+          "All subsidiaries",
+          "Annual leave",
+          "Medical absence"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Working Hours and Core Collaboration Window",
+        "content": "Standard operational hours are 40 hours per week, Monday through Friday. Core collaborative business hours are 10:00 AM to 4:00 PM local office time, during which all active employees are expected to be reachable via Slack and email unless pre-approved for flexible asynchronous schedules.",
+        "key_entities": [
+          "40 hours per week",
+          "10:00 AM to 4:00 PM",
+          "Slack",
+          "Email"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Annual Leave Entitlement",
+        "content": "Regular full-time employees accrue 22 days of paid annual leave per calendar year, accruing monthly at the rate of 1.83 days per completed month of service. A maximum of 8 unused annual leave days can be rolled over into the succeeding calendar year. Any carried-over leave must be fully utilized prior to March 31st; unutilized rollover balances are permanently forfeited without financial encashment.",
+        "key_entities": [
+          "22 days of paid annual leave",
+          "1.83 days per month",
+          "8 unused annual leave days",
+          "March 31st",
+          "Forfeited"
+        ]
+      },
+      {
+        "section_number": "4",
+        "section_title": "4. Sick and Medical Leave",
+        "content": "Employees are granted 12 days of fully paid medical and sick leave per annum. Any sick leave extending beyond two consecutive working days requires the submission of a medical certificate issued by a licensed medical practitioner within 48 hours of returning to duty. Medical leave does not roll over to subsequent years.",
+        "key_entities": [
+          "12 days paid medical leave",
+          "two consecutive working days",
+          "licensed medical practitioner",
+          "48 hours"
+        ]
+      },
+      {
+        "section_number": "5",
+        "section_title": "5. Parental, Maternity, and Paternity Leave",
+        "content": "Primary caregivers (maternity leave) are entitled to 18 weeks of fully paid leave upon the birth or legal adoption of a child under 5 years old. Secondary caregivers (paternity leave) are entitled to 4 weeks of fully paid leave. Employees may request an additional 4 weeks of unpaid parental leave with HR Director approval.",
+        "key_entities": [
+          "Primary Caregiver / Maternity: 18 weeks",
+          "Secondary Caregiver / Paternity: 4 weeks",
+          "unpaid 4 weeks",
+          "HR Director approval"
+        ]
+      },
+      {
+        "section_number": "6",
+        "section_title": "6. Compassionate and Bereavement Leave",
+        "content": "Employees may take up to 5 consecutive paid working days for the loss of an immediate family member (spouse, child, parent, sibling). For extended relatives (grandparent, in-laws), 3 paid working days are granted. International travel allowances for bereavement require People Partner clearance.",
+        "key_entities": [
+          "5 consecutive paid working days",
+          "immediate family",
+          "3 paid working days",
+          "extended relatives"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "HR-DOC-002",
+    "title": "Employee Code of Conduct, Ethics and Disciplinary Procedure",
+    "department": "HR",
+    "category": "Governance & Compliance",
+    "security_clearance": "Internal",
+    "version": "3.1",
+    "effective_date": "2026-01-01",
+    "owner": "Chief People Officer & Legal Compliance",
+    "allowed_roles": [
+      "General_Employee",
+      "HR_Staff",
+      "IT_Staff",
+      "Finance_Staff",
+      "Operations_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Corporate Values and Professional Integrity",
+        "content": "Employees must conduct all business interactions with honesty, integrity, transparency, and respect. Harassment, discrimination, bullying, or retaliation of any kind is strictly prohibited and results in immediate disciplinary review under corporate zero-tolerance mandates.",
+        "key_entities": [
+          "Zero-tolerance",
+          "Professional integrity",
+          "Anti-harassment"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Conflict of Interest Guidelines",
+        "content": "Employees must not engage in outside commercial activities or employment that compete directly with company business or compromise company duties. Outside board memberships, commercial consultancies, or investments exceeding 1% in direct vendor entities must be formally disclosed via the Annual Ethics Declaration portal.",
+        "key_entities": [
+          "Annual Ethics Declaration",
+          "1% vendor investment",
+          "Outside consultancies"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Gift and Hospitality Policy",
+        "content": "Employees may accept non-cash promotional gifts valued below $75 USD without prior approval. Any gift, entertainment, meal, or hospitality valued between $75 and $250 USD must be reported to the Department Head. Acceptance of gifts exceeding $250 USD, or any cash or cash-equivalent gift (gift cards, securities) regardless of denomination, is strictly prohibited.",
+        "key_entities": [
+          "$75 USD non-cash gift",
+          "$75 to $250 USD reportable",
+          "gifts exceeding $250 strictly prohibited",
+          "cash strictly prohibited"
+        ]
+      },
+      {
+        "section_number": "4",
+        "section_title": "4. Whistleblower Protection and Reporting Channels",
+        "content": "Employees who observe unethical, unlawful, or fraudulent conduct can submit confidential or anonymous disclosures through the Ethics Helpline portal or email ethics-hotline@company.internal. Retaliation against any employee making a good-faith report is illegal and causes immediate dismissal.",
+        "key_entities": [
+          "Ethics Helpline portal",
+          "ethics-hotline@company.internal",
+          "Strict anti-retaliation",
+          "Immediate dismissal"
+        ]
+      },
+      {
+        "section_number": "5",
+        "section_title": "5. Disciplinary Ladder and Sanctions",
+        "content": "Violations are adjudicated via a 4-step progressive disciplinary process: 1. Documented Verbal Warning; 2. Written Reprimand placed in personnel file; 3. Suspension without pay (up to 14 days); 4. Termination for cause with loss of severance eligibility.",
+        "key_entities": [
+          "Verbal Warning",
+          "Written Reprimand",
+          "Suspension without pay (up to 14 days)",
+          "Termination for cause"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "HR-DOC-003",
+    "title": "Remote Work, Telecommuting and Hybrid Workplace Agreement",
+    "department": "HR",
+    "category": "Workplace Arrangements",
+    "security_clearance": "Internal",
+    "version": "2.0",
+    "effective_date": "2026-02-01",
+    "owner": "Global Workplace Experience & HR",
+    "allowed_roles": [
+      "General_Employee",
+      "HR_Staff",
+      "IT_Staff",
+      "Finance_Staff",
+      "Operations_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Hybrid Work Model Eligibility",
+        "content": "Full-time employees whose job functions do not mandate physical on-site presence (such as data center operators and facilities engineers) may adopt a 3/2 hybrid model: a minimum of 3 days working from the designated company regional office and up to 2 days working remotely each work week.",
+        "key_entities": [
+          "3/2 hybrid model",
+          "3 days in office",
+          "2 days remote"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Home Office Ergonomic Stipend",
+        "content": "New full-time remote or hybrid employees are provided a one-time home office setup reimbursement of up to $800 USD within their first 90 days of employment. Eligible items include ergonomic chairs, external monitors, adjustable desk converters, and noise-canceling headsets.",
+        "key_entities": [
+          "$800 USD home office stipend",
+          "first 90 days",
+          "ergonomic chair",
+          "external monitors"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Work From Anywhere (WFA) International Travel Limit",
+        "content": "Employees may request to work remotely from an approved international country for up to 30 cumulative calendar days per calendar year. Requests must be logged 21 business days in advance to evaluate cross-border corporate tax presence and visa compliance.",
+        "key_entities": [
+          "30 cumulative calendar days",
+          "21 business days notice",
+          "international remote work",
+          "tax compliance"
+        ]
+      }
+    ]
+  }
+]

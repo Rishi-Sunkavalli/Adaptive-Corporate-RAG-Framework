@@ -1,0 +1,183 @@
+[
+  {
+    "doc_id": "FIN-DOC-001",
+    "title": "Corporate Travel, Meal and Business Expense Reimbursement Policy",
+    "department": "Finance",
+    "category": "Expense Management",
+    "security_clearance": "Internal",
+    "version": "6.0",
+    "effective_date": "2026-01-01",
+    "owner": "Global Financial Operations & Accounting",
+    "allowed_roles": [
+      "General_Employee",
+      "HR_Staff",
+      "IT_Staff",
+      "Finance_Staff",
+      "Operations_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Purpose and Expense Submission Timeline",
+        "content": "This policy governs the reimbursement of travel, lodging, meals, and business entertainment incurred during company business. All expense claims must be submitted via the Concur Expense portal within 30 calendar days of expense incurrence. Claims submitted beyond 60 days require VP Finance authorization.",
+        "key_entities": [
+          "Concur Expense portal",
+          "30 calendar days submission",
+          "60 days requires VP Finance authorization"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Commercial Airfare Class Standards",
+        "content": "Employees traveling on domestic flights or international flights under 6 hours duration must book Economy Class. Business Class bookings are permitted only for nonstop flight legs exceeding 6 continuous flight hours, or when medically necessary with Occupational Health documentation and CFO sign-off.",
+        "key_entities": [
+          "Economy Class under 6 hours",
+          "Business Class over 6 hours",
+          "CFO sign-off"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Hotel Nightly Lodging Caps",
+        "content": "Maximum allowable nightly hotel rates (excluding local taxes) are categorized by geographic tier: Tier 1 High-Cost Metro Areas (New York, London, San Francisco, Tokyo, Singapore): $280 USD per night. Tier 2 Standard Metro Areas: $190 USD per night. Tier 3 Regional Cities: $140 USD per night. Bookings exceeding caps by more than 15% require Department VP pre-approval.",
+        "key_entities": [
+          "Tier 1: $280 USD/night",
+          "Tier 2: $190 USD/night",
+          "Tier 3: $140 USD/night",
+          "15% variance requires VP approval"
+        ]
+      },
+      {
+        "section_number": "4",
+        "section_title": "4. Daily Per-Diem Meal Allowances",
+        "content": "Employees are provided daily per-diem meal allowances as follows: Tier 1 Cities: $85 USD per full travel day ($20 Breakfast, $25 Lunch, $40 Dinner). Tier 2 and Tier 3 Cities: $65 USD per full travel day ($15 Breakfast, $20 Lunch, $30 Dinner). Itemized receipts are mandatory for any individual business meal or transaction exceeding $25 USD. Alcohol is not reimbursable without client presence.",
+        "key_entities": [
+          "Tier 1: $85 USD daily per-diem",
+          "Tier 2/3: $65 USD daily per-diem",
+          "receipts mandatory over $25 USD",
+          "Alcohol restricted"
+        ]
+      },
+      {
+        "section_number": "5",
+        "section_title": "5. Ground Transportation and Personal Mileage",
+        "content": "Use of rideshare (Uber/Lyft Standard) and public rapid transit is encouraged. Luxury or Black car services are non-reimbursable. Personal vehicle mileage for business travel is reimbursed at the statutory rate of $0.67 USD per mile, excluding regular daily home-to-office commutes.",
+        "key_entities": [
+          "Uber/Lyft Standard",
+          "$0.67 USD per mile",
+          "No luxury car service"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "FIN-DOC-002",
+    "title": "Corporate Procurement, Vendor Selection and Supplier Payment Guidelines",
+    "department": "Finance",
+    "category": "Procurement & Treasury",
+    "security_clearance": "Confidential",
+    "version": "4.5",
+    "effective_date": "2026-01-01",
+    "owner": "Director of Global Strategic Sourcing",
+    "allowed_roles": [
+      "Finance_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Purchase Order (PO) Thresholds and Approval Ladder",
+        "content": "All vendor purchases exceeding $2,500 USD require an approved Purchase Order before contract signing or service commencement. Approval limits are structured as follows: Tier A (Up to $10,000 USD): Department Manager approval; Tier B ($10,001 to $50,000 USD): Department Director approval; Tier C ($50,001 to $250,000 USD): VP and Head of Procurement approval; Tier D (Exceeding $250,000 USD): Chief Financial Officer (CFO) and Chief Executive Officer (CEO) formal sign-off.",
+        "key_entities": [
+          "PO required over $2,500 USD",
+          "Tier A: up to $10,000",
+          "Tier B: $10,001 to $50,000",
+          "Tier C: $50,001 to $250,000",
+          "Tier D: >$250,000 CFO & CEO"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Competitive Bidding and RFP Requirements",
+        "content": "For any procurement contract with an aggregate contract value exceeding $50,000 USD, the procurement team must solicit a minimum of three independent, sealed competitive bids (RFP/RFQ). Single-source or sole-source exemptions require a formally documented Sole Source Justification memo approved by the General Counsel.",
+        "key_entities": [
+          "Exceeding $50,000 USD",
+          "three independent competitive bids",
+          "Sole Source Justification memo",
+          "General Counsel approval"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Three-Way Matching Verification Protocol",
+        "content": "Accounts Payable enforces strict Three-Way Matching before any vendor invoice is disbursed. The accounts payable system automatically cross-references: 1. The approved Purchase Order; 2. The Goods Received Note (GRN) or signed milestone proof-of-performance; 3. The vendor's itemized commercial tax invoice. Payment is halted automatically if price variance exceeds 1.5% or quantity exceeds 0%.",
+        "key_entities": [
+          "Three-Way Matching",
+          "Purchase Order (PO)",
+          "Goods Received Note (GRN)",
+          "Vendor tax invoice",
+          "1.5% price variance limit"
+        ]
+      },
+      {
+        "section_number": "4",
+        "section_title": "4. Standard Payment Terms and Wire Transfer Anti-Fraud",
+        "content": "Corporate standard payment terms are Net 45 days from the receipt of a verified invoice. Net 30 or Net 15 terms require Treasury Director sign-off. Wire transfer bank routing changes requested by any vendor require telephone callback verification to the verified vendor finance officer on record before updating banking records.",
+        "key_entities": [
+          "Net 45 days standard",
+          "Telephone callback verification",
+          "Anti-fraud protocol",
+          "Treasury Director sign-off"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "FIN-DOC-003",
+    "title": "Capital Expenditure (CapEx) Governance and Asset Depreciation Manual",
+    "department": "Finance",
+    "category": "Corporate Accounting",
+    "security_clearance": "Confidential",
+    "version": "3.0",
+    "effective_date": "2026-01-20",
+    "owner": "Corporate Controller & Capital Budgeting Committee",
+    "allowed_roles": [
+      "Finance_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Capital Expenditure Definition and Capitalization Floor",
+        "content": "Tangible assets or software development expenditures with an acquisition cost of $5,000 USD or greater and an estimated useful operational lifespan exceeding 12 months must be capitalized as fixed assets rather than expensed as operating expenditure (OpEx). Items under $5,000 are expensed immediately.",
+        "key_entities": [
+          "$5,000 USD capitalization floor",
+          "12 months useful life",
+          "CapEx vs OpEx"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. CapEx Budget Authorization Matrix",
+        "content": "CapEx projects between $50,000 and $200,000 require Capital Budgeting Committee approval and a Return on Investment (ROI) payback period under 36 months. Projects exceeding $500,000 require Board of Directors Audit Committee ratification.",
+        "key_entities": [
+          "$50,000 to $200,000 CapEx",
+          "36 months ROI payback",
+          "Board of Directors Audit Committee over $500,000"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Asset Depreciation Schedules",
+        "content": "Depreciation is recognized using the straight-line method over statutory useful lives: Computer Hardware & Servers: 3 years (36 months); Enterprise Software Licenses: 5 years (60 months); Office Furniture and Fixtures: 7 years; Leasehold Improvements: Lesser of 10 years or remaining lease term.",
+        "key_entities": [
+          "Straight-line depreciation",
+          "Servers: 3 years",
+          "Software: 5 years",
+          "Furniture: 7 years"
+        ]
+      }
+    ]
+  }
+]

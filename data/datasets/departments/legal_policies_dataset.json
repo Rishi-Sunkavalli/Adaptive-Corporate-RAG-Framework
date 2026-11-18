@@ -1,0 +1,101 @@
+[
+  {
+    "doc_id": "LEGAL-DOC-001",
+    "title": "Master Services Agreement (MSA) Standards and Contract Negotiation Framework",
+    "department": "Legal",
+    "category": "Corporate Legal & Contracts",
+    "security_clearance": "Confidential",
+    "version": "4.0",
+    "effective_date": "2026-01-01",
+    "owner": "Office of General Counsel",
+    "allowed_roles": [
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Standard Contract Terms and Governing Law",
+        "content": "All corporate commercial agreements, customer contracts, and vendor master services agreements (MSAs) must adopt the approved corporate standard legal templates. Governing law for US operations is the State of Delaware; for EMEA operations, governing law is the courts of England and Wales. Modifications to governing law require General Counsel sign-off.",
+        "key_entities": [
+          "State of Delaware",
+          "England and Wales",
+          "Standard MSA templates",
+          "General Counsel sign-off"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Limitation of Liability and Indemnification Caps",
+        "content": "Corporate policy stipulates that aggregate liability under any commercial contract shall not exceed 12 months of total fees paid or payable by the customer under the applicable Order Form. Super-caps for data breach or gross negligence are restricted to a maximum of 2x the standard annual fee cap.",
+        "key_entities": [
+          "12 months of total fees cap",
+          "Super-cap 2x annual fee",
+          "Data breach liability",
+          "No uncapped liability"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. Confidentiality and Non-Disclosure Term Duration",
+        "content": "Mutual non-disclosure agreements (NDAs) must mandate confidentiality protection for a minimum period of 5 years following disclosure of proprietary business information. Trade secrets, source code, and customer records must be protected in perpetuity without expiration.",
+        "key_entities": [
+          "5 years confidentiality protection",
+          "Trade secrets in perpetuity",
+          "Mutual NDA"
+        ]
+      }
+    ]
+  },
+  {
+    "doc_id": "LEGAL-DOC-002",
+    "title": "Global Data Privacy Regulation (GDPR & CCPA) Compliance Manual",
+    "department": "Legal",
+    "category": "Data Privacy & Compliance",
+    "security_clearance": "Internal",
+    "version": "3.2",
+    "effective_date": "2026-01-10",
+    "owner": "Data Protection Officer (DPO) & Privacy Council",
+    "allowed_roles": [
+      "General_Employee",
+      "HR_Staff",
+      "IT_Staff",
+      "Finance_Staff",
+      "Operations_Staff",
+      "Executive_Admin"
+    ],
+    "sections": [
+      {
+        "section_number": "1",
+        "section_title": "1. Data Subject Access Requests (DSAR) Response Timelines",
+        "content": "Under GDPR Article 15 and California CCPA/CPRA regulations, verified Data Subject Access Requests (DSAR)\u2014including requests to access, rectify, or delete personal data\u2014must be fulfilled within 30 calendar days of identity verification. An extension of up to 60 additional days is permissible only for exceptionally complex requests upon written notification to the applicant.",
+        "key_entities": [
+          "30 calendar days DSAR response",
+          "60 days extension for complex",
+          "GDPR Article 15",
+          "CCPA/CPRA"
+        ]
+      },
+      {
+        "section_number": "2",
+        "section_title": "2. Personal Data Breach Mandatory Notification Window",
+        "content": "In the event of a confirmed personal data security incident affecting employee or customer data, the Data Protection Officer must notify the lead supervisory data authority (e.g. Irish DPC or UK ICO) within 72 hours of becoming aware of the breach, pursuant to GDPR Article 33. Affected individuals must be notified without undue delay if the breach carries a high risk to personal freedoms.",
+        "key_entities": [
+          "72 hours mandatory notification to DPC/ICO",
+          "GDPR Article 33",
+          "Data Protection Officer (DPO)",
+          "High-risk breach"
+        ]
+      },
+      {
+        "section_number": "3",
+        "section_title": "3. International Data Transfer Mechanisms",
+        "content": "Transfers of personal data originating from the European Economic Area (EEA) to third countries must rely upon valid Standard Contractual Clauses (SCCs) approved by the European Commission, accompanied by a documented Transfer Impact Assessment (TIA), or an EU-US Data Privacy Framework certification.",
+        "key_entities": [
+          "Standard Contractual Clauses (SCCs)",
+          "Transfer Impact Assessment (TIA)",
+          "EU-US Data Privacy Framework"
+        ]
+      }
+    ]
+  }
+]

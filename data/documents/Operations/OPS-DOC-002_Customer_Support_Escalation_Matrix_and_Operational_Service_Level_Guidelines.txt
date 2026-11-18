@@ -1,0 +1,17 @@
+# DOCUMENT METADATA
+# Document ID: OPS-DOC-002
+# Title: Customer Support Escalation Matrix and Operational Service Level Guidelines
+# Department: Operations
+# Version: 3.6
+# Effective Date: 2026-01-01
+# Security Clearance: Confidential
+
+## 1. Customer Support Ticket Severity Tiers
+Customer support issues are categorized into four tiers: Tier 1 (Critical Enterprise Impact: Complete customer business standstill, data loss, or safety incident); Tier 2 (High Impact: Core workflows degraded for multiple users); Tier 3 (Medium Impact: Single user affected with functional workaround); Tier 4 (Low Impact: General inquiries, how-to questions, minor feedback).
+
+## 2. Escalation Reassignment Triggers
+A ticket must be escalated immediately to Tier 2 Engineering or Management under the following conditions: 1. SLA response timer has elapsed by 75% without substantive update; 2. Customer explicitly requests managerial intervention twice; 3. Issue involves potential contract breach or legal exposure; 4. Enterprise customer ARR exceeds $100,000 USD and ticket remains open past 3 hours.
+
+## 3. Executive Notification Protocols
+When a Tier 1 customer incident remains unresolved after 90 minutes, the VP of Customer Operations and Account Executive must be notified via SMS. If unresolved at 180 minutes (3 hours), a formal notification briefing is dispatched to the Chief Operating Officer (COO).
+

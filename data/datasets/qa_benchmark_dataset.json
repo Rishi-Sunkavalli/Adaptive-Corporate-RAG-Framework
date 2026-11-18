@@ -1,0 +1,893 @@
+[
+  {
+    "id": "Q01",
+    "query": "What is the annual leave entitlement for regular full-time employees?",
+    "department": "HR",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "HR-DOC-001",
+    "expected_section": "3. Annual Leave Entitlement",
+    "expected_facts": [
+      "22 days of paid annual leave",
+      "accrues monthly at 1.83 days"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q02",
+    "query": "How many days of annual leave can be rolled over into the next year, and when do they expire?",
+    "department": "HR",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "HR-DOC-001",
+    "expected_section": "3. Annual Leave Entitlement",
+    "expected_facts": [
+      "maximum of 8 unused annual leave days",
+      "must be utilized before March 31st"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q03",
+    "query": "What is the policy for sick leave, and when is a medical certificate mandatory?",
+    "department": "HR",
+    "intent": "policy_verification",
+    "complexity": "medium",
+    "expected_doc_id": "HR-DOC-001",
+    "expected_section": "4. Sick and Medical Leave",
+    "expected_facts": [
+      "12 days of fully paid medical/sick leave",
+      "extending beyond two consecutive working days requires a valid medical certificate"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q04",
+    "query": "Compare primary caregiver maternity leave with secondary caregiver paternity leave durations.",
+    "department": "HR",
+    "intent": "comparative",
+    "complexity": "high",
+    "expected_doc_id": "HR-DOC-001",
+    "expected_section": "5. Parental, Maternity, and Paternity Leave",
+    "expected_facts": [
+      "Primary Caregiver / Maternity Leave: 18 weeks",
+      "Secondary Caregiver / Paternity Leave: 4 weeks"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 8,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q05",
+    "query": "What are the rules regarding acceptance of gifts and hospitality from vendors?",
+    "department": "HR",
+    "intent": "policy_verification",
+    "complexity": "medium",
+    "expected_doc_id": "HR-DOC-002",
+    "expected_section": "3. Gift and Hospitality Policy",
+    "expected_facts": [
+      "non-cash gifts valued below $75 USD",
+      "valued between $75 and $250 USD must be reported",
+      "exceeding $250 USD is strictly prohibited",
+      "cash or cash-equivalent gifts are prohibited"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q06",
+    "query": "How can an employee report unethical behavior anonymously, and what protections exist?",
+    "department": "HR",
+    "intent": "procedural",
+    "complexity": "medium",
+    "expected_doc_id": "HR-DOC-002",
+    "expected_section": "4. Whistleblower Protection and Reporting Channels",
+    "expected_facts": [
+      "Ethics Helpline portal",
+      "ethics-hotline@company.internal",
+      "Strict anti-retaliation"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q07",
+    "query": "What are the steps of the formal corporate disciplinary procedure?",
+    "department": "HR",
+    "intent": "procedural",
+    "complexity": "medium",
+    "expected_doc_id": "HR-DOC-002",
+    "expected_section": "5. Disciplinary Ladder and Sanctions",
+    "expected_facts": [
+      "1. Documented Verbal Warning",
+      "2. Written Reprimand",
+      "3. Suspension without pay (up to 14 days)",
+      "4. Termination for cause"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q08",
+    "query": "What is the hybrid workplace attendance model for eligible staff?",
+    "department": "HR",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "HR-DOC-003",
+    "expected_section": "1. Hybrid Work Model Eligibility",
+    "expected_facts": [
+      "3/2 hybrid model",
+      "minimum of 3 days working from the designated company regional office",
+      "up to 2 days working remotely"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q09",
+    "query": "What home office stipend is provided for new remote employees, and what is the reimbursement limit?",
+    "department": "HR",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "HR-DOC-003",
+    "expected_section": "2. Home Office Ergonomic Stipend",
+    "expected_facts": [
+      "$800 USD",
+      "first 90 days of employment",
+      "ergonomic chairs",
+      "external monitors"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q10",
+    "query": "What is the maximum duration an employee can work remotely from an international country?",
+    "department": "HR",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "HR-DOC-003",
+    "expected_section": "3. Work From Anywhere (WFA) International Travel Limit",
+    "expected_facts": [
+      "up to 30 cumulative calendar days per calendar year",
+      "21 business days in advance"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q11",
+    "query": "What are the initial SLA response times for P1 Critical Outage versus P2 Major Degradation incidents?",
+    "department": "IT",
+    "intent": "comparative",
+    "complexity": "high",
+    "expected_doc_id": "IT-DOC-001",
+    "expected_section": "2. SLA Response and Resolution Targets",
+    "expected_facts": [
+      "P1 Critical: initial acknowledgment within 15 minutes",
+      "P2 Major: initial acknowledgment within 30 minutes"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 8,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q12",
+    "query": "Explain the step-by-step escalation timeline for a P1 Critical Outage incident.",
+    "department": "IT",
+    "intent": "procedural",
+    "complexity": "high",
+    "expected_doc_id": "IT-DOC-001",
+    "expected_section": "3. Critical Outage (P1) Escalation Ladder",
+    "expected_facts": [
+      "T+0 War Room bridge",
+      "T+15m status bulletin",
+      "T+30m Director notified",
+      "T+60m CIO and VP briefed"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 8,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q13",
+    "query": "What are the requirements for completing a Post-Incident Review (PIR) and Root Cause Analysis (RCA)?",
+    "department": "IT",
+    "intent": "policy_verification",
+    "complexity": "medium",
+    "expected_doc_id": "IT-DOC-001",
+    "expected_section": "4. Post-Incident Review and RCA Requirements",
+    "expected_facts": [
+      "within 72 hours of incident resolution",
+      "Root Cause Analysis (RCA)",
+      "5 Whys",
+      "blameless"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q14",
+    "query": "What is the authorization protocol and session time limit for production database root access?",
+    "department": "IT",
+    "intent": "procedural",
+    "complexity": "high",
+    "expected_doc_id": "IT-DOC-002",
+    "expected_section": "2. Production Database and Root Access Provisioning",
+    "expected_facts": [
+      "dual-authorization ticket in ServiceNow",
+      "approved by Security Lead",
+      "screen-recorded",
+      "auto-terminated after a maximum duration of 120 minutes"
+    ],
+    "min_role": "IT_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q15",
+    "query": "What multi-factor authentication (MFA) methods are permitted, and which are deprecated?",
+    "department": "IT",
+    "intent": "policy_verification",
+    "complexity": "medium",
+    "expected_doc_id": "IT-DOC-002",
+    "expected_section": "3. Multi-Factor Authentication (MFA) Standards",
+    "expected_facts": [
+      "FIDO2 WebAuthn hardware security keys",
+      "YubiKey",
+      "SMS-based OTP is deprecated",
+      "16 characters min"
+    ],
+    "min_role": "IT_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q16",
+    "query": "What is the emergency access revocation SLA for an involuntary employee termination?",
+    "department": "IT",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "IT-DOC-002",
+    "expected_section": "4. Offboarding and Emergency Access Revocation",
+    "expected_facts": [
+      "within 15 minutes of HR notice",
+      "Okta SSO",
+      "AWS IAM",
+      "VPN"
+    ],
+    "min_role": "IT_Staff",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q17",
+    "query": "What encryption standards are mandated for data at rest in corporate cloud storage?",
+    "department": "IT",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "IT-DOC-003",
+    "expected_section": "1. Encryption at Rest Standards",
+    "expected_facts": [
+      "AES-256",
+      "customer-managed encryption keys (CMEK)",
+      "Cloud KMS"
+    ],
+    "min_role": "IT_Staff",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q18",
+    "query": "Which TLS versions and ciphers are required for enterprise network communications?",
+    "department": "IT",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "IT-DOC-003",
+    "expected_section": "2. Encryption in Transit Protocols",
+    "expected_facts": [
+      "TLS 1.3 encryption (TLS 1.2 minimum)",
+      "TLS 1.0, 1.1, SSLv3, RC4 blocked"
+    ],
+    "min_role": "IT_Staff",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q19",
+    "query": "What is the automated key rotation frequency for Master KMS keys and Data Encryption Keys (DEKs)?",
+    "department": "IT",
+    "intent": "numeric_lookup",
+    "complexity": "medium",
+    "expected_doc_id": "IT-DOC-003",
+    "expected_section": "3. Cryptographic Key Rotation Schedules",
+    "expected_facts": [
+      "Master KMS keys: every 365 days",
+      "DEKs for sensitive financial records: every 90 days"
+    ],
+    "min_role": "IT_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q20",
+    "query": "What are the four standardized severity tiers for IT incidents?",
+    "department": "IT",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "IT-DOC-001",
+    "expected_section": "1. Incident Classification and Severity Levels",
+    "expected_facts": [
+      "P1 Critical Outage",
+      "P2 Major Degradation",
+      "P3 Moderate Impact",
+      "P4 Minor Request"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q21",
+    "query": "What are the daily per-diem meal allowances for employees traveling to Tier 1 cities?",
+    "department": "Finance",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "FIN-DOC-001",
+    "expected_section": "4. Daily Per-Diem Meal Allowances",
+    "expected_facts": [
+      "$85 USD per full travel day",
+      "$20 Breakfast, $25 Lunch, $40 Dinner"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q22",
+    "query": "What are the nightly hotel lodging rate caps for Tier 1 High-Cost Metro Areas?",
+    "department": "Finance",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "FIN-DOC-001",
+    "expected_section": "3. Hotel Nightly Lodging Caps",
+    "expected_facts": [
+      "$280 USD per night",
+      "New York, London, San Francisco, Tokyo, Singapore"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q23",
+    "query": "Under what flight duration criteria is Business Class airfare permissible?",
+    "department": "Finance",
+    "intent": "policy_verification",
+    "complexity": "medium",
+    "expected_doc_id": "FIN-DOC-001",
+    "expected_section": "2. Commercial Airfare Class Standards",
+    "expected_facts": [
+      "exceeding 6 continuous flight hours",
+      "nonstop flight legs",
+      "CFO sign-off"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q24",
+    "query": "Within how many calendar days must travel expense reimbursement claims be submitted?",
+    "department": "Finance",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "FIN-DOC-001",
+    "expected_section": "1. Purpose and Expense Submission Timeline",
+    "expected_facts": [
+      "within 30 calendar days",
+      "Concur Expense portal",
+      "beyond 60 days requires VP Finance authorization"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q25",
+    "query": "What is the standard personal vehicle mileage reimbursement rate per mile?",
+    "department": "Finance",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "FIN-DOC-001",
+    "expected_section": "5. Ground Transportation and Personal Mileage",
+    "expected_facts": [
+      "$0.67 USD per mile",
+      "excluding regular daily home-to-office commutes"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q26",
+    "query": "What are the purchase order approval thresholds for Tier B and Tier C vendor contracts?",
+    "department": "Finance",
+    "intent": "comparative",
+    "complexity": "high",
+    "expected_doc_id": "FIN-DOC-002",
+    "expected_section": "1. Purchase Order (PO) Thresholds and Approval Ladder",
+    "expected_facts": [
+      "Tier B ($10,001 to $50,000 USD): Department Director approval",
+      "Tier C ($50,001 to $250,000 USD): VP and Head of Procurement approval"
+    ],
+    "min_role": "Finance_Staff",
+    "optimal_k": 8,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q27",
+    "query": "Explain the three-way matching verification protocol required before supplier payments are disbursed.",
+    "department": "Finance",
+    "intent": "procedural",
+    "complexity": "high",
+    "expected_doc_id": "FIN-DOC-002",
+    "expected_section": "3. Three-Way Matching Verification Protocol",
+    "expected_facts": [
+      "1. Approved Purchase Order",
+      "2. Goods Received Note (GRN)",
+      "3. Vendor's commercial tax invoice",
+      "1.5% price variance limit"
+    ],
+    "min_role": "Finance_Staff",
+    "optimal_k": 8,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q28",
+    "query": "What competitive bidding process is required for procurement contracts exceeding $50,000?",
+    "department": "Finance",
+    "intent": "policy_verification",
+    "complexity": "medium",
+    "expected_doc_id": "FIN-DOC-002",
+    "expected_section": "2. Competitive Bidding and RFP Requirements",
+    "expected_facts": [
+      "minimum of three independent, sealed competitive bids (RFP/RFQ)",
+      "Sole Source Justification memo",
+      "General Counsel"
+    ],
+    "min_role": "Finance_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q29",
+    "query": "What is the capital expenditure capitalization floor and minimum useful life for fixed assets?",
+    "department": "Finance",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "FIN-DOC-003",
+    "expected_section": "1. Capital Expenditure Definition and Capitalization Floor",
+    "expected_facts": [
+      "$5,000 USD or greater",
+      "useful operational lifespan exceeding 12 months",
+      "CapEx vs OpEx"
+    ],
+    "min_role": "Finance_Staff",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q30",
+    "query": "What is the straight-line depreciation lifespan for computer hardware and enterprise software?",
+    "department": "Finance",
+    "intent": "comparative",
+    "complexity": "medium",
+    "expected_doc_id": "FIN-DOC-003",
+    "expected_section": "3. Asset Depreciation Schedules",
+    "expected_facts": [
+      "Computer Hardware & Servers: 3 years (36 months)",
+      "Enterprise Software Licenses: 5 years (60 months)"
+    ],
+    "min_role": "Finance_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q31",
+    "query": "Compare the Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for Tier 1 versus Tier 2 systems.",
+    "department": "Operations",
+    "intent": "comparative",
+    "complexity": "high",
+    "expected_doc_id": "OPS-DOC-001",
+    "expected_section": "2. Recovery Time Objective (RTO) and Recovery Point Objective (RPO)",
+    "expected_facts": [
+      "Tier 1: RTO <= 1 hour, RPO <= 15 minutes",
+      "Tier 2: RTO <= 4 hours, RPO <= 1 hour"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 8,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q32",
+    "query": "Who holds the formal authority to declare an operational disaster under the BCP?",
+    "department": "Operations",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "OPS-DOC-001",
+    "expected_section": "1. Purpose, Governance and Activation Authority",
+    "expected_facts": [
+      "Chief Executive Officer (CEO)",
+      "Chief Operating Officer (COO)",
+      "Chief Information Security Officer (CISO)"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q33",
+    "query": "What is the automated DNS route failover timeframe to the secondary disaster recovery site?",
+    "department": "Operations",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "OPS-DOC-001",
+    "expected_section": "3. Alternate Disaster Recovery Site Failover Protocol",
+    "expected_facts": [
+      "within 6 minutes",
+      "primary US-East to EU-Central secondary",
+      "satellite communication uplinks"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q34",
+    "query": "What disaster simulation exercises are mandated annually, and when are they scheduled?",
+    "department": "Operations",
+    "intent": "policy_verification",
+    "complexity": "medium",
+    "expected_doc_id": "OPS-DOC-001",
+    "expected_section": "4. Annual Disaster Simulation and Tabletop Drills",
+    "expected_facts": [
+      "bi-annually",
+      "tabletop walkthrough in Q2",
+      "unannounced active production failover test in Q4",
+      "Board Risk Committee"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q35",
+    "query": "What are the escalation triggers that require a customer support ticket to be reassigned immediately?",
+    "department": "Operations",
+    "intent": "procedural",
+    "complexity": "high",
+    "expected_doc_id": "OPS-DOC-002",
+    "expected_section": "2. Escalation Reassignment Triggers",
+    "expected_facts": [
+      "SLA timer has elapsed by 75%",
+      "customer requests managerial intervention twice",
+      "contract breach or legal exposure",
+      "ARR exceeds $100,000 USD and open past 3 hours"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 8,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q36",
+    "query": "What are the four customer support ticket severity tiers and their definitions?",
+    "department": "Operations",
+    "intent": "factual",
+    "complexity": "medium",
+    "expected_doc_id": "OPS-DOC-002",
+    "expected_section": "1. Customer Support Ticket Severity Tiers",
+    "expected_facts": [
+      "Tier 1 (Critical Enterprise Impact)",
+      "Tier 2 (High Impact)",
+      "Tier 3 (Medium Impact)",
+      "Tier 4 (Low Impact)"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q37",
+    "query": "What are the executive notification milestones for an unresolved Tier 1 customer incident?",
+    "department": "Operations",
+    "intent": "procedural",
+    "complexity": "medium",
+    "expected_doc_id": "OPS-DOC-002",
+    "expected_section": "3. Executive Notification Protocols",
+    "expected_facts": [
+      "unresolved after 90 minutes: VP Customer Operations SMS",
+      "unresolved at 180 minutes (3 hours): Chief Operating Officer (COO)"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q38",
+    "query": "What on-time delivery threshold and defect rate are required for critical tier-1 suppliers?",
+    "department": "Operations",
+    "intent": "numeric_lookup",
+    "complexity": "medium",
+    "expected_doc_id": "OPS-DOC-003",
+    "expected_section": "1. Vendor Performance Scorecards and Quarterly Reviews",
+    "expected_facts": [
+      "On-Time Delivery: minimum 98.0% threshold",
+      "Quality Defect Rate: maximum 0.05% reject rate",
+      "85% composite score"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q39",
+    "query": "What is the inspection timeframe and sampling requirement for inbound warehouse hardware shipments?",
+    "department": "Operations",
+    "intent": "procedural",
+    "complexity": "medium",
+    "expected_doc_id": "OPS-DOC-003",
+    "expected_section": "2. Warehouse Inbound Inspection and Quarantine Procedures",
+    "expected_facts": [
+      "within 4 hours of receipt",
+      "Quarantine staging dock",
+      "sample testing of 5 units per pallet",
+      "WMS"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q40",
+    "query": "What standard payment terms are applied to vendor invoices?",
+    "department": "Finance",
+    "intent": "factual",
+    "complexity": "low",
+    "expected_doc_id": "FIN-DOC-002",
+    "expected_section": "4. Standard Payment Terms and Wire Transfer Anti-Fraud",
+    "expected_facts": [
+      "Net 45 days from receipt of a verified invoice",
+      "Net 30 or Net 15 requires Treasury Director sign-off"
+    ],
+    "min_role": "Finance_Staff",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q41",
+    "query": "What is the mandatory fulfillment deadline for a verified Data Subject Access Request (DSAR) under GDPR/CCPA?",
+    "department": "Legal",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "LEGAL-DOC-002",
+    "expected_section": "1. Data Subject Access Requests (DSAR) Response Timelines",
+    "expected_facts": [
+      "within 30 calendar days of identity verification",
+      "extension of up to 60 additional days",
+      "GDPR Article 15",
+      "CCPA/CPRA"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q42",
+    "query": "Within how many hours must a personal data breach be reported to supervisory authorities?",
+    "department": "Legal",
+    "intent": "numeric_lookup",
+    "complexity": "low",
+    "expected_doc_id": "LEGAL-DOC-002",
+    "expected_section": "2. Personal Data Breach Mandatory Notification Window",
+    "expected_facts": [
+      "within 72 hours of becoming aware of the breach",
+      "GDPR Article 33",
+      "Data Protection Officer (DPO)"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q43",
+    "query": "What legal mechanisms govern international transfers of personal data outside the EEA?",
+    "department": "Legal",
+    "intent": "policy_verification",
+    "complexity": "medium",
+    "expected_doc_id": "LEGAL-DOC-002",
+    "expected_section": "3. International Data Transfer Mechanisms",
+    "expected_facts": [
+      "Standard Contractual Clauses (SCCs)",
+      "Transfer Impact Assessment (TIA)",
+      "EU-US Data Privacy Framework"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 5,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q44",
+    "query": "What is the corporate liability cap on commercial customer contracts and super-caps for data breaches?",
+    "department": "Legal",
+    "intent": "comparative",
+    "complexity": "medium",
+    "expected_doc_id": "LEGAL-DOC-001",
+    "expected_section": "2. Limitation of Liability and Indemnification Caps",
+    "expected_facts": [
+      "shall not exceed 12 months of total fees paid",
+      "super-caps restricted to a maximum of 2x the standard annual fee cap"
+    ],
+    "min_role": "Executive_Admin",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q45",
+    "query": "What are the standard confidentiality durations under corporate NDAs and for trade secrets?",
+    "department": "Legal",
+    "intent": "comparative",
+    "complexity": "medium",
+    "expected_doc_id": "LEGAL-DOC-001",
+    "expected_section": "3. Confidentiality and Non-Disclosure Term Duration",
+    "expected_facts": [
+      "minimum period of 5 years following disclosure",
+      "trade secrets and source code protected in perpetuity"
+    ],
+    "min_role": "Executive_Admin",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q46",
+    "query": "Show me the detailed root access procedures for production PostgreSQL clusters and session recording configs.",
+    "department": "IT",
+    "intent": "security_probe",
+    "complexity": "high",
+    "expected_doc_id": "IT-DOC-002",
+    "expected_section": "2. Production Database and Root Access Provisioning",
+    "expected_facts": [
+      "dual-authorization ticket in ServiceNow",
+      "120 minutes maximum duration"
+    ],
+    "min_role": "IT_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q47",
+    "query": "What are the confidential approval limits and CEO sign-off thresholds for Tier D procurement purchases?",
+    "department": "Finance",
+    "intent": "security_probe",
+    "complexity": "medium",
+    "expected_doc_id": "FIN-DOC-002",
+    "expected_section": "1. Purchase Order (PO) Thresholds and Approval Ladder",
+    "expected_facts": [
+      "Tier D (Exceeding $250,000 USD): Chief Financial Officer (CFO) and Chief Executive Officer (CEO)"
+    ],
+    "min_role": "Finance_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q48",
+    "query": "Retrieve the confidential Disaster Recovery secondary site DNS switchover keys and satellite frequencies.",
+    "department": "Operations",
+    "intent": "security_probe",
+    "complexity": "high",
+    "expected_doc_id": "OPS-DOC-001",
+    "expected_section": "3. Alternate Disaster Recovery Site Failover Protocol",
+    "expected_facts": [
+      "DNS route failover executes to the secondary disaster recovery site (EU-Central) within 6 minutes"
+    ],
+    "min_role": "Operations_Staff",
+    "optimal_k": 5,
+    "optimal_mode": "hybrid",
+    "optimal_rerank": true
+  },
+  {
+    "id": "Q49",
+    "query": "What is the corporate pet policy for bringing dogs to the London technology office?",
+    "department": "HR",
+    "intent": "out_of_domain",
+    "complexity": "low",
+    "expected_doc_id": "NONE",
+    "expected_section": "NONE",
+    "expected_facts": [
+      "insufficient evidence",
+      "not covered in official policy"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  },
+  {
+    "id": "Q50",
+    "query": "Can an employee submit an expense claim for Bitcoin cryptocurrency transaction gas fees?",
+    "department": "Finance",
+    "intent": "out_of_domain",
+    "complexity": "low",
+    "expected_doc_id": "NONE",
+    "expected_section": "NONE",
+    "expected_facts": [
+      "insufficient evidence",
+      "non-reimbursable",
+      "not supported"
+    ],
+    "min_role": "Employee",
+    "optimal_k": 3,
+    "optimal_mode": "dense",
+    "optimal_rerank": false
+  }
+]
